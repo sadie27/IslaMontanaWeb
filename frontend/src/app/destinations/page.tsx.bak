@@ -1,0 +1,146 @@
+import Image from 'next/image'
+import Link from 'next/link'
+import { DESTINATIONS } from '@/data/destinations'
+
+export const metadata = {
+  title: 'Destinos — Islamontana Travel',
+  description:
+    'Descubre los cuatro mundos de Ecuador: Galápagos, Amazonía, Andes Cultural y Andes Naturaleza. Viajes de naturaleza de alto impacto con Islamontana Travel.',
+}
+
+export default function DestinationsPage() {
+  return (
+    <main id="main-content">
+      <section style={{ padding: '120px var(--px) 80px', background: '#f4f8f2' }}>
+        <div style={{ maxWidth: 1200, margin: '0 auto' }}>
+          <span
+            style={{
+              display: 'block',
+              fontSize: 11,
+              letterSpacing: '0.2em',
+              textTransform: 'uppercase',
+              color: '#3aa023',
+              fontWeight: 700,
+              marginBottom: 14,
+            }}
+          >
+            Nuestros Destinos
+          </span>
+          <h1
+            style={{
+              fontSize: 'clamp(36px, 5vw, 64px)',
+              fontWeight: 900,
+              letterSpacing: '-0.03em',
+              lineHeight: 0.93,
+              color: '#0d200c',
+              marginBottom: 16,
+            }}
+          >
+            Ecuador,<br />cuatro mundos.
+          </h1>
+          <p
+            style={{
+              fontSize: 18,
+              fontWeight: 300,
+              color: 'rgba(13,32,12,0.55)',
+              maxWidth: '52ch',
+              lineHeight: 1.6,
+              marginBottom: 64,
+            }}
+          >
+            Desde archipiélagos volcánicos hasta selvas primarias y cumbres andinas. Elige tu forma de descubrir el país más biodiverso del planeta.
+          </p>
+
+          {/* 2×2 Grid */}
+          <div
+            style={{
+              display: 'grid',
+              gridTemplateColumns: 'repeat(2, 1fr)',
+              gap: 16,
+            }}
+            className="grid-cols-1 md:grid-cols-2"
+          >
+            {DESTINATIONS.map((dest, i) => (
+              <Link
+                key={dest.slug}
+                href={`/destinations/${dest.slug}`}
+                style={{
+                  display: 'block',
+                  borderRadius: 16,
+                  overflow: 'hidden',
+                  position: 'relative',
+                  aspectRatio: '4/3',
+                  background: dest.placeholderBg,
+                  textDecoration: 'none',
+                }}
+                className="group"
+              >
+                <Image
+                  src={dest.heroImage}
+                  alt={dest.name}
+                  fill
+                  unoptimized
+                  style={{ objectFit: 'cover', opacity: 0.75, transition: 'transform 0.5s ease, opacity 0.3s ease' }}
+                  className="group-hover:scale-105 group-hover:opacity-90"
+                />
+                <div
+                  style={{
+                    position: 'absolute',
+                    inset: 0,
+                    background: 'linear-gradient(to top, rgba(0,0,0,0.75) 0%, rgba(0,0,0,0.1) 60%, transparent 100%)',
+                  }}
+                  aria-hidden="true"
+                />
+                <div
+                  style={{
+                    position: 'absolute',
+                    bottom: 0,
+                    left: 0,
+                    right: 0,
+                    padding: '28px 28px',
+                  }}
+                >
+                  <span
+                    style={{
+                      display: 'block',
+                      fontSize: 10,
+                      letterSpacing: '0.18em',
+                      textTransform: 'uppercase',
+                      fontWeight: 700,
+                      color: dest.accentColor,
+                      marginBottom: 6,
+                    }}
+                  >
+                    Destino
+                  </span>
+                  <h2
+                    style={{
+                      fontSize: 'clamp(20px, 2.5vw, 26px)',
+                      fontWeight: 900,
+                      color: 'white',
+                      letterSpacing: '-0.02em',
+                      lineHeight: 1.1,
+                      marginBottom: 6,
+                    }}
+                  >
+                    {dest.name}
+                  </h2>
+                  <p
+                    style={{
+                      fontSize: 13,
+                      color: 'rgba(255,255,255,0.6)',
+                      fontWeight: 300,
+                      lineHeight: 1.5,
+                    }}
+                  >
+                    {dest.tagline}
+                  </p>
+                </div>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+    </main>
+  )
+}

@@ -1,0 +1,53 @@
+/* ════════════════════════════════════════════════════════════
+   mobile.css — Islamontana Travel
+   Overrides exclusivos mobile < 768px
+   Los estilos mobile de cada sección están en su módulo css.
+   Este archivo centraliza overrides globales de mobile.
+════════════════════════════════════════════════════════════ */
+
+@media (max-width: 767px) {
+
+  /* Tipografía base mobile */
+  :root {
+    --px: 20px;
+  }
+
+  /* Espaciados de secciones */
+  section {
+    scroll-margin-top: var(--nav-height);
+  }
+
+  /* Touch targets mínimos 44×44px */
+  button, a {
+    min-height: 44px;
+  }
+
+  /* Tipografía body ligeramente mayor en portrait para legibilidad */
+  body {
+    font-size: 16px;
+    -webkit-text-size-adjust: 100%; /* evita que iOS ajuste fuentes en landscape */
+    text-size-adjust: 100%;
+  }
+}
+
+@media (max-width: 479px) {
+  :root { --px: 18px; }
+}
+
+/* Portrait pequeño (≤480px ancho, orientación vertical):
+   Fuentes de secciones un poco más generosas */
+@media (max-width: 480px) and (orientation: portrait) {
+  :root {
+    --px: 20px;
+  }
+
+  /* Títulos de sección en destinos (usados via Tailwind en algunos componentes) */
+  .text-3xl { font-size: 1.625rem; }  /* 26px en lugar de 30px — más legible */
+  .text-2xl { font-size: 1.375rem; }  /* 22px */
+  .text-xl  { font-size: 1.125rem; }  /* 18px */
+  .leading-relaxed { line-height: 1.7; }
+}
+
+@media (max-width: 320px) {
+  :root { --px: 16px; }
+}

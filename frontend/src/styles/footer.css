@@ -1,0 +1,154 @@
+/* ════════════════════════════════════════════════════════════
+   footer.css — Islamontana Travel
+════════════════════════════════════════════════════════════ */
+
+.footer {
+  background: var(--color-dark);
+  padding: 72px var(--px) 36px;
+}
+
+.footer__inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+.footer__grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  gap: clamp(32px, 5vw, 64px);
+  margin-bottom: 56px;
+}
+
+.footer__brand {}
+
+.footer__logo {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  margin-bottom: 22px;
+}
+
+.footer__brand-name {
+  display: block;
+  font-weight: 800;
+  font-size: 13px;
+  letter-spacing: 0.1em;
+  color: white;
+  line-height: 1;
+}
+
+.footer__brand-sub {
+  display: block;
+  font-size: 10px;
+  letter-spacing: 0.28em;
+  color: rgba(255, 255, 255, 0.4);
+  margin-top: 3px;
+}
+
+.footer__tagline {
+  color: rgba(255, 255, 255, 0.62);
+  font-size: 14px;
+  line-height: 1.85;
+  max-width: 260px;
+}
+
+.footer__col-title {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  color: var(--color-accent);
+  margin-bottom: 24px;
+  text-transform: uppercase;
+}
+
+.footer__col ul {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.footer__link {
+  color: rgba(255, 255, 255, 0.65);
+  font-size: 14px;
+  transition: color 0.2s;
+}
+@media (hover: hover) and (pointer: fine) {
+  .footer__link:hover { color: rgba(255, 255, 255, 0.88); }
+}
+
+.footer__link:active { color: rgba(255, 255, 255, 0.88); }
+
+.footer__bottom {
+  border-top: 1px solid rgba(255, 255, 255, 0.07);
+  padding-top: 28px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+  color: rgba(255, 255, 255, 0.42);
+  font-size: 12px;
+}
+
+.footer__locales {
+  display: flex;
+  gap: 28px;
+}
+
+.footer__locales span { cursor: pointer; }
+
+@media (hover: hover) and (pointer: fine) {
+  .footer__locales span:hover { color: rgba(255, 255, 255, 0.6); }
+}
+
+.footer__locales span:active { color: rgba(255, 255, 255, 0.6); }
+
+/* ── Tablet (768–1023px) ── */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .footer__grid {
+    grid-template-columns: 1.5fr 1fr 1fr;
+    gap: clamp(24px, 3vw, 40px);
+  }
+
+  .footer {
+    padding: 64px var(--px) 32px;
+  }
+}
+
+/* ── Responsive ── */
+@media (max-width: 767px) {
+  .footer__grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 32px 24px;
+  }
+
+  .footer__brand { grid-column: 1 / -1; }
+
+  .footer__bottom {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .footer__locales { gap: 16px; }
+}
+
+@media (max-width: 639px) {
+  .footer__grid { gap: 28px 20px; }
+  .footer__col-title { font-size: 10px; margin-bottom: 16px; }
+  .footer__link { font-size: 13px; }
+}
+
+@media (max-width: 479px) {
+  .footer__grid { gap: 24px 16px; }
+  .footer { padding: 56px var(--px) 28px; }
+}
+
+@media (max-width: 374px) {
+  .footer__grid { gap: 20px 12px; }
+  .footer__link { font-size: 12px; }
+}
+
+@media (max-width: 320px) {
+  .footer__col ul { gap: 10px; }
+}

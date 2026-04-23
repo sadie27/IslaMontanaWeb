@@ -1,0 +1,115 @@
+/* ════════════════════════════════════════════════════════════
+   globals.css — Islamontana Travel
+   Tokens · Reset · Animaciones globales
+   Estilos de sección en archivos separados (ver imports abajo)
+════════════════════════════════════════════════════════════ */
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ── Google Font ── */
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&display=swap");
+
+/* ── Módulos por sección ── */
+@import './navbar.css';
+@import './footer.css';
+@import './home.css';
+
+/* ── Breakpoints específicos por dispositivo ── */
+@import './breakpoints/mobile.css';
+@import './breakpoints/tablet.css';
+@import './breakpoints/desktop.css';
+
+/* ── Tokens ── */
+:root {
+  --color-primary:    #3aa023;
+  --color-accent:     #abd430;
+  --color-dark:       #0d200c;
+  --color-dark-mid:   #1a3a18;
+  --color-gray:       #6b7560;
+  --color-light-bg:   #f4f8f2;
+  --color-white:      #ffffff;
+
+  --font-base: "Outfit", system-ui, sans-serif;
+
+  --nav-height: 70px;
+  --max-width:  1280px;
+  --px:         clamp(20px, 4vw, 40px);
+}
+
+/* ── Reset ── */
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { font-family: var(--font-base); color: var(--color-dark); background: var(--color-white); }
+a { text-decoration: none; color: inherit; }
+ul { list-style: none; }
+button { font-family: inherit; cursor: pointer; }
+img, svg { display: block; }
+
+/* ── Responsive base ── */
+/* Los overrides de --px por breakpoint están en breakpoints/mobile.css */
+
+/* ════════════════════════════════
+   ANIMACIONES GLOBALES
+════════════════════════════════ */
+@keyframes fade-up {
+  from { opacity: 0; transform: translateY(12px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-up {
+  animation: fade-up 0.3s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+/* ─── Destination Page Animations ── */
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(18px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.fade-up   { animation: fadeUp 0.55s cubic-bezier(0.16, 1, 0.3, 1) both; }
+.fade-up-1 { animation-delay: 80ms; }
+.fade-up-2 { animation-delay: 200ms; }
+.fade-up-3 { animation-delay: 340ms; }
+.fade-up-4 { animation-delay: 450ms; }
+.fade-up-5 { animation-delay: 560ms; }
+
+/* ─── Tour Card ── */
+
+.tour-card {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .tour-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 36px rgba(0, 0, 0, 0.25);
+  }
+}
+
+/* ─── CTA Buttons (destination pages) ── */
+
+@media (hover: hover) and (pointer: fine) {
+  .cta-primary:hover {
+    filter: brightness(1.08);
+    transform: translateY(-1px);
+  }
+  .cta-ghost:hover {
+    background: rgba(255, 255, 255, 0.12) !important;
+  }
+}
+
+.cta-primary:active { filter: brightness(0.96); transform: scale(0.98); }
+.cta-ghost:active   { background: rgba(255, 255, 255, 0.12) !important; }
+
+/* ─── FAQ Item ── */
+
+@media (hover: hover) and (pointer: fine) {
+  .faq-item:hover .faq-icon {
+    border-color: currentColor !important;
+  }
+}
+
+.faq-item:active .faq-icon { border-color: currentColor !important; }

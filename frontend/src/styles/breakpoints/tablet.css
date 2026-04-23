@@ -1,0 +1,60 @@
+/* ════════════════════════════════════════════════════════════
+   tablet.css — Islamontana Travel
+   Overrides exclusivos tablet: 768px – 1023px
+════════════════════════════════════════════════════════════ */
+
+@media (min-width: 768px) and (max-width: 1023px) {
+
+  /* ── Tokens tablet ── */
+  :root {
+    --px: clamp(24px, 3vw, 32px);
+  }
+
+  /* ── Navbar tablet ── */
+  .navbar__links {
+    gap: 20px;
+  }
+
+  .navbar__link {
+    font-size: 13px;
+  }
+
+  .navbar__cta {
+    padding: 8px 14px;
+    font-size: 13px;
+  }
+
+  .navbar__logo-img {
+    width: 140px !important;
+  }
+
+  /* ── Hero tablet ── */
+  .hero__title {
+    font-size: clamp(44px, 6vw, 64px);
+    max-width: 580px;
+    margin-bottom: 22px;
+  }
+
+  .hero__subtitle {
+    font-size: 16px;
+    max-width: 440px;
+    margin-bottom: 36px;
+  }
+
+  .hero__badge {
+    font-size: 11px;
+    margin-bottom: 28px;
+  }
+
+  /* ── Footer tablet ── */
+  .footer__grid {
+    grid-template-columns: 1.5fr 1fr 1fr;
+    gap: clamp(24px, 3vw, 40px);
+  }
+
+  /* ── Botones tablet ── */
+  .btn {
+    padding: 13px 28px;
+    font-size: 14px;
+  }
+}

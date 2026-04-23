@@ -1,0 +1,440 @@
+/* ════════════════════════════════════════════════════════════
+   navbar.css — Islamontana Travel
+   Navbar desktop + hamburger + mobile drawer
+════════════════════════════════════════════════════════════ */
+
+.navbar {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 100;
+  height: var(--nav-height);
+  display: flex;
+  align-items: center;
+  transition: background-color 0.2s ease-out, box-shadow 0.2s ease-out, backdrop-filter 0.2s ease-out;
+}
+
+.navbar--transparent {
+  background: transparent;
+}
+
+.navbar--scrolled {
+  background: rgba(255, 255, 255, 0.97);
+  box-shadow: 0 1px 24px rgba(0, 0, 0, 0.07);
+  backdrop-filter: blur(16px);
+}
+
+.navbar--transparent .navbar__brand-name,
+.navbar--transparent .navbar__link,
+.navbar--transparent .navbar__link--has-sub { color: rgba(255, 255, 255, 0.92); }
+
+.navbar--transparent .navbar__brand-sub  { color: rgba(255, 255, 255, 0.6); }
+
+.navbar--transparent .navbar__cta {
+  background: rgba(255, 255, 255, 0.12);
+  border: 1.5px solid rgba(255, 255, 255, 0.4);
+  color: white;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .navbar--transparent .navbar__link:hover,
+  .navbar--transparent .navbar__link--has-sub:hover { color: rgba(255, 255, 255, 0.92); }
+  .navbar--transparent .navbar__cta:hover  { background: rgba(255, 255, 255, 0.22); }
+}
+
+.navbar--transparent .navbar__cta:active { background: rgba(255, 255, 255, 0.28); }
+
+.navbar--scrolled .navbar__brand-name   { color: var(--color-primary); }
+.navbar--scrolled .navbar__brand-sub    { color: var(--color-gray); }
+.navbar--scrolled .navbar__link,
+.navbar--scrolled .navbar__link--has-sub         { color: var(--color-dark); }
+.navbar--scrolled .navbar__cta {
+  background: var(--color-primary);
+  border: none;
+  color: white;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .navbar--scrolled .navbar__link:hover,
+  .navbar--scrolled .navbar__link--has-sub:hover   { color: var(--color-primary); }
+  .navbar--scrolled .navbar__cta:hover    { background: #2d8c1b; }
+}
+
+.navbar--scrolled .navbar__link:active,
+.navbar--scrolled .navbar__link--has-sub:active { color: var(--color-primary); }
+.navbar--scrolled .navbar__cta:active           { background: #2d8c1b; }
+
+.navbar__inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  width: 100%;
+  padding: 0 var(--px);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.navbar__logo {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+}
+
+.navbar__brand {
+  display: flex;
+  flex-direction: column;
+}
+
+.navbar__brand-name {
+  font-weight: 800;
+  font-size: 14px;
+  letter-spacing: 0.1em;
+  line-height: 1;
+  transition: color 0.35s;
+}
+
+.navbar__brand-sub {
+  font-size: 10px;
+  letter-spacing: 0.28em;
+  margin-top: 3px;
+  transition: color 0.35s;
+}
+
+.navbar__links {
+  display: flex;
+  align-items: center;
+  gap: 36px;
+}
+
+.navbar__link {
+  font-size: 15px;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  transition: color 0.3s;
+}
+
+.navbar__cta {
+  padding: 10px 22px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  transition: all 0.35s;
+}
+
+/* ── Hamburger ── */
+.navbar__hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  z-index: 152;
+  position: relative;
+}
+
+.navbar__hamburger-line {
+  width: 24px;
+  height: 2px;
+  background: var(--color-dark);
+  transition: all 0.3s ease;
+  position: absolute;
+}
+
+.navbar__hamburger-line:nth-child(1) { transform: translateY(-6px); }
+.navbar__hamburger-line:nth-child(2) { transform: translateY(0); }
+.navbar__hamburger-line:nth-child(3) { transform: translateY(6px); }
+
+.navbar__hamburger--open .navbar__hamburger-line:nth-child(1) {
+  transform: rotate(45deg) translateY(0);
+}
+.navbar__hamburger--open .navbar__hamburger-line:nth-child(2) {
+  opacity: 0;
+  transform: translateX(-20px);
+}
+.navbar__hamburger--open .navbar__hamburger-line:nth-child(3) {
+  transform: rotate(-45deg) translateY(0);
+}
+
+/* ── Mobile Drawer ── */
+.navbar__drawer {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 150;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+.navbar__drawer--open {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.navbar__drawer-content {
+  position: fixed;
+  top: 0; right: 0;
+  width: 280px;
+  height: 100vh;
+  background-color: #fff;
+  box-shadow: -4px 0 24px rgba(0, 0, 0, 0.2);
+  transform: translateX(100%);
+  transition: transform 0.3s ease;
+  padding-top: calc(var(--nav-height) + 20px);
+  padding-bottom: 20px;
+  z-index: 151;
+  overflow-y: auto;
+}
+
+.navbar__drawer--open .navbar__drawer-content {
+  transform: translateX(0);
+}
+
+.navbar__drawer-links {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 0 20px;
+  background-color: #ffffff;
+}
+
+.navbar__drawer-link {
+  padding: 14px 16px;
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--color-dark);
+  background-color: transparent;
+  border-radius: 8px;
+  transition: background 0.2s;
+  display: block;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .navbar__drawer-link:hover {
+    background: rgba(58, 160, 35, 0.08);
+    color: var(--color-primary);
+  }
+}
+
+.navbar__drawer-link:active {
+  background: rgba(58, 160, 35, 0.12);
+  color: var(--color-primary);
+}
+
+.navbar__drawer-cta {
+  margin-top: 12px;
+  padding: 14px 16px;
+  background-color: var(--color-primary);
+  color: white;
+  font-size: 15px;
+  font-weight: 600;
+  text-align: center;
+  border-radius: 8px;
+  transition: background 0.25s;
+  display: block;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .navbar__drawer-cta:hover { background-color: #2d8c1b; }
+}
+
+.navbar__drawer-cta:active { background-color: #2d8c1b; }
+
+/* ── MegaMenu grid + card ── */
+.mega-menu__grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.mega-menu__card {
+  height: 299px;
+}
+
+/* ── Tablet dropdown ── */
+
+/* El botón con submenú debe verse idéntico al <a> navbar__link.
+   Reseteamos todo lo que el navegador añade a <button> y
+   usamos las mismas propiedades que .navbar__link. */
+.navbar__link--has-sub {
+  /* Reset de button */
+  background: none;
+  border: none;
+  cursor: pointer;
+  /* Mismos valores que .navbar__link */
+  font-size: 15px;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  color: inherit;
+  transition: color 0.3s;
+  /* Alineación: flecha en línea con el texto, sin empujar la altura */
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 0;
+  line-height: inherit;
+  /* Touch target real sin afectar al layout visual */
+  position: relative;
+}
+
+/* Ampliar el área táctil con pseudo-elemento — no cambia el tamaño visual */
+.navbar__link--has-sub::after {
+  content: "";
+  position: absolute;
+  inset: -12px -8px;
+}
+
+.navbar__link-arrow {
+  font-size: 10px;
+  opacity: 0.6;
+  line-height: 1;
+  /* Alineación óptica de la flecha con la línea de base del texto */
+  margin-top: 1px;
+}
+
+.navbar__tablet-dropdown {
+  position: absolute;
+  top: calc(100% + 12px);
+  left: 0;               /* anclar a la izquierda del trigger, no al centro */
+  min-width: 180px;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12), 0 0 0 1px rgba(0, 0, 0, 0.05);
+  padding: 6px;
+  z-index: 200;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(-6px);
+  transition: opacity 0.18s ease, transform 0.18s ease;
+}
+
+.navbar__tablet-dropdown--open {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+
+/* Flecha decorativa alineada con el trigger */
+.navbar__tablet-dropdown::before {
+  content: "";
+  position: absolute;
+  top: -6px;
+  left: 16px;            /* alineada al texto del trigger, no al centro */
+  width: 12px;
+  height: 6px;
+  background: white;
+  clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+}
+
+.navbar__tablet-dropdown-item {
+  display: flex;
+  align-items: center;
+  padding: 10px 14px;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--color-dark);
+  border-radius: 7px;
+  transition: background 0.15s, color 0.15s;
+  white-space: nowrap;
+  min-height: 44px;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .navbar__tablet-dropdown-item:hover {
+    background: rgba(58, 160, 35, 0.08);
+    color: var(--color-primary);
+  }
+}
+
+.navbar__tablet-dropdown-item:active {
+  background: rgba(58, 160, 35, 0.12);
+  color: var(--color-primary);
+}
+
+/* ── Tablet (768–1023px) ── */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .navbar__links {
+    gap: 20px;
+  }
+
+  /* Links y botón con submenú: mismo font-size en un solo selector */
+  .navbar__link,
+  .navbar__link--has-sub {
+    font-size: 13px;
+  }
+
+  .navbar__cta {
+    padding: 8px 16px;
+    font-size: 13px;
+  }
+
+  .navbar__logo-img {
+    width: 140px !important;
+  }
+
+  /* MegaMenu tablet: reducir altura de cards para que quepan en viewport */
+  .mega-menu__card {
+    height: 220px;
+  }
+}
+
+/* ── Responsive ── */
+@media (max-width: 767px) {
+  .navbar {
+    background: rgba(255, 255, 255, 0.97) !important;
+    box-shadow: 0 1px 24px rgba(0, 0, 0, 0.07);
+    backdrop-filter: blur(16px);
+  }
+
+  .navbar__links--desktop { display: none; }
+  .navbar__hamburger { display: flex; }
+
+  .navbar__logo-img {
+    width: 140px !important;
+    height: auto !important;
+  }
+}
+
+@media (max-width: 479px) {
+  .navbar__logo-img { width: 120px !important; }
+}
+
+@media (max-width: 374px) {
+  .navbar__logo-img { width: 100px !important; }
+}
+
+@media (max-width: 320px) {
+  .navbar__logo-img { width: 90px !important; }
+}
+
+/* ── Móvil landscape ── */
+@media (max-width: 767px) and (orientation: landscape) {
+  /* Reducir el token global: todo lo que use --nav-height se adapta solo */
+  :root { --nav-height: 52px; }
+
+  /* Fondo siempre sólido — en landscape no hay hero que justifique transparencia */
+  .navbar {
+    background: rgba(255, 255, 255, 0.98) !important;
+    box-shadow: 0 1px 0 rgba(0, 0, 0, 0.08) !important;
+    backdrop-filter: none !important;
+  }
+
+  .navbar__logo-img { width: 110px !important; }
+
+  /* Drawer: columna desde la derecha, tamaño contenido, scroll si hace falta */
+  .navbar__drawer-content {
+    max-width: 300px;
+    padding-top: calc(var(--nav-height) + 12px);
+    padding-bottom: 12px;
+  }
+
+  .navbar__drawer-links { gap: 4px; }
+
+  .navbar__drawer-link {
+    padding: 10px 16px;
+    font-size: 15px;
+  }
+}

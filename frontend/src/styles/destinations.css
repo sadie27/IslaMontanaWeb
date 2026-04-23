@@ -1,0 +1,110 @@
+/* ════════════════════════════════════════════════════════════
+   destinations.css — Islamontana Travel
+   Estilos específicos de las páginas /destinations/*
+════════════════════════════════════════════════════════════ */
+
+/* ════════════════════════════════
+   DESTINATION HERO
+════════════════════════════════ */
+@keyframes destFadeUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.dest-hero-anim {
+  opacity: 0;
+  animation: destFadeUp 0.7s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes destScrollBounce {
+  0%, 100% { transform: translateX(-50%) translateY(0); }
+  50%       { transform: translateX(-50%) translateY(6px); }
+}
+
+.dest-scroll-hint {
+  animation: destScrollBounce 2s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .dest-hero-anim  { animation: none; opacity: 1; }
+  .dest-scroll-hint { animation: none; }
+}
+
+/* ════════════════════════════════
+   TOUR CARDS
+════════════════════════════════ */
+@keyframes cardFadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.dest-card-anim {
+  opacity: 0;
+  animation: cardFadeIn 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .dest-card-anim { animation: none; opacity: 1; }
+}
+
+/* ════════════════════════════════
+   POLAROID STACK (WhyVisit desktop)
+   Transición gestionada via inline styles + useState en WhyVisit.tsx
+   Estilo visual: carta con pseudo-elementos detrás (::before / ::after)
+════════════════════════════════ */
+
+.polaroid-card {
+  position: relative;
+  background: #fff;
+  border: 1px solid #d4cfc8;
+  padding: 5% 5% 14% 5%;
+  cursor: default;
+}
+
+.polaroid-card::before,
+.polaroid-card::after {
+  content: "";
+  display: block;
+  position: absolute;
+  inset: 0;
+  border: 1px solid #d4cfc8;
+  background: #fff;
+  z-index: -1;
+  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.polaroid-card::before {
+  transform: translateY(-2%) rotate(-5deg);
+}
+
+.polaroid-card::after {
+  transform: translateY(2%) rotate(5deg);
+}
+
+/* En hover el contenedor padre tiene clase polaroid-stack-hovered */
+.polaroid-stack-hovered .polaroid-card::before,
+.polaroid-stack-hovered .polaroid-card::after {
+  transform: translateY(0) rotate(0deg);
+}
+
+.polaroid-card .polaroid-image {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  position: relative;
+  overflow: hidden;
+  background: #e2ead6;
+}
+
+/* Mobile: sin pseudo-elementos detrás */
+.polaroid-card--no-pseudo::before,
+.polaroid-card--no-pseudo::after {
+  display: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .polaroid-card,
+  .polaroid-card::before,
+  .polaroid-card::after {
+    transition: none !important;
+  }
+}

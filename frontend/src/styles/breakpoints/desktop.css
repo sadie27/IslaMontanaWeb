@@ -1,0 +1,14 @@
+/* ════════════════════════════════════════════════════════════
+   desktop.css — Islamontana Travel
+   Overrides exclusivos desktop: ≥ 1024px
+   Los hover states están protegidos con @media (hover: hover)
+   directamente en cada módulo CSS. Este archivo solo añade
+   estilos de layout que son EXCLUSIVOS de desktop.
+════════════════════════════════════════════════════════════ */
+
+@media (min-width: 1024px) {
+  /* Espacio extra en secciones grandes */
+  .hero__content {
+    padding-top: calc(var(--nav-height) + 16px);
+  }
+}
