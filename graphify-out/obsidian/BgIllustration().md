@@ -1,12 +1,12 @@
 ---
 source_file: "C:\Users\Santiago Die\Desktop\IslaMontana\IslaMontanaWeb\frontend\src\components\ui\ErrorPageClient.tsx"
 type: "code"
-community: "Community 13"
+community: "BgIllustration()"
 location: "L14"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_13
+  - community/BgIllustration()
 ---
 
 # BgIllustration()
@@ -14,4 +14,4 @@ tags:
 ## Connections
 - [[ErrorPageClient.tsx]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_13
+#graphify/code #graphify/EXTRACTED #community/BgIllustration()

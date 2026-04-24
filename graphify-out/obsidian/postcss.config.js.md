@@ -1,14 +1,14 @@
 ---
 source_file: "C:\Users\Santiago Die\Desktop\IslaMontana\IslaMontanaWeb\frontend\postcss.config.js"
 type: "code"
-community: "Community 29"
+community: "postcss.config.js"
 location: "L1"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_29
+  - community/postcss.config.js
 ---
 
 # postcss.config.js
 
-#graphify/code #graphify/EXTRACTED #community/Community_29
+#graphify/code #graphify/EXTRACTED #community/postcss.config.js

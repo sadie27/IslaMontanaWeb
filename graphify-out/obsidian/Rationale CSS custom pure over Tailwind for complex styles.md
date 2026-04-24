@@ -1,11 +1,11 @@
 ---
 source_file: "MASTER_PLAN.md"
 type: "document"
-community: "Community 4"
+community: "CSS Design System & Master Plan"
 tags:
   - graphify/document
   - graphify/EXTRACTED
-  - community/Community_4
+  - community/CSS_Design_System_&_Master_Plan
 ---
 
 # Rationale: CSS custom pure over Tailwind for complex styles
@@ -13,4 +13,4 @@ tags:
 ## Connections
 - [[BEM CSS Methodology with CSS Custom Properties]] - `rationale_for` [EXTRACTED]
 
-#graphify/document #graphify/EXTRACTED #community/Community_4
+#graphify/document #graphify/EXTRACTED #community/CSS_Design_System_&_Master_Plan

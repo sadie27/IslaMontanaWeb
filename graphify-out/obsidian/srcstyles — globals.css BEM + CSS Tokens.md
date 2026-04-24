@@ -1,11 +1,11 @@
 ---
 source_file: "frontend/src/styles/README.md"
 type: "document"
-community: "Community 4"
+community: "CSS Design System & Master Plan"
 tags:
   - graphify/document
   - graphify/EXTRACTED
-  - community/Community_4
+  - community/CSS_Design_System_&_Master_Plan
 ---
 
 # src/styles/ — globals.css BEM + CSS Tokens
@@ -15,4 +15,4 @@ tags:
 - [[CSS Hover Rule @media (hover hover) and (pointer fine)]] - `references` [INFERRED]
 - [[Color Design Tokens]] - `references` [EXTRACTED]
 
-#graphify/document #graphify/EXTRACTED #community/Community_4
+#graphify/document #graphify/EXTRACTED #community/CSS_Design_System_&_Master_Plan

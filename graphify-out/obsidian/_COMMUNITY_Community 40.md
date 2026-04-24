@@ -1,16 +1,17 @@
 ---
 type: community
 cohesion: 1.00
-members: 1
+members: 2
 ---
 
 # Community 40
 
 **Cohesion:** 1.00 - tightly connected
-**Members:** 1 nodes
+**Members:** 2 nodes
 
 ## Members
-- [[WhyVisit.tsx]] - code - C:\Users\Santiago Die\Desktop\IslaMontana\IslaMontanaWeb\frontend\src\components\destinations\WhyVisit.tsx
+- [[Community 40]] - document - graphify-out/obsidian/_COMMUNITY_Community 40.md
+- [[WhyVisit.tsx_1]] - code - frontend/src/components/destinations/WhyVisit.tsx
 
 ## Live Query (requires Dataview plugin)
 

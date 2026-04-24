@@ -1,12 +1,12 @@
 ---
 source_file: "C:\Users\Santiago Die\Desktop\IslaMontana\IslaMontanaWeb\frontend\src\components\destinations\DestinationCard.tsx"
 type: "code"
-community: "Community 16"
+community: "DestinationCard()"
 location: "L22"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_16
+  - community/DestinationCard()
 ---
 
 # DestinationCard()
@@ -14,4 +14,4 @@ tags:
 ## Connections
 - [[DestinationCard.tsx]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_16
+#graphify/code #graphify/EXTRACTED #community/DestinationCard()

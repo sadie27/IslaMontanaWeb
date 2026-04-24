@@ -1,14 +1,14 @@
 ---
 source_file: "C:\Users\Santiago Die\Desktop\IslaMontana\IslaMontanaWeb\frontend\src\components\destinations\FinalCta.tsx"
 type: "code"
-community: "Community 36"
+community: "FinalCta.tsx"
 location: "L1"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_36
+  - community/FinalCta.tsx
 ---
 
 # FinalCta.tsx
 
-#graphify/code #graphify/EXTRACTED #community/Community_36
+#graphify/code #graphify/EXTRACTED #community/FinalCta.tsx

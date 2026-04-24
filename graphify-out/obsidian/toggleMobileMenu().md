@@ -1,12 +1,12 @@
 ---
 source_file: "C:\Users\Santiago Die\Desktop\IslaMontana\IslaMontanaWeb\frontend\src\components\layout\Navbar.tsx"
 type: "code"
-community: "Community 5"
+community: "Navbar Interaction Handlers"
 location: "L109"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_5
+  - community/Navbar_Interaction_Handlers
 ---
 
 # toggleMobileMenu()
@@ -14,4 +14,4 @@ tags:
 ## Connections
 - [[Navbar.tsx]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_5
+#graphify/code #graphify/EXTRACTED #community/Navbar_Interaction_Handlers

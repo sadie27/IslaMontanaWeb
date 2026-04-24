@@ -1,11 +1,11 @@
 ---
 source_file: "frontend/public/images/mega-menu/costa.webp"
 type: "image"
-community: "Community 2"
+community: "Brand Logos & Hero Images"
 tags:
   - graphify/image
   - graphify/INFERRED
-  - community/Community_2
+  - community/Brand_Logos_&_Hero_Images
 ---
 
 # Costa Destination - Pacific Coastline with Cliffs
@@ -15,4 +15,4 @@ tags:
 - [[Andes Naturaleza Destination - Snow-capped Volcano at Sunset]] - `conceptually_related_to` [INFERRED]
 - [[Galapagos Destination - Sea Lions on Boardwalk]] - `conceptually_related_to` [INFERRED]
 
-#graphify/image #graphify/INFERRED #community/Community_2
+#graphify/image #graphify/INFERRED #community/Brand_Logos_&_Hero_Images

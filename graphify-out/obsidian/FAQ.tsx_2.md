@@ -1,0 +1,16 @@
+---
+source_file: "frontend/src/components/destinations/FAQ.tsx"
+type: "code"
+community: "Hero Manifest & Destination Content"
+tags:
+  - graphify/code
+  - graphify/INFERRED
+  - community/Hero_Manifest_&_Destination_Content
+---
+
+# FAQ.tsx
+
+## Connections
+- [[page.tsx (destinations)]] - `references` [INFERRED]
+
+#graphify/code #graphify/INFERRED #community/Hero_Manifest_&_Destination_Content

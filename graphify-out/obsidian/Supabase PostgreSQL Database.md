@@ -1,11 +1,11 @@
 ---
 source_file: "README.md"
 type: "document"
-community: "Community 0"
+community: "Backend Architecture Docs"
 tags:
   - graphify/document
   - graphify/EXTRACTED
-  - community/Community_0
+  - community/Backend_Architecture_Docs
 ---
 
 # Supabase PostgreSQL Database
@@ -14,4 +14,4 @@ tags:
 - [[Backend models — SQLAlchemy ORM Models]] - `references` [EXTRACTED]
 - [[IslaMontana Monorepo README]] - `references` [EXTRACTED]
 
-#graphify/document #graphify/EXTRACTED #community/Community_0
+#graphify/document #graphify/EXTRACTED #community/Backend_Architecture_Docs

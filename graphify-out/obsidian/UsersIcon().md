@@ -1,12 +1,12 @@
 ---
 source_file: "C:\Users\Santiago Die\Desktop\IslaMontana\IslaMontanaWeb\frontend\src\components\home\WhyUs.tsx"
 type: "code"
-community: "Community 9"
+community: "WhyUs.tsx"
 location: "L44"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_9
+  - community/WhyUs.tsx
 ---
 
 # UsersIcon()
@@ -14,4 +14,4 @@ tags:
 ## Connections
 - [[WhyUs.tsx]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_9
+#graphify/code #graphify/EXTRACTED #community/WhyUs.tsx

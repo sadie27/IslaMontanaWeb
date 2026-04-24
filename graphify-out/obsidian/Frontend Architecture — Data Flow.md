@@ -1,11 +1,11 @@
 ---
 source_file: "frontend/ARCHITECTURE.md"
 type: "document"
-community: "Community 0"
+community: "Backend Architecture Docs"
 tags:
   - graphify/document
   - graphify/EXTRACTED
-  - community/Community_0
+  - community/Backend_Architecture_Docs
 ---
 
 # Frontend Architecture — Data Flow
@@ -18,4 +18,4 @@ tags:
 - [[Next.js ServerClient Component Split Strategy]] - `references` [EXTRACTED]
 - [[Pydantic v2 Schemas as DTOs]] - `references` [EXTRACTED]
 
-#graphify/document #graphify/EXTRACTED #community/Community_0
+#graphify/document #graphify/EXTRACTED #community/Backend_Architecture_Docs

@@ -1,11 +1,11 @@
 ---
 source_file: "frontend/public/images/mega-menu/galapagos.webp"
 type: "image"
-community: "Community 2"
+community: "Brand Logos & Hero Images"
 tags:
   - graphify/image
   - graphify/INFERRED
-  - community/Community_2
+  - community/Brand_Logos_&_Hero_Images
 ---
 
 # Galapagos Destination - Sea Lions on Boardwalk
@@ -21,4 +21,4 @@ tags:
 - [[Galapagos Volcanic Landscape Panorama (Desktop Hero)]] - `semantically_similar_to` [INFERRED]
 - [[Islamontana Travel Logo Horizontal Sans Background]] - `conceptually_related_to` [INFERRED]
 
-#graphify/image #graphify/INFERRED #community/Community_2
+#graphify/image #graphify/INFERRED #community/Brand_Logos_&_Hero_Images

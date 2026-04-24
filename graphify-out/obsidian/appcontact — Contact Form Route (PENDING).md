@@ -1,11 +1,11 @@
 ---
 source_file: "frontend/src/app/contact/README.md"
 type: "document"
-community: "Community 0"
+community: "Backend Architecture Docs"
 tags:
   - graphify/document
   - graphify/EXTRACTED
-  - community/Community_0
+  - community/Backend_Architecture_Docs
 ---
 
 # app/contact/ — Contact Form Route (PENDING)
@@ -15,4 +15,4 @@ tags:
 - [[Known Bugs missing images, 404 routes, typo directory]] - `references` [INFERRED]
 - [[frontendsrcapp — App Router Routes]] - `references` [EXTRACTED]
 
-#graphify/document #graphify/EXTRACTED #community/Community_0
+#graphify/document #graphify/EXTRACTED #community/Backend_Architecture_Docs

@@ -1,17 +1,16 @@
 ---
-source_file: "C:\Users\Santiago Die\Desktop\IslaMontana\IslaMontanaWeb\frontend\src\components\layout\MegaMenu.tsx"
+source_file: "frontend/src/components/layout/MegaMenu.tsx"
 type: "code"
-community: "Community 23"
-location: "L110"
+community: "components/layout â€” Navbar, MegaMenu, "
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_23
+  - community/components/layout_â€”_Navbar,_MegaMenu,_
 ---
 
-# handler()
+# handler()_1
 
 ## Connections
-- [[MegaMenu.tsx]] - `contains` [EXTRACTED]
+- [[MegaMenu.tsx_2]] - `references` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_23
+#graphify/code #graphify/EXTRACTED #community/components/layout_â€”_Navbar,_MegaMenu,_

@@ -1,0 +1,1 @@
+{"nodes": [], "edges": [{"source": "error_tsx", "target": "error_func", "relation": "implements", "confidence": "EXTRACTED", "confidence_score": 1.0, "source_file": "graphify-out/obsidian/error.tsx.md", "source_location": "L14", "weight": 1.0}], "hyperedges": []}

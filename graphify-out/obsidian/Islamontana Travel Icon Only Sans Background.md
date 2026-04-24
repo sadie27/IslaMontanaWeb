@@ -1,11 +1,11 @@
 ---
 source_file: "frontend/public/images/logos/logo-simple-sf.webp"
 type: "image"
-community: "Community 2"
+community: "Brand Logos & Hero Images"
 tags:
   - graphify/image
   - graphify/INFERRED
-  - community/Community_2
+  - community/Brand_Logos_&_Hero_Images
 ---
 
 # Islamontana Travel Icon Only Sans Background
@@ -13,4 +13,4 @@ tags:
 ## Connections
 - [[Islamontana Travel Icon Only with Background]] - `conceptually_related_to` [INFERRED]
 
-#graphify/image #graphify/INFERRED #community/Community_2
+#graphify/image #graphify/INFERRED #community/Brand_Logos_&_Hero_Images

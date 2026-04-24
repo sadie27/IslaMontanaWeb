@@ -1,12 +1,12 @@
 ---
 source_file: "C:\Users\Santiago Die\Desktop\IslaMontana\IslaMontanaWeb\frontend\src\components\destinations\DestinationMapAnimationWrapper.tsx"
 type: "code"
-community: "Community 17"
+community: "DestinationMapAnimationWrapper()"
 location: "L1"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_17
+  - community/DestinationMapAnimationWrapper()
 ---
 
 # DestinationMapAnimationWrapper.tsx
@@ -14,4 +14,4 @@ tags:
 ## Connections
 - [[DestinationMapAnimationWrapper()]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_17
+#graphify/code #graphify/EXTRACTED #community/DestinationMapAnimationWrapper()

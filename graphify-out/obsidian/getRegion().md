@@ -1,12 +1,12 @@
 ---
 source_file: "C:\Users\Santiago Die\Desktop\IslaMontana\IslaMontanaWeb\frontend\src\components\destinations\DestinationMapAnimation.tsx"
 type: "code"
-community: "Community 7"
+community: "Map Math Functions"
 location: "L20"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_7
+  - community/Map_Math_Functions
 ---
 
 # getRegion()
@@ -14,4 +14,4 @@ tags:
 ## Connections
 - [[DestinationMapAnimation.tsx]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_7
+#graphify/code #graphify/EXTRACTED #community/Map_Math_Functions

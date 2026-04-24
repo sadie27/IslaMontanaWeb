@@ -1,11 +1,11 @@
 ---
 source_file: "backend/app/models/README.md"
 type: "document"
-community: "Community 0"
+community: "Backend Architecture Docs"
 tags:
   - graphify/document
   - graphify/EXTRACTED
-  - community/Community_0
+  - community/Backend_Architecture_Docs
 ---
 
 # Backend models/ — SQLAlchemy ORM Models
@@ -13,4 +13,4 @@ tags:
 ## Connections
 - [[Supabase PostgreSQL Database]] - `references` [EXTRACTED]
 
-#graphify/document #graphify/EXTRACTED #community/Community_0
+#graphify/document #graphify/EXTRACTED #community/Backend_Architecture_Docs

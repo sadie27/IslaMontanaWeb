@@ -1,17 +1,16 @@
 ---
-source_file: "C:\Users\Santiago Die\Desktop\IslaMontana\IslaMontanaWeb\frontend\src\components\ui\ErrorPageClient.tsx"
+source_file: "frontend/src/components/ui/ErrorPageClient.tsx"
 type: "code"
-community: "Community 13"
-location: "L39"
+community: "BgIllustration()"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_13
+  - community/BgIllustration()
 ---
 
-# handler()
+# handler()_2
 
 ## Connections
-- [[ErrorPageClient.tsx]] - `contains` [EXTRACTED]
+- [[ErrorPageClient.tsx_4]] - `calls` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_13
+#graphify/code #graphify/EXTRACTED #community/BgIllustration()

@@ -1,12 +1,12 @@
 ---
 source_file: "C:\Users\Santiago Die\Desktop\IslaMontana\IslaMontanaWeb\frontend\src\data\destinations.ts"
 type: "code"
-community: "Community 6"
+community: "Destination Dynamic Route"
 location: "L431"
 tags:
   - graphify/code
   - graphify/INFERRED
-  - community/Community_6
+  - community/Destination_Dynamic_Route
 ---
 
 # getDestinationBySlug()
@@ -16,4 +16,4 @@ tags:
 - [[destinations.ts]] - `contains` [EXTRACTED]
 - [[generateMetadata()]] - `calls` [INFERRED]
 
-#graphify/code #graphify/INFERRED #community/Community_6
+#graphify/code #graphify/INFERRED #community/Destination_Dynamic_Route

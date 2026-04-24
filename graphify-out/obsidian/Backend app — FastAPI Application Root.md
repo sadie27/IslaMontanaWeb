@@ -1,13 +1,13 @@
 ---
 source_file: "backend/app/README.md"
 type: "document"
-community: "Community 49"
+community: "Backend app/ — FastAPI Application Root"
 tags:
   - graphify/document
   - graphify/EXTRACTED
-  - community/Community_49
+  - community/Backend_app/_—_FastAPI_Application_Root
 ---
 
 # Backend app/ — FastAPI Application Root
 
-#graphify/document #graphify/EXTRACTED #community/Community_49
+#graphify/document #graphify/EXTRACTED #community/Backend_app/_—_FastAPI_Application_Root

@@ -1,11 +1,11 @@
 ---
 source_file: "backend/app/schemas/README.md"
 type: "document"
-community: "Community 0"
+community: "Backend Architecture Docs"
 tags:
   - graphify/document
   - graphify/EXTRACTED
-  - community/Community_0
+  - community/Backend_Architecture_Docs
 ---
 
 # Pydantic v2 Schemas as DTOs
@@ -16,4 +16,4 @@ tags:
 - [[Frontend Architecture — Data Flow]] - `references` [EXTRACTED]
 - [[Frontend Data Flow FastAPI - api.ts - adapters.ts - Components]] - `conceptually_related_to` [INFERRED]
 
-#graphify/document #graphify/EXTRACTED #community/Community_0
+#graphify/document #graphify/EXTRACTED #community/Backend_Architecture_Docs

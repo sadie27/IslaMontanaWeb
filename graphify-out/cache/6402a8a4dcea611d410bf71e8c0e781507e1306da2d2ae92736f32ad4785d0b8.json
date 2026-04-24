@@ -1,0 +1,1 @@
+{"nodes": [], "edges": [{"source": "destinations_ts", "target": "destinations_getdestinationbyslug_func", "relation": "implements", "confidence": "EXTRACTED", "confidence_score": 1.0, "source_file": "graphify-out/obsidian/destinations.ts.md", "source_location": "L15", "weight": 1.0}], "hyperedges": []}

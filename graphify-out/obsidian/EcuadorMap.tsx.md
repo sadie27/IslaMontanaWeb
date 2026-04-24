@@ -1,12 +1,12 @@
 ---
 source_file: "C:\Users\Santiago Die\Desktop\IslaMontana\IslaMontanaWeb\frontend\src\components\destinations\EcuadorMap.tsx"
 type: "code"
-community: "Community 18"
+community: "EcuadorMap()"
 location: "L1"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_18
+  - community/EcuadorMap()
 ---
 
 # EcuadorMap.tsx
@@ -14,4 +14,4 @@ tags:
 ## Connections
 - [[EcuadorMap()]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_18
+#graphify/code #graphify/EXTRACTED #community/EcuadorMap()

@@ -1,18 +1,16 @@
 ---
-source_file: "C:\Users\Santiago Die\Desktop\IslaMontana\IslaMontanaWeb\frontend\src\components\destinations\DestinationMapAnimationMobile.tsx"
+source_file: "frontend/src/components/destinations/DestinationMapAnimationMobile.tsx"
 type: "code"
-community: "Community 3"
-location: "L142"
+community: "DestinationMapAnimationMobile.tsx"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_3
+  - community/DestinationMapAnimationMobile.tsx
 ---
 
-# tick()
+# tick()_1
 
 ## Connections
-- [[DestinationMapAnimationMobile.tsx]] - `contains` [EXTRACTED]
-- [[lerp()_1]] - `calls` [EXTRACTED]
+- [[lerp() â€” DestinationMapAnimationMobile]] - `calls` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_3
+#graphify/code #graphify/EXTRACTED #community/DestinationMapAnimationMobile.tsx

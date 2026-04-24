@@ -1,11 +1,11 @@
 ---
 source_file: "frontend/ARCHITECTURE.md"
 type: "document"
-community: "Community 0"
+community: "Backend Architecture Docs"
 tags:
   - graphify/document
   - graphify/INFERRED
-  - community/Community_0
+  - community/Backend_Architecture_Docs
 ---
 
 # Frontend Data Flow: FastAPI -> api.ts -> adapters.ts -> Components
@@ -15,4 +15,4 @@ tags:
 - [[Pydantic v2 Schemas as DTOs]] - `conceptually_related_to` [INFERRED]
 - [[srclib — Shared Types and Utilities]] - `references` [INFERRED]
 
-#graphify/document #graphify/INFERRED #community/Community_0
+#graphify/document #graphify/INFERRED #community/Backend_Architecture_Docs

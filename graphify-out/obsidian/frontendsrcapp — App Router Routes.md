@@ -1,11 +1,11 @@
 ---
 source_file: "frontend/src/app/README.md"
 type: "document"
-community: "Community 1"
+community: "CSS Design System & Master Plan"
 tags:
   - graphify/document
   - graphify/EXTRACTED
-  - community/Community_1
+  - community/CSS_Design_System_&_Master_Plan
 ---
 
 # frontend/src/app/ — App Router Routes
@@ -17,4 +17,4 @@ tags:
 - [[apptoursid — Tour Detail Dynamic Route (PENDING)]] - `references` [EXTRACTED]
 - [[componentslayout — Navbar, MegaMenu, Footer]] - `references` [INFERRED]
 
-#graphify/document #graphify/EXTRACTED #community/Community_1
+#graphify/document #graphify/EXTRACTED #community/CSS_Design_System_&_Master_Plan

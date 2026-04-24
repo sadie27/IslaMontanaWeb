@@ -1,17 +1,17 @@
 ---
-source_file: "C:\Users\Santiago Die\Desktop\IslaMontana\IslaMontanaWeb\frontend\src\lib\api.ts"
+source_file: "frontend/src/lib/api.ts"
 type: "code"
-community: "Community 8"
-location: "L5"
+community: "API Client & Adapters Layer"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_8
+  - community/API_Client_&_Adapters_Layer
 ---
 
 # getDestinations()
 
 ## Connections
 - [[api.ts]] - `contains` [EXTRACTED]
+- [[api.ts (API Client lib)]] - `implements` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_8
+#graphify/code #graphify/EXTRACTED #community/API_Client_&_Adapters_Layer

@@ -1,12 +1,12 @@
 ---
 source_file: "C:\Users\Santiago Die\Desktop\IslaMontana\IslaMontanaWeb\frontend\src\components\destinations\DestinationMapAnimationMobile.tsx"
 type: "code"
-community: "Community 3"
+community: "Map Animation Math Helpers"
 location: "L134"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_3
+  - community/Map_Animation_Math_Helpers
 ---
 
 # handler()
@@ -14,4 +14,4 @@ tags:
 ## Connections
 - [[DestinationMapAnimationMobile.tsx]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_3
+#graphify/code #graphify/EXTRACTED #community/Map_Animation_Math_Helpers

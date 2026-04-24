@@ -1,11 +1,11 @@
 ---
 source_file: "backend/app/routers/README.md"
 type: "document"
-community: "Community 0"
+community: "Backend Architecture Docs"
 tags:
   - graphify/document
   - graphify/EXTRACTED
-  - community/Community_0
+  - community/Backend_Architecture_Docs
 ---
 
 # Backend routers/ — REST Endpoint Definitions
@@ -13,4 +13,4 @@ tags:
 ## Connections
 - [[Layered Architecture routers - services - models]] - `implements` [EXTRACTED]
 
-#graphify/document #graphify/EXTRACTED #community/Community_0
+#graphify/document #graphify/EXTRACTED #community/Backend_Architecture_Docs

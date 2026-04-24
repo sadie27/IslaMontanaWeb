@@ -1,12 +1,12 @@
 ---
 source_file: "C:\Users\Santiago Die\Desktop\IslaMontana\IslaMontanaWeb\frontend\src\lib\api.ts"
 type: "code"
-community: "Community 8"
+community: "API Client & Adapters Layer"
 location: "L1"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_8
+  - community/API_Client_&_Adapters_Layer
 ---
 
 # api.ts
@@ -16,4 +16,4 @@ tags:
 - [[getDestinations()]] - `contains` [EXTRACTED]
 - [[getNavMenu()]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_8
+#graphify/code #graphify/EXTRACTED #community/API_Client_&_Adapters_Layer

@@ -1,12 +1,12 @@
 ---
 source_file: "C:\Users\Santiago Die\Desktop\IslaMontana\IslaMontanaWeb\frontend\src\components\destinations\DestinationMapAnimationMobile.tsx"
 type: "code"
-community: "Community 3"
+community: "Map Animation Math Helpers"
 location: "L14"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_3
+  - community/Map_Animation_Math_Helpers
 ---
 
 # lerp()
@@ -15,4 +15,4 @@ tags:
 - [[DestinationMapAnimationMobile.tsx]] - `contains` [EXTRACTED]
 - [[tick()_1]] - `calls` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_3
+#graphify/code #graphify/EXTRACTED #community/Map_Animation_Math_Helpers

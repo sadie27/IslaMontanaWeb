@@ -1,12 +1,12 @@
 ---
 source_file: "C:\Users\Santiago Die\Desktop\IslaMontana\IslaMontanaWeb\frontend\src\app\destinations\[slug]\page.tsx"
 type: "code"
-community: "Community 6"
+community: "Destination Dynamic Route"
 location: "L1"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_6
+  - community/Destination_Dynamic_Route
 ---
 
 # page.tsx
@@ -16,4 +16,4 @@ tags:
 - [[generateMetadata()]] - `contains` [EXTRACTED]
 - [[generateStaticParams()]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_6
+#graphify/code #graphify/EXTRACTED #community/Destination_Dynamic_Route

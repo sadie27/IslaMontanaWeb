@@ -1,11 +1,11 @@
 ---
 source_file: "frontend/README.md"
 type: "document"
-community: "Community 1"
+community: "CSS Design System & Master Plan"
 tags:
   - graphify/document
   - graphify/INFERRED
-  - community/Community_1
+  - community/CSS_Design_System_&_Master_Plan
 ---
 
 # Known Bugs: missing images, 404 routes, typo directory
@@ -15,4 +15,4 @@ tags:
 - [[appcontact — Contact Form Route (PENDING)]] - `references` [INFERRED]
 - [[apptours — Tours Listing Route (PENDING)]] - `references` [INFERRED]
 
-#graphify/document #graphify/INFERRED #community/Community_1
+#graphify/document #graphify/INFERRED #community/CSS_Design_System_&_Master_Plan

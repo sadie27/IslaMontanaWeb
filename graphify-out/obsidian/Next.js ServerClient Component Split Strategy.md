@@ -1,11 +1,11 @@
 ---
 source_file: "frontend/ARCHITECTURE.md"
 type: "document"
-community: "Community 0"
+community: "Backend Architecture Docs"
 tags:
   - graphify/document
   - graphify/EXTRACTED
-  - community/Community_0
+  - community/Backend_Architecture_Docs
 ---
 
 # Next.js Server/Client Component Split Strategy
@@ -16,4 +16,4 @@ tags:
 - [[Navbar Component — Client Component with Scroll + MegaMenu]] - `implements` [INFERRED]
 - [[Rationale Server Components by default]] - `rationale_for` [EXTRACTED]
 
-#graphify/document #graphify/EXTRACTED #community/Community_0
+#graphify/document #graphify/EXTRACTED #community/Backend_Architecture_Docs

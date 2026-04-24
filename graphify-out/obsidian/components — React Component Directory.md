@@ -1,11 +1,11 @@
 ---
 source_file: "frontend/src/components/README.md"
 type: "document"
-community: "Community 1"
+community: "CSS Design System & Master Plan"
 tags:
   - graphify/document
   - graphify/EXTRACTED
-  - community/Community_1
+  - community/CSS_Design_System_&_Master_Plan
 ---
 
 # components/ — React Component Directory
@@ -15,4 +15,4 @@ tags:
 - [[componentstours — Tour Domain Components (PENDING)]] - `references` [EXTRACTED]
 - [[componentsui — Generic UI Components (PENDING)]] - `references` [EXTRACTED]
 
-#graphify/document #graphify/EXTRACTED #community/Community_1
+#graphify/document #graphify/EXTRACTED #community/CSS_Design_System_&_Master_Plan

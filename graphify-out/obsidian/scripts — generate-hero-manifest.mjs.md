@@ -1,11 +1,11 @@
 ---
 source_file: "frontend/scripts/README.md"
 type: "document"
-community: "Community 26"
+community: "Hero Images Manifest — Auto-generated"
 tags:
   - graphify/document
   - graphify/EXTRACTED
-  - community/Community_26
+  - community/Hero_Images_Manifest_—_Auto-generated
 ---
 
 # scripts/ — generate-hero-manifest.mjs
@@ -13,4 +13,4 @@ tags:
 ## Connections
 - [[Hero Images Manifest — Auto-generated]] - `references` [EXTRACTED]
 
-#graphify/document #graphify/EXTRACTED #community/Community_26
+#graphify/document #graphify/EXTRACTED #community/Hero_Images_Manifest_—_Auto-generated

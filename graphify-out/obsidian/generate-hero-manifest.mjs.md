@@ -1,12 +1,12 @@
 ---
 source_file: "C:\Users\Santiago Die\Desktop\IslaMontana\IslaMontanaWeb\frontend\scripts\generate-hero-manifest.mjs"
 type: "code"
-community: "Community 10"
+community: "generateManifest()"
 location: "L1"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_10
+  - community/generateManifest()
 ---
 
 # generate-hero-manifest.mjs
@@ -15,4 +15,4 @@ tags:
 - [[generateManifest()]] - `contains` [EXTRACTED]
 - [[readImagesFromDir()]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_10
+#graphify/code #graphify/EXTRACTED #community/generateManifest()

@@ -1,11 +1,11 @@
 ---
 source_file: "frontend/ARCHITECTURE.md"
 type: "document"
-community: "Community 0"
+community: "Backend Architecture Docs"
 tags:
   - graphify/document
   - graphify/EXTRACTED
-  - community/Community_0
+  - community/Backend_Architecture_Docs
 ---
 
 # Rationale: Local fallback data only when API unavailable
@@ -13,4 +13,4 @@ tags:
 ## Connections
 - [[API Fallback Strategy (local data when backend unavailable)]] - `rationale_for` [EXTRACTED]
 
-#graphify/document #graphify/EXTRACTED #community/Community_0
+#graphify/document #graphify/EXTRACTED #community/Backend_Architecture_Docs

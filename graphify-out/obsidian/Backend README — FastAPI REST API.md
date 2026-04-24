@@ -1,11 +1,11 @@
 ---
 source_file: "backend/README.md"
 type: "document"
-community: "Community 0"
+community: "Backend Architecture Docs"
 tags:
   - graphify/document
   - graphify/EXTRACTED
-  - community/Community_0
+  - community/Backend_Architecture_Docs
 ---
 
 # Backend README — FastAPI REST API
@@ -16,4 +16,4 @@ tags:
 - [[Layered Architecture routers - services - models]] - `references` [EXTRACTED]
 - [[Pydantic v2 Schemas as DTOs]] - `references` [EXTRACTED]
 
-#graphify/document #graphify/EXTRACTED #community/Community_0
+#graphify/document #graphify/EXTRACTED #community/Backend_Architecture_Docs

@@ -1,11 +1,11 @@
 ---
 source_file: "frontend/src/lib/README.md"
 type: "document"
-community: "Community 0"
+community: "Backend Architecture Docs"
 tags:
   - graphify/document
   - graphify/INFERRED
-  - community/Community_0
+  - community/Backend_Architecture_Docs
 ---
 
 # src/lib/ — Shared Types and Utilities
@@ -13,4 +13,4 @@ tags:
 ## Connections
 - [[Frontend Data Flow FastAPI - api.ts - adapters.ts - Components]] - `references` [INFERRED]
 
-#graphify/document #graphify/INFERRED #community/Community_0
+#graphify/document #graphify/INFERRED #community/Backend_Architecture_Docs

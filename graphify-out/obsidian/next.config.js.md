@@ -1,14 +1,14 @@
 ---
 source_file: "C:\Users\Santiago Die\Desktop\IslaMontana\IslaMontanaWeb\frontend\next.config.js"
 type: "code"
-community: "Community 28"
+community: "next.config.js"
 location: "L1"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_28
+  - community/next.config.js
 ---
 
 # next.config.js
 
-#graphify/code #graphify/EXTRACTED #community/Community_28
+#graphify/code #graphify/EXTRACTED #community/next.config.js

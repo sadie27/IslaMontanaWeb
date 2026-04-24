@@ -1,0 +1,1 @@
+{"nodes": [], "edges": [{"source": "community24_MegaMenuImageTsx", "target": "community24_MegaMenuImage", "relation": "calls", "confidence": "EXTRACTED", "confidence_score": 1.0, "source_file": "graphify-out/obsidian/_COMMUNITY_Community 24.md", "source_location": null, "weight": 1.0}], "hyperedges": []}

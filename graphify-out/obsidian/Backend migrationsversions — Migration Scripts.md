@@ -1,11 +1,11 @@
 ---
 source_file: "backend/app/migrations/versions/README.md"
 type: "document"
-community: "Community 0"
+community: "Backend Architecture Docs"
 tags:
   - graphify/document
   - graphify/EXTRACTED
-  - community/Community_0
+  - community/Backend_Architecture_Docs
 ---
 
 # Backend migrations/versions/ — Migration Scripts
@@ -13,4 +13,4 @@ tags:
 ## Connections
 - [[Backend migrations — Alembic DB Migrations]] - `references` [EXTRACTED]
 
-#graphify/document #graphify/EXTRACTED #community/Community_0
+#graphify/document #graphify/EXTRACTED #community/Backend_Architecture_Docs

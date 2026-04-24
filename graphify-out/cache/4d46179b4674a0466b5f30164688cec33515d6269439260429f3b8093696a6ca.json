@@ -1,0 +1,1 @@
+{"nodes": [], "edges": [{"source": "community18_EcuadorMapTsx", "target": "community18_EcuadorMap", "relation": "calls", "confidence": "EXTRACTED", "confidence_score": 1.0, "source_file": "graphify-out/obsidian/_COMMUNITY_Community 18.md", "source_location": null, "weight": 1.0}], "hyperedges": []}

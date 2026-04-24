@@ -1,11 +1,11 @@
 ---
 source_file: "frontend/src/components/layout/README.md"
 type: "document"
-community: "Community 1"
+community: "CSS Design System & Master Plan"
 tags:
   - graphify/document
   - graphify/EXTRACTED
-  - community/Community_1
+  - community/CSS_Design_System_&_Master_Plan
 ---
 
 # components/layout/ — Navbar, MegaMenu, Footer
@@ -16,4 +16,4 @@ tags:
 - [[components — React Component Directory]] - `references` [EXTRACTED]
 - [[frontendsrcapp — App Router Routes]] - `references` [INFERRED]
 
-#graphify/document #graphify/EXTRACTED #community/Community_1
+#graphify/document #graphify/EXTRACTED #community/CSS_Design_System_&_Master_Plan

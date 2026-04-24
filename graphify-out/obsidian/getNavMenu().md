@@ -1,18 +1,19 @@
 ---
-source_file: "C:\Users\Santiago Die\Desktop\IslaMontana\IslaMontanaWeb\frontend\src\lib\api.ts"
+source_file: "frontend/src/lib/api.ts"
 type: "code"
-community: "Community 8"
-location: "L29"
+community: "API Client & Adapters Layer"
 tags:
   - graphify/code
-  - graphify/INFERRED
-  - community/Community_8
+  - graphify/EXTRACTED
+  - community/API_Client_&_Adapters_Layer
 ---
 
 # getNavMenu()
 
 ## Connections
+- [[adaptNavItem()]] - `shares_data_with` [INFERRED]
 - [[api.ts]] - `contains` [EXTRACTED]
-- [[getNavMenuData()]] - `calls` [INFERRED]
+- [[api.ts (API Client lib)]] - `implements` [EXTRACTED]
+- [[getNavMenuData()]] - `calls` [EXTRACTED]
 
-#graphify/code #graphify/INFERRED #community/Community_8
+#graphify/code #graphify/EXTRACTED #community/API_Client_&_Adapters_Layer

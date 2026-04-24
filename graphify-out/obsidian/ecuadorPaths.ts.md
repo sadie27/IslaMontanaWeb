@@ -1,14 +1,14 @@
 ---
 source_file: "C:\Users\Santiago Die\Desktop\IslaMontana\IslaMontanaWeb\frontend\src\data\ecuadorPaths.ts"
 type: "code"
-community: "Community 45"
+community: "ecuadorPaths.ts"
 location: "L1"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_45
+  - community/ecuadorPaths.ts
 ---
 
 # ecuadorPaths.ts
 
-#graphify/code #graphify/EXTRACTED #community/Community_45
+#graphify/code #graphify/EXTRACTED #community/ecuadorPaths.ts
