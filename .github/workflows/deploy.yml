@@ -30,6 +30,10 @@ jobs:
         working-directory: frontend
         run: npm ci
 
+      - name: Generate hero manifest
+        working-directory: frontend
+        run: npm run generate:hero
+
       - name: Build
         working-directory: frontend
         run: npm run build

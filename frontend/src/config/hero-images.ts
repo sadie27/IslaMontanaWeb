@@ -10,11 +10,18 @@
 
 export const heroImages = {
   computer: [
-    '/images/hero-main/computer/lobitos.webp',
-    '/images/hero-main/computer/paisaje.webp',
-    '/images/hero-main/computer/piquero.webp',
+    '/images/hero-main/computer/DSC_0436.webp',
+    '/images/hero-main/computer/GLP 5 Amalia con TortugaMarina Mayo2019.webp',
+    '/images/hero-main/computer/GLP Children sea Lions and sandcastles.webp',
+    '/images/hero-main/computer/Orcas Mom and Calf Feb2016.webp',
+    '/images/hero-main/computer/Papallacta Die-Muriel 2 Oct2016.webp',
+    '/images/hero-main/computer/Reserva PazdelasAves Cock-of-the-Rock Nov2018.webp',
+    '/images/hero-main/computer/SachaLodge 29 Barizo Ag2019.webp',
+    '/images/hero-main/computer/Viaje Ecuador 22 Sacha Ag2024.webp',
+    '/images/hero-main/computer/Yubarta 8 Isla de La Plata Ag2019.webp',
   ],
   movile: [
+    '/images/hero-main/movile/Papallacta Antisana Nov2016.webp',
     '/images/hero-main/movile/lobito.webp',
     '/images/hero-main/movile/piqueros.webp',
   ],

@@ -35,7 +35,7 @@ const fallbackNavData: NavItem[] = [
     subItems: [
       { label: "Galápagos",        description: "Fauna única en el mundo",   href: "/destinations/galapagos",       image: "/images/mega-menu/galapagos.webp" },
       { label: "Amazonía",         description: "Selva virgen ecuatorial",    href: "/destinations/amazonia",        image: "/images/mega-menu/amazonia.webp" },
-      { label: "Andes Cultural",   description: "Cultura viva andina",        href: "/destinations/andes-cultura",   image: "/images/mega-menu/andes-cultura.webp" },
+      { label: "Andes Cultural",   description: "Cultura viva andina",        href: "/destinations/andes-cultura",   image: "/images/mega-menu/costa.webp" },
       { label: "Andes Naturaleza", description: "Páramos y volcanes",         href: "/destinations/andes-naturaleza", image: "/images/mega-menu/andes-naturaleza.webp" },
     ],
   },
@@ -43,20 +43,20 @@ const fallbackNavData: NavItem[] = [
     label: "Experiencias",
     href: "/experiences",
     subItems: [
-      { label: "Cruceros",     description: "Navega las Galápagos",    href: "/experiences/cruceros",     image: "/images/mega-menu/cruceros.webp" },
-      { label: "Circuitos",   description: "Rutas a tu medida",        href: "/experiences/circuitos",    image: "/images/mega-menu/circuitos.webp" },
-      { label: "Day Tours",   description: "Escápate un día",          href: "/experiences/day-tours",    image: "/images/mega-menu/day-tours.webp" },
-      { label: "Birdwatching", description: "Aves únicas del Ecuador", href: "/experiences/birdwatching", image: "/images/mega-menu/birdwatching.webp" },
+      { label: "Cruceros",     description: "Navega las Galápagos",    href: "/experiences/cruceros",     image: "/images/mega-menu/galapagos.webp" },
+      { label: "Circuitos",   description: "Rutas a tu medida",        href: "/experiences/circuitos",    image: "/images/mega-menu/andes-naturaleza.webp" },
+      { label: "Day Tours",   description: "Escápate un día",          href: "/experiences/day-tours",    image: "/images/mega-menu/costa.webp" },
+      { label: "Birdwatching", description: "Aves únicas del Ecuador", href: "/experiences/birdwatching", image: "/images/mega-menu/amazonia.webp" },
     ],
   },
   {
     label: "Galería",
     href: "/gallery",
     subItems: [
-      { label: "Fauna & Wildlife", description: "Vida silvestre única",    href: "/gallery?category=fauna-wildlife", image: "/images/mega-menu/gallery-fauna.webp" },
-      { label: "Paisajes",         description: "Volcanes, selva, océano", href: "/gallery?category=paisajes",        image: "/images/mega-menu/gallery-paisajes.webp" },
-      { label: "Cultura",          description: "Haciendas, mercados, gente", href: "/gallery?category=cultura",     image: "/images/mega-menu/gallery-cultura.webp" },
-      { label: "Aventura",         description: "Buceo, trekking, birdwatching", href: "/gallery?category=aventura", image: "/images/mega-menu/gallery-aventura.webp" },
+      { label: "Fauna & Wildlife", description: "Vida silvestre única",    href: "/gallery?category=fauna-wildlife", image: "/images/mega-menu/galapagos.webp" },
+      { label: "Paisajes",         description: "Volcanes, selva, océano", href: "/gallery?category=paisajes",        image: "/images/mega-menu/andes-naturaleza.webp" },
+      { label: "Cultura",          description: "Haciendas, mercados, gente", href: "/gallery?category=cultura",     image: "/images/mega-menu/costa.webp" },
+      { label: "Aventura",         description: "Buceo, trekking, birdwatching", href: "/gallery?category=aventura", image: "/images/mega-menu/amazonia.webp" },
     ],
   },
   {
