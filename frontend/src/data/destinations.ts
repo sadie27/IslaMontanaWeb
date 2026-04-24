@@ -1,4 +1,5 @@
 import { Destination } from '@/lib/types'
+import { ASSETS } from '@/config/assets'
 
 export const DESTINATIONS: Destination[] = [
   {
@@ -6,7 +7,7 @@ export const DESTINATIONS: Destination[] = [
     name: 'Islas Galápagos',
     tagline: 'Donde Darwin tomó notas',
     description: 'A mil kilómetros del continente, donde la evolución ocurrió sin interferencias. Aquí los animales nunca aprendieron a temer al ser humano.',
-    heroImage: '/images/mega-menu/galapagos.webp',
+    heroImage: ASSETS.MEGA_MENU.GALAPAGOS,
     accentColor: '#1a7a8a',
     placeholderBg: '#061318',
     mapRegion: 'galapagos',
@@ -31,9 +32,9 @@ export const DESTINATIONS: Destination[] = [
     ],
     bestTime: 'Junio – Diciembre',
     photos: [
-      '/images/hero-main/Computer/lobitos.webp',
-      '/images/hero-main/Computer/piquero.webp',
-      '/images/hero-main/Computer/paisaje.webp',
+      ASSETS.HERO.COMPUTER.LOBITOS,
+      ASSETS.HERO.COMPUTER.PIQUERO,
+      ASSETS.HERO.COMPUTER.PAISAJE,
     ],
     tours: {
       dia: [
@@ -134,7 +135,7 @@ export const DESTINATIONS: Destination[] = [
     name: 'Amazonía Ecuatoriana',
     tagline: 'El silencio más ruidoso del planeta',
     description: 'La selva no es un lugar — es un estado de atención. Canoas al amanecer, 600 especies de aves y guías Kichwa que leen el bosque como un texto antiguo.',
-    heroImage: '/images/mega-menu/amazonia.webp',
+    heroImage: ASSETS.MEGA_MENU.AMAZONIA,
     accentColor: '#2d6a1e',
     placeholderBg: '#0a1a06',
     mapRegion: 'amazonia',
@@ -159,9 +160,9 @@ export const DESTINATIONS: Destination[] = [
     ],
     bestTime: 'Agosto – Enero',
     photos: [
-      '/images/mega-menu/amazonia.webp',
-      '/images/hero-main/Computer/paisaje.webp',
-      '/images/hero-main/Computer/lobitos.webp',
+      ASSETS.MEGA_MENU.AMAZONIA,
+      ASSETS.HERO.COMPUTER.PAISAJE,
+      ASSETS.HERO.COMPUTER.LOBITOS,
     ],
     tours: {
       dia: [
@@ -228,7 +229,7 @@ export const DESTINATIONS: Destination[] = [
     name: 'Andes Cultural',
     tagline: 'Donde el tiempo mide en mercados y tejidos',
     description: 'Quito colonial, mercados indígenas y comunidades que guardan tradiciones de siglos. Los Andes culturales son la memoria viva de Ecuador.',
-    heroImage: '/images/mega-menu/andes-cultura.webp',
+    heroImage: ASSETS.MEGA_MENU.ANDES_CULTURA,
     accentColor: '#8B4513',
     placeholderBg: '#1a0e06',
     mapRegion: 'andes',
@@ -253,9 +254,9 @@ export const DESTINATIONS: Destination[] = [
     ],
     bestTime: 'Todo el año',
     photos: [
-      '/images/mega-menu/andes-cultura.webp',
-      '/images/hero-main/Computer/paisaje.webp',
-      '/images/hero-main/Computer/lobitos.webp',
+      ASSETS.MEGA_MENU.ANDES_CULTURA,
+      ASSETS.HERO.COMPUTER.PAISAJE,
+      ASSETS.HERO.COMPUTER.LOBITOS,
     ],
     tours: {
       dia: [
@@ -329,7 +330,7 @@ export const DESTINATIONS: Destination[] = [
     name: 'Andes & Volcanes',
     tagline: 'La avenida de los volcanes que Humboldt bautizó',
     description: 'Cotopaxi, Chimborazo, Quilotoa. La mayor concentración de volcanes activos del mundo, con lagunas de cráter esmeralda y páramos que parecen de otro planeta.',
-    heroImage: '/images/mega-menu/andes-naturaleza.webp',
+    heroImage: ASSETS.MEGA_MENU.ANDES_NATURALEZA,
     accentColor: '#4a6fa5',
     placeholderBg: '#060c18',
     mapRegion: 'andes',
@@ -354,9 +355,9 @@ export const DESTINATIONS: Destination[] = [
     ],
     bestTime: 'Junio – Septiembre',
     photos: [
-      '/images/mega-menu/andes-naturaleza.webp',
-      '/images/hero-main/Computer/paisaje.webp',
-      '/images/hero-main/Computer/piquero.webp',
+      ASSETS.MEGA_MENU.ANDES_NATURALEZA,
+      ASSETS.HERO.COMPUTER.PAISAJE,
+      ASSETS.HERO.COMPUTER.PIQUERO,
     ],
     tours: {
       dia: [

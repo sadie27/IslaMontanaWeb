@@ -4,19 +4,20 @@ import { useState, useEffect } from "react"
 import Link from "next/link"
 import type { SubItem } from "@/lib/types"
 import MegaMenuImage from "@/components/ui/MegaMenuImage"
+import { ASSETS } from "@/config/assets"
 
 const FALLBACK_COLORS: Record<string, string> = {
-  "/images/mega-menu/amazonia.webp":         "#0a1f08",
-  "/images/mega-menu/andes-cultura.webp":    "#1a0e06",
-  "/images/mega-menu/andes-naturaleza.webp": "#060d1a",
-  "/images/mega-menu/cruceros.webp":         "#061520",
-  "/images/mega-menu/circuitos.webp":        "#0d200c",
-  "/images/mega-menu/day-tours.webp":        "#1a1506",
-  "/images/mega-menu/birdwatching.webp":     "#0a1f08",
-  "/images/mega-menu/gallery-fauna.webp":    "#0a1f08",
-  "/images/mega-menu/gallery-paisajes.webp": "#061520",
-  "/images/mega-menu/gallery-cultura.webp":  "#1a0e06",
-  "/images/mega-menu/gallery-aventura.webp": "#0d200c",
+  [ASSETS.MEGA_MENU.AMAZONIA]:         "#0a1f08",
+  [ASSETS.MEGA_MENU.ANDES_CULTURA]:    "#1a0e06",
+  [ASSETS.MEGA_MENU.ANDES_NATURALEZA]: "#060d1a",
+  [ASSETS.MEGA_MENU.CRUCEROS]:         "#061520",
+  [ASSETS.MEGA_MENU.CIRCUITOS]:        "#0d200c",
+  [ASSETS.MEGA_MENU.DAY_TOURS]:        "#1a1506",
+  [ASSETS.MEGA_MENU.BIRDWATCHING]:     "#0a1f08",
+  [ASSETS.MEGA_MENU.GALLERY_FAUNA]:    "#0a1f08",
+  [ASSETS.MEGA_MENU.GALLERY_PAISAJES]: "#061520",
+  [ASSETS.MEGA_MENU.GALLERY_CULTURA]:  "#1a0e06",
+  [ASSETS.MEGA_MENU.GALLERY_AVENTURA]: "#0d200c",
 }
 
 interface MegaMenuProps {

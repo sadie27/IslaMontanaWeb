@@ -1,23 +1,25 @@
 import Link from "next/link"
 import Image from "next/image"
+import { ROUTES } from "@/config/routes"
+import { ASSETS } from "@/config/assets"
 
 const FOOTER_COLS = [
   {
     title: "Destinos",
     links: [
-      { label: "Galápagos",        href: "/destinations/galapagos" },
-      { label: "Amazonía",         href: "/destinations/amazonia" },
-      { label: "Andes Cultural",   href: "/destinations/andes-cultura" },
-      { label: "Andes & Volcanes", href: "/destinations/andes-naturaleza" },
+      { label: "Galápagos",        href: ROUTES.DESTINATION('galapagos') },
+      { label: "Amazonía",         href: ROUTES.DESTINATION('amazonia') },
+      { label: "Andes Cultural",   href: ROUTES.DESTINATION('andes-cultura') },
+      { label: "Andes & Volcanes", href: ROUTES.DESTINATION('andes-naturaleza') },
     ],
   },
   {
     title: "Empresa",
     links: [
-      { label: "Nosotros",  href: "/about" },
-      { label: "Tours",     href: "/experiences" },
-      { label: "Galería",   href: "/gallery" },
-      { label: "Contacto",  href: "/contact" },
+      { label: "Nosotros",  href: ROUTES.ABOUT },
+      { label: "Tours",     href: ROUTES.EXPERIENCES },
+      { label: "Galería",   href: ROUTES.GALLERY },
+      { label: "Contacto",  href: ROUTES.CONTACT },
     ],
   },
 ]
@@ -34,7 +36,7 @@ export default function Footer() {
           <div className="footer__brand">
             <div className="footer__logo">
               <Image
-                src="/images/logos/logo-simple.webp"
+                src={ASSETS.LOGOS.SIMPLE}
                 alt="Islamontana Travel"
                 width={150}
                 height={42}

@@ -22,6 +22,8 @@ interface TourCardProps {
   tour: Tour
 }
 
+import { ROUTES } from '@/config/routes'
+
 export default function TourCard({ tour }: TourCardProps) {
   const diffColor = DIFF_COLORS[tour.difficulty] ?? '#6b7560'
 
@@ -75,7 +77,7 @@ export default function TourCard({ tour }: TourCardProps) {
           {tour.price}
         </span>
         <a
-          href={`/tours/${tour.id}`}
+          href={ROUTES.TOUR(tour.id)}
           className="tour-card__cta"
           style={{ borderColor: tour.accent, color: tour.accent }}
         >

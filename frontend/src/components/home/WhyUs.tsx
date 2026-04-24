@@ -71,6 +71,8 @@ function getIcon(name: string) {
   }
 }
 
+import { ROUTES } from '@/config/routes'
+
 export default function WhyUs() {
   return (
     <section className="why-us">
@@ -87,7 +89,7 @@ export default function WhyUs() {
             que llevan más de diez años diseñando experiencias auténticas en los cuatro
             mundos del Ecuador.
           </p>
-          <a href="/about" className="why-us__link">
+          <a href={ROUTES.ABOUT} className="why-us__link">
             Conoce nuestro equipo →
           </a>
         </div>

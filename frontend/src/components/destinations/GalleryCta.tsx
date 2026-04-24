@@ -1,6 +1,7 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import type { Destination } from '@/lib/types'
+import { ROUTES } from '@/config/routes'
 
 interface Props {
   destination: Destination
@@ -46,7 +47,7 @@ export default function GalleryCta({ destination, isMobile }: Props) {
             Más de 80 fotografías de nuestros tours, fauna, paisajes y experiencias.
           </p>
           <Link
-            href="/gallery"
+            href={ROUTES.GALLERY}
             style={{
               display: 'inline-flex', alignItems: 'center', gap: 8,
               padding: '11px 22px', borderRadius: 8,
@@ -74,7 +75,7 @@ export default function GalleryCta({ destination, isMobile }: Props) {
           {allPhotos.map((src, i) => (
             <Link
               key={i}
-              href="/gallery"
+              href={ROUTES.GALLERY}
               style={{ position: 'relative', overflow: 'hidden', background: '#1a3018', display: 'block' }}
               className="group"
             >

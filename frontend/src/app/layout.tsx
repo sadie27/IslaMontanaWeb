@@ -6,6 +6,8 @@ import "@/styles/globals.css"
 import type { NavItem } from "@/lib/types"
 import { getNavMenu } from "@/lib/api"
 import { adaptNavItem } from "@/lib/adapters"
+import { ROUTES } from "@/config/routes"
+import { ASSETS } from "@/config/assets"
 
 const outfit = Outfit({
   subsets: ["latin"],
@@ -26,42 +28,42 @@ export const metadata: Metadata = {
 const fallbackNavData: NavItem[] = [
   {
     label: "Inicio",
-    href: "/",
+    href: ROUTES.HOME,
     subItems: [],
   },
   {
     label: "Destinos",
-    href: "/destinations",
+    href: ROUTES.DESTINATIONS,
     subItems: [
-      { label: "Galápagos",        description: "Fauna única en el mundo",   href: "/destinations/galapagos",       image: "/images/mega-menu/galapagos.webp" },
-      { label: "Amazonía",         description: "Selva virgen ecuatorial",    href: "/destinations/amazonia",        image: "/images/mega-menu/amazonia.webp" },
-      { label: "Andes Cultural",   description: "Cultura viva andina",        href: "/destinations/andes-cultura",   image: "/images/mega-menu/costa.webp" },
-      { label: "Andes Naturaleza", description: "Páramos y volcanes",         href: "/destinations/andes-naturaleza", image: "/images/mega-menu/andes-naturaleza.webp" },
+      { label: "Galápagos",        description: "Fauna única en el mundo",   href: ROUTES.DESTINATION('galapagos'),       image: ASSETS.MEGA_MENU.GALAPAGOS },
+      { label: "Amazonía",         description: "Selva virgen ecuatorial",    href: ROUTES.DESTINATION('amazonia'),        image: ASSETS.MEGA_MENU.AMAZONIA },
+      { label: "Andes Cultural",   description: "Cultura viva andina",        href: ROUTES.DESTINATION('andes-cultura'),   image: ASSETS.MEGA_MENU.COSTA },
+      { label: "Andes Naturaleza", description: "Páramos y volcanes",         href: ROUTES.DESTINATION('andes-naturaleza'), image: ASSETS.MEGA_MENU.ANDES_NATURALEZA },
     ],
   },
   {
     label: "Experiencias",
-    href: "/experiences",
+    href: ROUTES.EXPERIENCES,
     subItems: [
-      { label: "Cruceros",     description: "Navega las Galápagos",    href: "/experiences/cruceros",     image: "/images/mega-menu/galapagos.webp" },
-      { label: "Circuitos",   description: "Rutas a tu medida",        href: "/experiences/circuitos",    image: "/images/mega-menu/andes-naturaleza.webp" },
-      { label: "Day Tours",   description: "Escápate un día",          href: "/experiences/day-tours",    image: "/images/mega-menu/costa.webp" },
-      { label: "Birdwatching", description: "Aves únicas del Ecuador", href: "/experiences/birdwatching", image: "/images/mega-menu/amazonia.webp" },
+      { label: "Cruceros",     description: "Navega las Galápagos",    href: ROUTES.EXPERIENCE('cruceros'),     image: ASSETS.MEGA_MENU.GALAPAGOS },
+      { label: "Circuitos",   description: "Rutas a tu medida",        href: ROUTES.EXPERIENCE('circuitos'),    image: ASSETS.MEGA_MENU.ANDES_NATURALEZA },
+      { label: "Day Tours",   description: "Escápate un día",          href: ROUTES.EXPERIENCE('day-tours'),    image: ASSETS.MEGA_MENU.COSTA },
+      { label: "Birdwatching", description: "Aves únicas del Ecuador", href: ROUTES.EXPERIENCE('birdwatching'), image: ASSETS.MEGA_MENU.AMAZONIA },
     ],
   },
   {
     label: "Galería",
-    href: "/gallery",
+    href: ROUTES.GALLERY,
     subItems: [
-      { label: "Fauna & Wildlife", description: "Vida silvestre única",    href: "/gallery?category=fauna-wildlife", image: "/images/mega-menu/galapagos.webp" },
-      { label: "Paisajes",         description: "Volcanes, selva, océano", href: "/gallery?category=paisajes",        image: "/images/mega-menu/andes-naturaleza.webp" },
-      { label: "Cultura",          description: "Haciendas, mercados, gente", href: "/gallery?category=cultura",     image: "/images/mega-menu/costa.webp" },
-      { label: "Aventura",         description: "Buceo, trekking, birdwatching", href: "/gallery?category=aventura", image: "/images/mega-menu/amazonia.webp" },
+      { label: "Fauna & Wildlife", description: "Vida silvestre única",    href: ROUTES.GALLERY_CATEGORY('fauna-wildlife'), image: ASSETS.MEGA_MENU.GALAPAGOS },
+      { label: "Paisajes",         description: "Volcanes, selva, océano", href: ROUTES.GALLERY_CATEGORY('paisajes'),        image: ASSETS.MEGA_MENU.ANDES_NATURALEZA },
+      { label: "Cultura",          description: "Haciendas, mercados, gente", href: ROUTES.GALLERY_CATEGORY('cultura'),     image: ASSETS.MEGA_MENU.COSTA },
+      { label: "Aventura",         description: "Buceo, trekking, birdwatching", href: ROUTES.GALLERY_CATEGORY('aventura'), image: ASSETS.MEGA_MENU.AMAZONIA },
     ],
   },
   {
     label: "Nosotros",
-    href: "/about",
+    href: ROUTES.ABOUT,
     subItems: [],
   },
 ]

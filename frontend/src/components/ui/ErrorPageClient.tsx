@@ -3,12 +3,14 @@
 import { useEffect, useState } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
+import { ROUTES } from '@/config/routes'
+import { ASSETS } from '@/config/assets'
 
 const LINKS = [
-  { label: 'Islas Galápagos', sub: 'Fauna & Snorkel',     href: '/destinations/galapagos',       color: '#1a7a8a' },
-  { label: 'Amazonía',        sub: 'Selva & Biodiversidad', href: '/destinations/amazonia',        color: '#2d6a1e' },
-  { label: 'Andes Cultural',  sub: 'Pueblos & Tradición',  href: '/destinations/andes-cultura',   color: '#8B4513' },
-  { label: 'Andes & Volcanes',sub: 'Trekking & Cumbres',   href: '/destinations/andes-naturaleza', color: '#4a6fa5' },
+  { label: 'Islas Galápagos', sub: 'Fauna & Snorkel',      href: ROUTES.DESTINATION('galapagos'),       color: '#1a7a8a' },
+  { label: 'Amazonía',        sub: 'Selva & Biodiversidad', href: ROUTES.DESTINATION('amazonia'),        color: '#2d6a1e' },
+  { label: 'Andes Cultural',  sub: 'Pueblos & Tradición',   href: ROUTES.DESTINATION('andes-cultura'),   color: '#8B4513' },
+  { label: 'Andes & Volcanes',sub: 'Trekking & Cumbres',    href: ROUTES.DESTINATION('andes-naturaleza'), color: '#4a6fa5' },
 ]
 
 function BgIllustration() {
@@ -59,7 +61,7 @@ export default function ErrorPageClient({ type, reset }: Props) {
       {/* BG image */}
       <div style={{ position: 'absolute', inset: 0 }}>
         <Image
-          src="/images/mega-menu/galapagos.webp"
+          src={ASSETS.MEGA_MENU.GALAPAGOS}
           alt=""
           fill
           unoptimized
@@ -153,7 +155,7 @@ export default function ErrorPageClient({ type, reset }: Props) {
           style={{ display: 'flex', gap: 10, flexWrap: 'wrap', marginBottom: isMobile ? 48 : 64 }}
         >
           <Link
-            href="/"
+            href={ROUTES.HOME}
             style={{
               display: 'inline-flex', alignItems: 'center', gap: 8,
               padding: isMobile ? '13px 24px' : '15px 32px',
@@ -170,7 +172,7 @@ export default function ErrorPageClient({ type, reset }: Props) {
             </svg>
           </Link>
           <Link
-            href="/destinations"
+            href={ROUTES.DESTINATIONS}
             style={{
               display: 'inline-flex', alignItems: 'center', gap: 8,
               padding: isMobile ? '13px 22px' : '15px 28px',

@@ -4,6 +4,8 @@ import { useEffect, useRef, useState } from 'react'
 import { ECUADOR_PATHS, PHASE_VIEWBOXES_MOBILE, REGION_GROUPS } from '@/data/ecuadorPaths'
 import { SA_PATHS } from '@/data/southAmericaPaths'
 import DestinationCard from '@/components/destinations/DestinationCard'
+import { ROUTES } from '@/config/routes'
+import { ASSETS } from '@/config/assets'
 
 const EASE_OUT = 'cubic-bezier(0.23, 1, 0.32, 1)'
 
@@ -50,8 +52,8 @@ const SA_VB_ECUADOR: ViewBox = { x: 218, y: 445, w: 80,  h: 70  }
 const DESTINATIONS = [
   {
     slug: 'galapagos',
-    href: '/destinations/galapagos',
-    imageSrc: '/images/mega-menu/galapagos.webp',
+    href: ROUTES.DESTINATION('galapagos'),
+    imageSrc: ASSETS.MEGA_MENU.GALAPAGOS,
     imageAlt: 'Lobos marinos en las Islas Galápagos',
     label: 'Fauna & Snorkel',
     title: 'Islas Galápagos',
@@ -61,8 +63,8 @@ const DESTINATIONS = [
   },
   {
     slug: 'amazonia',
-    href: '/destinations/amazonia',
-    imageSrc: '/images/mega-menu/amazonia.webp',
+    href: ROUTES.DESTINATION('amazonia'),
+    imageSrc: ASSETS.MEGA_MENU.AMAZONIA,
     imageAlt: 'Selva amazónica ecuatoriana vista desde el río',
     label: 'Selva & Biodiversidad',
     title: 'Amazonía Ecuatoriana',
@@ -72,8 +74,8 @@ const DESTINATIONS = [
   },
   {
     slug: 'andes-cultura',
-    href: '/destinations/andes-cultura',
-    imageSrc: '/images/mega-menu/andes-cultura.webp',
+    href: ROUTES.DESTINATION('andes-cultura'),
+    imageSrc: ASSETS.MEGA_MENU.ANDES_CULTURA,
     imageAlt: 'Mercado indígena de Otavalo, Ecuador',
     label: 'Pueblos & Tradición',
     title: 'Andes Cultural',
@@ -83,8 +85,8 @@ const DESTINATIONS = [
   },
   {
     slug: 'andes-naturaleza',
-    href: '/destinations/andes-naturaleza',
-    imageSrc: '/images/mega-menu/andes-naturaleza.webp',
+    href: ROUTES.DESTINATION('andes-naturaleza'),
+    imageSrc: ASSETS.MEGA_MENU.ANDES_NATURALEZA,
     imageAlt: 'Volcán Cotopaxi nevado bajo cielo despejado',
     label: 'Volcanes & Páramos',
     title: 'Andes & Volcanes',

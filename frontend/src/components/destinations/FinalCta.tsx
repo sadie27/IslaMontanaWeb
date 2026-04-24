@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import type { Destination } from '@/lib/types'
+import { ROUTES } from '@/config/routes'
 
 interface Props {
   destination: Destination
@@ -38,7 +39,7 @@ export default function FinalCta({ destination, isMobile }: Props) {
         </div>
         <div style={{ display: 'flex', gap: 10, flexWrap: 'wrap', flexShrink: 0, alignItems: 'center', justifyContent: 'center' }}>
           <Link
-            href="/contact"
+            href={ROUTES.CONTACT}
             style={{
               display: 'inline-flex', alignItems: 'center', gap: 8,
               padding: '13px 26px', borderRadius: 8,
@@ -50,7 +51,7 @@ export default function FinalCta({ destination, isMobile }: Props) {
             Planifica tu viaje
           </Link>
           <Link
-            href="/destinations"
+            href={ROUTES.DESTINATIONS}
             style={{
               display: 'inline-flex', alignItems: 'center', gap: 8,
               padding: '13px 26px', borderRadius: 8,

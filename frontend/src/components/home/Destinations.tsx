@@ -5,13 +5,15 @@
 
 import Link from 'next/link'
 import DestCard, { type DestinationItem } from './DestCard'
+import { ROUTES } from '@/config/routes'
+import { ASSETS } from '@/config/assets'
 
 const DESTINATIONS: DestinationItem[] = [
   {
     slug: 'galapagos',
     name: 'Islas Galápagos',
     label: 'Fauna & Snorkel',
-    src: '/images/mega-menu/galapagos.webp',
+    src: ASSETS.MEGA_MENU.GALAPAGOS,
     accent: '#1a7a8a',
     desc: 'Nada junto a leones marinos en aguas cristalinas. Un archipiélago único donde la evolución ocurrió a su propio ritmo.',
   },
@@ -19,7 +21,7 @@ const DESTINATIONS: DestinationItem[] = [
     slug: 'amazonia',
     name: 'Amazonía Ecuatoriana',
     label: 'Selva & Biodiversidad',
-    src: '/images/mega-menu/amazonia.webp',
+    src: ASSETS.MEGA_MENU.AMAZONIA,
     accent: '#2d6a1e',
     desc: '600 especies de aves y una biodiversidad sin igual. La selva más rica del planeta te espera.',
   },
@@ -27,7 +29,7 @@ const DESTINATIONS: DestinationItem[] = [
     slug: 'andes-naturaleza',
     name: 'Andes & Volcanes',
     label: 'Trekking & Cumbres',
-    src: '/images/mega-menu/andes-naturaleza.webp',
+    src: ASSETS.MEGA_MENU.ANDES_NATURALEZA,
     accent: '#4a6fa5',
     desc: 'Ocho volcanes activos y paisajes de altitud que cortan el aliento. La columna vertebral de Ecuador.',
   },
@@ -35,7 +37,7 @@ const DESTINATIONS: DestinationItem[] = [
     slug: 'andes-cultura',
     name: 'Andes Cultural',
     label: 'Pueblos & Tradición',
-    src: '/images/mega-menu/costa.webp',
+    src: ASSETS.MEGA_MENU.COSTA,
     accent: '#8B4513',
     desc: 'Mercados indígenas, textiles artesanales y comunidades que guardan siglos de historia viva.',
   },
@@ -53,7 +55,7 @@ export default function Destinations() {
           </div>
 
           {/* Link desktop (oculto en mobile via CSS) */}
-          <Link href="/destinations" className="destinations__header-link btn btn--outline">
+          <Link href={ROUTES.DESTINATIONS} className="destinations__header-link btn btn--outline">
             Ver todos los destinos →
           </Link>
         </div>
@@ -71,7 +73,7 @@ export default function Destinations() {
 
         {/* Link mobile (oculto en desktop via CSS) */}
         <div className="destinations__footer-link">
-          <Link href="/destinations" className="btn btn--outline">
+          <Link href={ROUTES.DESTINATIONS} className="btn btn--outline">
             Ver todos los destinos →
           </Link>
         </div>

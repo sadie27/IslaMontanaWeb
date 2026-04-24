@@ -6,6 +6,7 @@
 
 import Image from 'next/image'
 import Link from 'next/link'
+import { ROUTES } from '@/config/routes'
 
 export interface DestinationItem {
   slug: string
@@ -25,7 +26,7 @@ export default function DestCard({ d, tall = false }: DestCardProps) {
   const cardClass = ['dest-card', tall ? 'dest-card--tall' : ''].filter(Boolean).join(' ')
 
   return (
-    <Link href={`/destinations/${d.slug}`} className={cardClass} aria-label={`Explorar ${d.name}`}>
+    <Link href={ROUTES.DESTINATION(d.slug)} className={cardClass} aria-label={`Explorar ${d.name}`}>
       {/* Imagen de fondo */}
       <div className="dest-card__img">
         <Image

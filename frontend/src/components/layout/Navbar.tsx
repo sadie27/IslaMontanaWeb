@@ -5,6 +5,8 @@ import Link from "next/link"
 import Image from "next/image"
 import MegaMenu from "./MegaMenu"
 import type { NavItem } from "@/lib/types"
+import { ROUTES } from "@/config/routes"
+import { ASSETS } from "@/config/assets"
 
 interface NavbarProps {
   navData: NavItem[]
@@ -124,9 +126,9 @@ export default function Navbar({ navData }: NavbarProps) {
     >
       <div className="navbar__inner">
         {/* Logo */}
-        <Link href="/" className="navbar__logo">
+        <Link href={ROUTES.HOME} className="navbar__logo">
           <Image
-            src="/images/logos/Logo-horizontal-sf.webp"
+            src={ASSETS.LOGOS.HORIZONTAL}
             alt="Islamontana Travel"
             width={180}
             height={50}
@@ -208,7 +210,7 @@ export default function Navbar({ navData }: NavbarProps) {
               )}
             </div>
           ))}
-          <Link href="/contact" className="navbar__cta">
+          <Link href={ROUTES.CONTACT} className="navbar__cta">
             Reservar
           </Link>
         </div>
@@ -280,7 +282,7 @@ export default function Navbar({ navData }: NavbarProps) {
               </div>
             ))}
             <Link
-              href="/contact"
+              href={ROUTES.CONTACT}
               className="navbar__drawer-cta"
               onClick={closeMobileMenu}
             >

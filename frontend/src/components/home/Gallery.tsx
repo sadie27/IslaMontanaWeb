@@ -1,13 +1,15 @@
 /* ─── Gallery.tsx — Server Component ───────────────────────── */
 
 import Image from 'next/image'
+import { ROUTES } from '@/config/routes'
+import { ASSETS } from '@/config/assets'
 
 const GALLERY_IMGS = [
-  { src: '/images/galapagos.webp',        alt: 'Islas Galápagos',        tall: true  },
-  { src: '/images/amazonia.webp',         alt: 'Amazonía Ecuatoriana',   tall: false },
-  { src: '/images/andes-naturaleza.webp', alt: 'Andes y Volcanes',       tall: false },
-  { src: '/images/paisaje.webp',          alt: 'Paisaje ecuatoriano',    tall: false },
-  { src: '/images/lobitos.webp',          alt: 'Lobitos marinos',        tall: false },
+  { src: ASSETS.GALLERY.GALAPAGOS,        alt: 'Islas Galápagos',        tall: true  },
+  { src: ASSETS.GALLERY.AMAZONIA,         alt: 'Amazonía Ecuatoriana',   tall: false },
+  { src: ASSETS.GALLERY.ANDES_NATURALEZA, alt: 'Andes y Volcanes',       tall: false },
+  { src: ASSETS.GALLERY.PAISAJE,          alt: 'Paisaje ecuatoriano',    tall: false },
+  { src: ASSETS.GALLERY.LOBITOS,          alt: 'Lobitos marinos',        tall: false },
 ]
 
 export default function Gallery() {
@@ -55,7 +57,7 @@ export default function Gallery() {
                 {/* Overlay en la última imagen (desktop) */}
                 {isLast && (
                   <a
-                    href="/gallery"
+                    href={ROUTES.GALLERY}
                     className="gallery__img-overlay"
                     aria-label="Ver todas las fotos de la galería"
                   >

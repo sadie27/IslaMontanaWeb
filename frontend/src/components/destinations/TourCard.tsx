@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import type { TourItem } from '@/lib/types'
+import { ROUTES } from '@/config/routes'
 
 const DIFF_COLORS = {
   'Fácil':    '#22c55e',
@@ -72,7 +73,7 @@ export default function TourCard({ tour, accentColor }: Props) {
           {tour.price}
         </span>
         <Link
-          href={`/contact?tour=${tour.id}`}
+          href={ROUTES.TOUR_CONTACT(tour.id)}
           style={{
             border: `1px solid ${accentColor}55`,
             color: 'rgba(255,255,255,0.82)',

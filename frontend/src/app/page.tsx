@@ -7,6 +7,7 @@
 
 import Image from "next/image"
 import { useHeroImages } from "@/hooks/useHeroImages"
+import { ROUTES } from "@/config/routes"
 import Stats from '@/components/home/Stats'
 import Destinations from '@/components/home/Destinations'
 import WhyUs from '@/components/home/WhyUs'
@@ -82,8 +83,8 @@ function Hero() {
         </p>
 
         <div className="hero__ctas">
-          <a href="/destinations" className="btn btn--primary">Ver destinos →</a>
-          <a href="/tours" className="btn btn--ghost">Nuestros tours</a>
+          <a href={ROUTES.DESTINATIONS} className="btn btn--primary">Ver destinos →</a>
+          <a href={ROUTES.TOURS} className="btn btn--ghost">Nuestros tours</a>
         </div>
       </div>
 

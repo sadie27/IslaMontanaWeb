@@ -1,0 +1,53 @@
+export const ASSETS = {
+  LOGOS: {
+    HORIZONTAL: '/images/logos/Logo-horizontal-sf.webp',
+    SIMPLE: '/images/logos/logo-simple.webp',
+  },
+  MEGA_MENU: {
+    GALAPAGOS: '/images/mega-menu/galapagos.webp',
+    AMAZONIA: '/images/mega-menu/amazonia.webp',
+    ANDES_CULTURA: '/images/mega-menu/andes-cultura.webp',
+    ANDES_NATURALEZA: '/images/mega-menu/andes-naturaleza.webp',
+    COSTA: '/images/mega-menu/costa.webp',
+    CRUCEROS: '/images/mega-menu/cruceros.webp',
+    CIRCUITOS: '/images/mega-menu/circuitos.webp',
+    DAY_TOURS: '/images/mega-menu/day-tours.webp',
+    BIRDWATCHING: '/images/mega-menu/birdwatching.webp',
+    GALLERY_FAUNA: '/images/mega-menu/gallery-fauna.webp',
+    GALLERY_PAISAJES: '/images/mega-menu/gallery-paisajes.webp',
+    GALLERY_CULTURA: '/images/mega-menu/gallery-cultura.webp',
+    GALLERY_AVENTURA: '/images/mega-menu/gallery-aventura.webp',
+  },
+  GALLERY: {
+    GALAPAGOS: '/images/galapagos.webp',
+    AMAZONIA: '/images/amazonia.webp',
+    ANDES_NATURALEZA: '/images/andes-naturaleza.webp',
+    PAISAJE: '/images/paisaje.webp',
+    LOBITOS: '/images/lobitos.webp',
+  },
+  HERO: {
+    COMPUTER: {
+      DSC_0436: '/images/hero-main/computer/DSC_0436.webp',
+      TORTUGA_MARINA: '/images/hero-main/computer/GLP 5 Amalia con TortugaMarina Mayo2019.webp',
+      SEA_LIONS: '/images/hero-main/computer/GLP Children sea Lions and sandcastles.webp',
+      ORCAS: '/images/hero-main/computer/Orcas Mom and Calf Feb2016.webp',
+      PAPALLACTA: '/images/hero-main/computer/Papallacta Die-Muriel 2 Oct2016.webp',
+      COCK_OF_THE_ROCK: '/images/hero-main/computer/Reserva PazdelasAves Cock-of-the-Rock Nov2018.webp',
+      SACHA_LODGE: '/images/hero-main/computer/SachaLodge 29 Barizo Ag2019.webp',
+      VIAJE_ECUADOR: '/images/hero-main/computer/Viaje Ecuador 22 Sacha Ag2024.webp',
+      YUBARTA: '/images/hero-main/computer/Yubarta 8 Isla de La Plata Ag2019.webp',
+      LOBITOS: '/images/hero-main/Computer/lobitos.webp',
+      PIQUERO: '/images/hero-main/Computer/piquero.webp',
+      PAISAJE: '/images/hero-main/Computer/paisaje.webp',
+    },
+    MOVILE: {
+      PAPALLACTA_ANTISANA: '/images/hero-main/movile/Papallacta Antisana Nov2016.webp',
+      LOBITO: '/images/hero-main/movile/lobito.webp',
+      PIQUEROS: '/images/hero-main/movile/piqueros.webp',
+    },
+  },
+  SVG: {
+    ECUADOR_HIGH: '/ecuadorHigh.svg',
+    SOUTH_AMERICA_LOW: '/southAmericaLow.svg',
+  },
+} as const
