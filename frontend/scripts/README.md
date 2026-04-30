@@ -51,13 +51,3 @@ Ejecuta este script cada vez que:
 - No requiere dependencias externas, solo Node.js nativo
 - Las imágenes se ordenan alfabéticamente en el manifiesto
 
-### Pendiente — Typo en directorio
-
-El directorio actualmente se llama `movile/` (typo). Antes de usar este script, renombrar:
-
-```bash
-# En el directorio public/images/hero-main/
-mv movile mobile
-```
-
-Y actualizar la referencia en `src/config/hero-images.ts` de `movile` a `mobile`. El script también usa el nombre del directorio internamente — verificar que quede consistente.

@@ -5,7 +5,7 @@
    Ejecutar: npm run generate:hero
    cada vez que agregues o elimines imágenes en:
    - /public/images/hero-main/computer/ (landscape desktop)
-   - /public/images/hero-main/movile/   (portrait mobile)
+   - /public/images/hero-main/mobile/   (portrait mobile)
 ──────────────────────────────────────────────────────────── */
 
 export const heroImages = {
@@ -20,9 +20,9 @@ export const heroImages = {
     '/images/hero-main/computer/Viaje Ecuador 22 Sacha Ag2024.webp',
     '/images/hero-main/computer/Yubarta 8 Isla de La Plata Ag2019.webp',
   ],
-  movile: [
-    '/images/hero-main/movile/Papallacta Antisana Nov2016.webp',
-    '/images/hero-main/movile/lobito.webp',
-    '/images/hero-main/movile/piqueros.webp',
+  mobile: [
+    '/images/hero-main/mobile/Papallacta Antisana Nov2016.webp',
+    '/images/hero-main/mobile/lobito.webp',
+    '/images/hero-main/mobile/piqueros.webp',
   ],
 }

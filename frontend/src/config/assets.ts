@@ -40,10 +40,10 @@ export const ASSETS = {
       PIQUERO: '/images/hero-main/computer/piquero.webp',
       PAISAJE: '/images/hero-main/computer/paisaje.webp',
     },
-    MOVILE: {
-      PAPALLACTA_ANTISANA: '/images/hero-main/movile/Papallacta Antisana Nov2016.webp',
-      LOBITO: '/images/hero-main/movile/lobito.webp',
-      PIQUEROS: '/images/hero-main/movile/piqueros.webp',
+    MOBILE: {
+      PAPALLACTA_ANTISANA: '/images/hero-main/mobile/Papallacta Antisana Nov2016.webp',
+      LOBITO: '/images/hero-main/mobile/lobito.webp',
+      PIQUEROS: '/images/hero-main/mobile/piqueros.webp',
     },
   },
   SVG: {

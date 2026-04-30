@@ -4,7 +4,7 @@
    Script que genera automáticamente el manifiesto estático
    de imágenes del Hero leyendo las carpetas:
    - public/images/hero-main/computer/
-   - public/images/hero-main/movile/
+   - public/images/hero-main/mobile/
 
    Uso: npm run generate:hero
 ──────────────────────────────────────────────────────────── */
@@ -40,13 +40,13 @@ function generateManifest() {
   console.log('🔍 Leyendo imágenes del Hero...\n')
 
   const computerImages = readImagesFromDir('computer')
-  const movileImages = readImagesFromDir('movile')
+  const mobileImages = readImagesFromDir('mobile')
 
   console.log(`📁 Computer (desktop): ${computerImages.length} imágenes`)
   computerImages.forEach(img => console.log(`   - ${img}`))
 
-  console.log(`\n📱 Movile (mobile): ${movileImages.length} imágenes`)
-  movileImages.forEach(img => console.log(`   - ${img}`))
+  console.log(`\n📱 Mobile: ${mobileImages.length} imágenes`)
+  mobileImages.forEach(img => console.log(`   - ${img}`))
 
   const fileContent = `/* ── config/hero-images.ts ─────────────────────────────────
    Manifiesto estático de imágenes del Hero.
@@ -55,15 +55,15 @@ function generateManifest() {
    Ejecutar: npm run generate:hero
    cada vez que agregues o elimines imágenes en:
    - /public/images/hero-main/computer/ (landscape desktop)
-   - /public/images/hero-main/movile/   (portrait mobile)
+   - /public/images/hero-main/mobile/   (portrait mobile)
 ──────────────────────────────────────────────────────────── */
 
 export const heroImages = {
   computer: [
 ${computerImages.map(img => `    '${img}',`).join('\n')}
   ],
-  movile: [
-${movileImages.map(img => `    '${img}',`).join('\n')}
+  mobile: [
+${mobileImages.map(img => `    '${img}',`).join('\n')}
   ],
 }
 `
@@ -71,7 +71,7 @@ ${movileImages.map(img => `    '${img}',`).join('\n')}
   fs.writeFileSync(OUTPUT_FILE, fileContent, 'utf-8')
 
   console.log(`\n✅ Manifiesto generado: ${path.relative(process.cwd(), OUTPUT_FILE)}`)
-  console.log(`📊 Total: ${computerImages.length + movileImages.length} imágenes\n`)
+  console.log(`📊 Total: ${computerImages.length + mobileImages.length} imágenes\n`)
 }
 
 try {
