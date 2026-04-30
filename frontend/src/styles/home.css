@@ -263,6 +263,7 @@
   background: var(--color-dark);
   padding: 72px var(--px);
   border-top: 1px solid rgba(255, 255, 255, 0.05);
+  min-height: 280px;
 }
 
 .stats__grid {
@@ -352,6 +353,7 @@
 @media (max-width: 767px) {
   .stats {
     padding: 52px 24px;
+    min-height: 264px;
   }
 
   .stats__grid {
