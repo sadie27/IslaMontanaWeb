@@ -3,7 +3,7 @@
    - Carga del manifiesto estático de imágenes
    - Detección de mobile/desktop con debounce en resize
    - Rotación automática cada 5 segundos
-   - Precarga de TODAS las imágenes del set activo al montar
+   - Precarga eager de la primera imagen, diferida del resto (requestIdleCallback)
 ──────────────────────────────────────────────────────────── */
 
 'use client'
@@ -41,16 +41,28 @@ export function useHeroImages(): UseHeroImagesReturn {
   // Seleccionar el set de imágenes correcto según mobile/desktop
   const images = isMobile ? heroImages.mobile : heroImages.computer
 
-  // Precargar TODAS las imágenes del set activo al montar
+  // Eager: precargar solo la primera imagen (above-fold)
   useEffect(() => {
     if (images.length === 0 || hasPreloadedRef.current) return
-
-    images.forEach(src => {
-      const img = new Image()
-      img.src = src
-    })
-
+    const img = new window.Image()
+    img.src = images[0]
     hasPreloadedRef.current = true
+  }, [images])
+
+  // Diferida: precargar el resto cuando el browser esté idle
+  useEffect(() => {
+    if (images.length <= 1) return
+    const preloadRest = () => {
+      images.slice(1).forEach(src => {
+        const img = new window.Image()
+        img.src = src
+      })
+    }
+    if ('requestIdleCallback' in window) {
+      requestIdleCallback(preloadRest)
+    } else {
+      setTimeout(preloadRest, 1000)
+    }
   }, [images])
 
   // Listener de resize con debounce
