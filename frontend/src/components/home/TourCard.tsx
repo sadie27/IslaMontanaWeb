@@ -1,5 +1,8 @@
 /* ─── TourCard.tsx — Server Component ──────────────────────── */
 
+import { ROUTES } from '@/config/routes'
+import { DIFF_COLORS } from '@/config/colors'
+
 export interface Tour {
   id: string
   name: string
@@ -12,17 +15,9 @@ export interface Tour {
   highlights: string[]
 }
 
-const DIFF_COLORS: Record<string, string> = {
-  'Fácil':    '#22c55e',
-  'Moderado': '#eab308',
-  'Exigente': '#ef4444',
-}
-
 interface TourCardProps {
   tour: Tour
 }
-
-import { ROUTES } from '@/config/routes'
 
 export default function TourCard({ tour }: TourCardProps) {
   const diffColor = DIFF_COLORS[tour.difficulty] ?? '#6b7560'
