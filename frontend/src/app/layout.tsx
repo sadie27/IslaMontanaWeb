@@ -16,12 +16,14 @@ const outfit = Outfit({
   display: "swap",
 })
 
+const base = process.env.NEXT_PUBLIC_BASE_PATH ?? ''
+
 export const metadata: Metadata = {
   title: "Islamontana Travel",
   description:
     "Agencia de viajes especializada en turismo de naturaleza en Ecuador. Tours a Galápagos, Amazonía, Andes y Costa del Pacífico.",
   icons: {
-    icon: "/favicon.ico",
+    icon: `${base}/favicon.ico`,
   },
 }
 
