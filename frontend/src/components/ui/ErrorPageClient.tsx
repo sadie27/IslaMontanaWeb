@@ -2,16 +2,11 @@
 
 import { useEffect, useState } from 'react'
 import Image from 'next/image'
-import Link from 'next/link'
-import { ROUTES } from '@/config/routes'
 import { ASSETS } from '@/config/assets'
+import ErrorHeader from './ErrorHeader'
+import ErrorCTAs from './ErrorCTAs'
+import ErrorQuickLinks from './ErrorQuickLinks'
 
-const LINKS = [
-  { label: 'Islas Galápagos', sub: 'Fauna & Snorkel',      href: ROUTES.DESTINATION('galapagos'),       color: '#1a7a8a' },
-  { label: 'Amazonía',        sub: 'Selva & Biodiversidad', href: ROUTES.DESTINATION('amazonia'),        color: '#2d6a1e' },
-  { label: 'Andes Cultural',  sub: 'Pueblos & Tradición',   href: ROUTES.DESTINATION('andes-cultura'),   color: '#8B4513' },
-  { label: 'Andes & Volcanes',sub: 'Trekking & Cumbres',    href: ROUTES.DESTINATION('andes-naturaleza'), color: '#4a6fa5' },
-]
 
 function BgIllustration() {
   return (
@@ -49,17 +44,8 @@ export default function ErrorPageClient({ type, reset }: Props) {
   const is404 = type === '404'
 
   return (
-    <div style={{
-      fontFamily: "'Outfit', system-ui, sans-serif",
-      position: 'fixed',
-      inset: 0,
-      zIndex: 9999,
-      background: '#0d200c',
-      overflow: 'hidden',
-    }}>
-
-      {/* BG image */}
-      <div style={{ position: 'absolute', inset: 0 }}>
+    <div className="error-page">
+      <div className="error-page__bg-image">
         <Image
           src={ASSETS.MEGA_MENU.GALAPAGOS}
           alt=""
@@ -69,206 +55,30 @@ export default function ErrorPageClient({ type, reset }: Props) {
           style={{ objectFit: 'cover', objectPosition: 'center', opacity: 0.18 }}
         />
       </div>
-
-      {/* Dark overlay */}
-      <div style={{
-        position: 'absolute', inset: 0,
-        background: 'linear-gradient(to bottom, rgba(13,32,12,0.6) 0%, rgba(13,32,12,0.92) 60%, #0d200c 100%)',
-      }} />
-
-      {/* BG map illustration */}
-      <div style={{
-        position: 'absolute',
-        right: isMobile ? '-20%' : '-4%',
-        top: '50%',
-        transform: 'translateY(-50%)',
-        width: isMobile ? '70%' : '42%',
-        maxWidth: 520,
-        pointerEvents: 'none',
-      }}>
+      <div className="error-page__overlay" />
+      <div
+        className="error-page__illustration"
+        style={{ right: isMobile ? '-20%' : '-4%', width: isMobile ? '70%' : '42%' }}
+      >
         <BgIllustration />
       </div>
-
-      {/* Content */}
-      <div style={{
-        position: 'relative', zIndex: 2,
-        height: '100%',
-        display: 'flex', flexDirection: 'column', justifyContent: 'center',
-        padding: isMobile ? `100px ${px} 64px` : `120px ${px} 80px`,
-        maxWidth: isMobile ? 'none' : 1280,
-        margin: '0 auto',
-      }}>
-
-        {/* Error badge */}
-        <div className="fade-up fade-up-1" style={{ display: 'inline-flex', alignItems: 'center', gap: 8, marginBottom: 28 }}>
-          <span style={{
-            background: 'rgba(171,212,48,0.1)',
-            border: '1px solid rgba(171,212,48,0.25)',
-            borderRadius: 100,
-            padding: '5px 16px',
-            fontSize: 11, fontWeight: 700, letterSpacing: '0.14em', color: '#abd430',
-            display: 'inline-flex', alignItems: 'center', gap: 7,
-          }}>
-            <span style={{ width: 5, height: 5, borderRadius: '50%', background: '#abd430', display: 'inline-block' }} />
-            ERROR {type}
-          </span>
-        </div>
-
-        {/* Headline */}
-        <h1
-          className="fade-up fade-up-2"
-          style={{
-            fontSize: isMobile ? 'clamp(44px, 12vw, 68px)' : 'clamp(64px, 6vw, 96px)',
-            fontWeight: 900,
-            color: 'white',
-            lineHeight: 0.9,
-            letterSpacing: '-0.035em',
-            marginBottom: 22,
-          }}
-        >
-          {is404
-            ? <><span>Esta ruta</span><br /><span style={{ color: '#abd430' }}>no existe.</span></>
-            : <><span>Algo salió</span><br /><span style={{ color: '#abd430' }}>mal.</span></>
-          }
-        </h1>
-
-        {/* Subtitle */}
-        <p
-          className="fade-up fade-up-3"
-          style={{
-            fontSize: isMobile ? 15 : 18,
-            fontWeight: 300,
-            color: 'rgba(255,255,255,0.68)',
-            lineHeight: 1.7,
-            maxWidth: '42ch',
-            marginBottom: isMobile ? 36 : 48,
-          }}
-        >
-          {is404
-            ? 'La página que buscas no existe o ha sido movida. Pero Ecuador sigue ahí, esperándote.'
-            : 'Algo falló en nuestro servidor. Estamos trabajando para resolverlo. Intenta de nuevo en unos minutos.'}
-        </p>
-
-        {/* CTAs */}
-        <div
-          className="fade-up fade-up-4"
-          style={{ display: 'flex', gap: 10, flexWrap: 'wrap', marginBottom: isMobile ? 48 : 64 }}
-        >
-          <Link
-            href={ROUTES.HOME}
-            style={{
-              display: 'inline-flex', alignItems: 'center', gap: 8,
-              padding: isMobile ? '13px 24px' : '15px 32px',
-              borderRadius: 10,
-              background: '#3aa023', color: 'white',
-              fontWeight: 700, fontSize: 14, letterSpacing: '0.02em',
-              transition: 'all 0.2s ease', textDecoration: 'none',
-            }}
-            className="btn-primary"
-          >
-            Ir al inicio
-            <svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true">
-              <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-            </svg>
-          </Link>
-          <Link
-            href={ROUTES.DESTINATIONS}
-            style={{
-              display: 'inline-flex', alignItems: 'center', gap: 8,
-              padding: isMobile ? '13px 22px' : '15px 28px',
-              borderRadius: 10,
-              background: 'rgba(255,255,255,0.05)',
-              border: '1.5px solid rgba(255,255,255,0.15)',
-              color: 'rgba(255,255,255,0.65)', fontWeight: 500, fontSize: 14,
-              transition: 'all 0.2s ease', textDecoration: 'none',
-            }}
-            className="btn-ghost"
-          >
-            Ver destinos
-          </Link>
-          {!is404 && reset && (
-            <button
-              onClick={reset}
-              style={{
-                display: 'inline-flex', alignItems: 'center', gap: 8,
-                padding: isMobile ? '13px 22px' : '15px 28px',
-                borderRadius: 10,
-                background: 'rgba(255,255,255,0.05)',
-                border: '1.5px solid rgba(255,255,255,0.15)',
-                color: 'rgba(255,255,255,0.65)', fontWeight: 500, fontSize: 14,
-                transition: 'all 0.2s ease', cursor: 'pointer',
-              }}
-              className="btn-ghost"
-            >
-              ↻ Reintentar
-            </button>
-          )}
-        </div>
-
-        {/* Quick links — solo en 404 */}
-        {is404 && (
-          <>
-            <div className="fade-up fade-up-5" style={{ marginBottom: 16 }}>
-              <span style={{
-                fontSize: 10, letterSpacing: '0.18em', textTransform: 'uppercase',
-                color: 'rgba(255,255,255,0.38)', fontWeight: 600,
-              }}>
-                Quizás buscabas
-              </span>
-            </div>
-            <div
-              className="fade-up fade-up-5"
-              style={{
-                display: 'grid',
-                gridTemplateColumns: isMobile ? '1fr 1fr' : 'repeat(4, 1fr)',
-                gap: isMobile ? 8 : 10,
-                maxWidth: isMobile ? '100%' : 680,
-              }}
-            >
-              {LINKS.map((link) => (
-                <Link
-                  key={link.href}
-                  href={link.href}
-                  style={{
-                    display: 'flex', flexDirection: 'column', gap: 3,
-                    padding: isMobile ? '12px 14px' : '14px 16px',
-                    borderRadius: 10,
-                    background: 'rgba(255,255,255,0.03)',
-                    border: '1px solid rgba(255,255,255,0.07)',
-                    transition: 'all 0.18s ease',
-                    textDecoration: 'none',
-                  }}
-                  className="link-card"
-                >
-                  <span style={{ width: 18, height: 3, borderRadius: 2, background: link.color, display: 'block', marginBottom: 4 }} />
-                  <span style={{ fontSize: isMobile ? 13 : 14, fontWeight: 700, color: 'rgba(255,255,255,0.82)', lineHeight: 1.2 }}>{link.label}</span>
-                  <span style={{ fontSize: 11, color: 'rgba(255,255,255,0.50)', fontWeight: 400 }}>{link.sub}</span>
-                </Link>
-              ))}
-            </div>
-          </>
-        )}
-
-        {/* Decoration — desktop only */}
+      <div
+        className="error-page__content"
+        style={{
+          padding: isMobile ? `100px ${px} 64px` : `120px ${px} 80px`,
+          maxWidth: isMobile ? 'none' : 1280,
+        }}
+      >
+        <ErrorHeader type={type} isMobile={isMobile} />
+        <ErrorCTAs type={type} isMobile={isMobile} reset={reset} />
+        {is404 && <ErrorQuickLinks isMobile={isMobile} />}
         {!isMobile && (
-          <div style={{
-            position: 'absolute', bottom: 40, left: '50%', transform: 'translateX(-50%)',
-            display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 8,
-            color: 'rgba(255,255,255,0.30)', fontSize: 9, letterSpacing: '0.22em',
-            pointerEvents: 'none',
-          }}>
+          <div className="error-page__decoration">
             ISLAMONTANA
-            <div style={{ width: 1, height: 36, background: 'linear-gradient(to bottom, rgba(255,255,255,0.18), transparent)' }} />
+            <div className="error-page__decoration-line" />
           </div>
         )}
       </div>
-
-      {/* Hover styles */}
-      <style>{`
-        .link-card:hover { background: rgba(255,255,255,0.06) !important; transform: translateY(-1px); }
-        .btn-primary:hover { filter: brightness(1.08); transform: translateY(-1px); }
-        .btn-ghost:hover { background: rgba(255,255,255,0.1) !important; }
-      `}</style>
     </div>
   )
 }

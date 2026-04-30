@@ -1,119 +1,28 @@
 "use client"
 
-import { useState, useEffect, useRef, useCallback } from "react"
 import Link from "next/link"
 import Image from "next/image"
 import MegaMenu from "./MegaMenu"
+import MobileDrawer from "./MobileDrawer"
 import type { NavItem } from "@/lib/types"
 import { ROUTES } from "@/config/routes"
 import { ASSETS } from "@/config/assets"
+import { useScrollState } from "@/hooks/useScrollState"
+import { useTabletDetection } from "@/hooks/useTabletDetection"
+import { useMegaMenuController } from "@/hooks/useMegaMenuController"
+import { useBodyOverflowLock } from "@/hooks/useBodyOverflowLock"
+import { useMobileMenuState } from "@/hooks/useMobileMenuState"
 
 interface NavbarProps {
   navData: NavItem[]
 }
 
 export default function Navbar({ navData }: NavbarProps) {
-  const [scrolled, setScrolled] = useState(false)
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
-  const [activeMenu, setActiveMenu] = useState<string | null>(null)
-  const [mobileExpanded, setMobileExpanded] = useState<string | null>(null)
-  const [isTablet, setIsTablet] = useState(false)
-  const closeTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null)
-
-  const openMenu = useCallback((label: string) => {
-    if (closeTimerRef.current) {
-      clearTimeout(closeTimerRef.current)
-      closeTimerRef.current = null
-    }
-    setActiveMenu(label)
-  }, [])
-
-  const closeMenu = useCallback(() => {
-    closeTimerRef.current = setTimeout(() => {
-      setActiveMenu(null)
-      closeTimerRef.current = null
-    }, 150)
-  }, [])
-
-  const toggleTabletDropdown = useCallback((label: string) => {
-    setActiveMenu((prev) => (prev === label ? null : label))
-  }, [])
-
-  useEffect(() => {
-    // Usa el menú táctil (dropdown) si el dispositivo no tiene hover real
-    // (cubre tablets, iPads en portrait y landscape, y cualquier touch-only)
-    // independientemente del ancho de pantalla.
-    const mqTouch = window.matchMedia("(hover: none)")
-    const mqTabletWidth = window.matchMedia("(min-width: 768px) and (max-width: 1023px)")
-
-    const evaluate = () => setIsTablet(mqTouch.matches || mqTabletWidth.matches)
-    evaluate()
-
-    mqTouch.addEventListener("change", evaluate)
-    mqTabletWidth.addEventListener("change", evaluate)
-    return () => {
-      mqTouch.removeEventListener("change", evaluate)
-      mqTabletWidth.removeEventListener("change", evaluate)
-    }
-  }, [])
-
-  useEffect(() => {
-    const handleScroll = () => setScrolled(window.scrollY > 30)
-    window.addEventListener("scroll", handleScroll, { passive: true })
-    return () => window.removeEventListener("scroll", handleScroll)
-  }, [])
-
-  useEffect(() => {
-    const handleResize = () => {
-      if (window.innerWidth >= 768) {
-        setMobileMenuOpen(false)
-      }
-    }
-    window.addEventListener("resize", handleResize)
-    return () => window.removeEventListener("resize", handleResize)
-  }, [])
-
-  useEffect(() => {
-    if (mobileMenuOpen) {
-      document.body.style.overflow = "hidden"
-    } else {
-      document.body.style.overflow = ""
-    }
-    return () => {
-      document.body.style.overflow = ""
-    }
-  }, [mobileMenuOpen])
-
-  // Cerrar dropdown tablet al hacer click fuera
-  useEffect(() => {
-    if (!isTablet || activeMenu === null) return
-    const handleClickOutside = () => setActiveMenu(null)
-    document.addEventListener("click", handleClickOutside)
-    return () => document.removeEventListener("click", handleClickOutside)
-  }, [isTablet, activeMenu])
-
-  useEffect(() => {
-    return () => {
-      if (closeTimerRef.current) clearTimeout(closeTimerRef.current)
-    }
-  }, [])
-
-  const handleKeyDown = (e: React.KeyboardEvent, label: string) => {
-    if (e.key === "Enter" || e.key === " ") {
-      e.preventDefault()
-      setActiveMenu(activeMenu === label ? null : label)
-    }
-    if (e.key === "Escape") {
-      setActiveMenu(null)
-    }
-  }
-
-  const toggleMobileMenu = () => setMobileMenuOpen(!mobileMenuOpen)
-  const closeMobileMenu = () => setMobileMenuOpen(false)
-
-  const toggleMobileExpand = (label: string) => {
-    setMobileExpanded(mobileExpanded === label ? null : label)
-  }
+  const scrolled = useScrollState()
+  const isTablet = useTabletDetection()
+  const { activeMenu, openMenu, closeMenu, toggleTabletDropdown, handleKeyDown } = useMegaMenuController(isTablet)
+  const { mobileOpen, mobileExpanded, toggleMobile, closeMobile, toggleMobileExpand } = useMobileMenuState()
+  useBodyOverflowLock(mobileOpen)
 
   const isMenuOpen = activeMenu !== null
 
@@ -146,7 +55,6 @@ export default function Navbar({ navData }: NavbarProps) {
               onMouseEnter={() => !isTablet && link.subItems.length > 0 ? openMenu(link.label) : undefined}
               onMouseLeave={() => !isTablet ? closeMenu() : undefined}
             >
-              {/* Tablet: botón que despliega dropdown; Desktop: link con hover megamenu */}
               {isTablet && link.subItems.length > 0 ? (
                 <button
                   className="navbar__link navbar__link--has-sub"
@@ -190,7 +98,7 @@ export default function Navbar({ navData }: NavbarProps) {
                       key={sub.href}
                       href={sub.href}
                       className="navbar__tablet-dropdown-item"
-                      onClick={() => setActiveMenu(null)}
+                      onClick={() => toggleTabletDropdown(link.label)}
                     >
                       {sub.label}
                     </Link>
@@ -204,6 +112,7 @@ export default function Navbar({ navData }: NavbarProps) {
                   items={link.subItems}
                   isOpen={activeMenu === link.label}
                   parentLabel={link.label}
+                  isTablet={isTablet}
                   onMouseEnter={() => openMenu(link.label)}
                   onMouseLeave={closeMenu}
                 />
@@ -217,10 +126,10 @@ export default function Navbar({ navData }: NavbarProps) {
 
         {/* Hamburger */}
         <button
-          className={["navbar__hamburger", mobileMenuOpen ? "navbar__hamburger--open" : ""].join(" ")}
-          onClick={toggleMobileMenu}
-          aria-label={mobileMenuOpen ? "Cerrar menú" : "Abrir menú"}
-          aria-expanded={mobileMenuOpen}
+          className={["navbar__hamburger", mobileOpen ? "navbar__hamburger--open" : ""].join(" ")}
+          onClick={toggleMobile}
+          aria-label={mobileOpen ? "Cerrar menú" : "Abrir menú"}
+          aria-expanded={mobileOpen}
         >
           <span className="navbar__hamburger-line"></span>
           <span className="navbar__hamburger-line"></span>
@@ -228,69 +137,13 @@ export default function Navbar({ navData }: NavbarProps) {
         </button>
       </div>
 
-      {/* Mobile Drawer */}
-      <div
-        className={["navbar__drawer", mobileMenuOpen ? "navbar__drawer--open" : ""].join(" ")}
-        onClick={closeMobileMenu}
-      >
-        <div className="navbar__drawer-content" onClick={(e) => e.stopPropagation()}>
-          <div className="navbar__drawer-links">
-            {navData.map((link) => (
-              <div key={link.label}>
-                {link.subItems.length > 0 ? (
-                  <>
-                    <button
-                      className="navbar__drawer-link w-full text-left flex items-center justify-between"
-                      onClick={() => toggleMobileExpand(link.label)}
-                      aria-expanded={mobileExpanded === link.label}
-                    >
-                      <span>{link.label}</span>
-                      <span
-                        className="transition-transform duration-200"
-                        style={{
-                          display: "inline-block",
-                          transform: mobileExpanded === link.label ? "rotate(180deg)" : "rotate(0deg)",
-                        }}
-                      >
-                        ▾
-                      </span>
-                    </button>
-                    {mobileExpanded === link.label && (
-                      <div className="pl-4 pb-2">
-                        {link.subItems.map((sub) => (
-                          <Link
-                            key={sub.href}
-                            href={sub.href}
-                            className="navbar__drawer-link block text-sm py-2"
-                            onClick={closeMobileMenu}
-                          >
-                            {sub.label}
-                          </Link>
-                        ))}
-                      </div>
-                    )}
-                  </>
-                ) : (
-                  <Link
-                    href={link.href}
-                    className="navbar__drawer-link"
-                    onClick={closeMobileMenu}
-                  >
-                    {link.label}
-                  </Link>
-                )}
-              </div>
-            ))}
-            <Link
-              href={ROUTES.CONTACT}
-              className="navbar__drawer-cta"
-              onClick={closeMobileMenu}
-            >
-              Reservar
-            </Link>
-          </div>
-        </div>
-      </div>
+      <MobileDrawer
+        navData={navData}
+        mobileOpen={mobileOpen}
+        mobileExpanded={mobileExpanded}
+        closeMobile={closeMobile}
+        toggleMobileExpand={toggleMobileExpand}
+      />
     </nav>
   )
 }
