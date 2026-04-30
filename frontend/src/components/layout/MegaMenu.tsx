@@ -1,6 +1,6 @@
 "use client"
 
-import { useState, useEffect } from "react"
+import { useState } from "react"
 import Link from "next/link"
 import type { SubItem } from "@/lib/types"
 import MegaMenuImage from "@/components/ui/MegaMenuImage"
@@ -24,6 +24,7 @@ interface MegaMenuProps {
   items: SubItem[]
   isOpen: boolean
   parentLabel: string
+  isTablet: boolean
   onMouseEnter: () => void
   onMouseLeave: () => void
 }
@@ -100,19 +101,10 @@ export default function MegaMenu({
   items,
   isOpen,
   parentLabel,
+  isTablet,
   onMouseEnter,
   onMouseLeave,
 }: MegaMenuProps) {
-  const [isTablet, setIsTablet] = useState(false)
-
-  useEffect(() => {
-    const mq = window.matchMedia('(min-width: 768px) and (max-width: 1023px)')
-    setIsTablet(mq.matches)
-    const handler = (e: MediaQueryListEvent) => setIsTablet(e.matches)
-    mq.addEventListener('change', handler)
-    return () => mq.removeEventListener('change', handler)
-  }, [])
-
   if (items.length === 0) return null
 
   return (

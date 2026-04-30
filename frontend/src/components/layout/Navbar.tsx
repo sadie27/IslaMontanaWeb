@@ -111,6 +111,7 @@ export default function Navbar({ navData }: NavbarProps) {
                   items={link.subItems}
                   isOpen={activeMenu === link.label}
                   parentLabel={link.label}
+                  isTablet={isTablet}
                   onMouseEnter={() => openMenu(link.label)}
                   onMouseLeave={closeMenu}
                 />
