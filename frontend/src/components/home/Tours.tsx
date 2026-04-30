@@ -1,5 +1,6 @@
 /* ─── Tours.tsx — Server Component ─────────────────────────── */
 
+import Link from 'next/link'
 import TourCard from './TourCard'
 import { ROUTES } from '@/config/routes'
 import { HOME_TOURS } from '@/data/home-tours'
@@ -15,9 +16,9 @@ export default function Tours() {
             <h2 className="tours__title">Los más elegidos por nuestros viajeros.</h2>
           </div>
           {/* Ver todos — desktop: arriba derecha */}
-          <a href={ROUTES.TOURS} className="tours__view-all tours__view-all--desktop">
+          <Link href={ROUTES.TOURS} className="tours__view-all tours__view-all--desktop">
             Ver todos los tours →
-          </a>
+          </Link>
         </div>
 
         {/* ── Grid ── */}
@@ -31,9 +32,9 @@ export default function Tours() {
 
         {/* Ver todos — mobile: al final */}
         <div className="tours__view-all-wrap">
-          <a href={ROUTES.TOURS} className="tours__view-all tours__view-all--mobile">
+          <Link href={ROUTES.TOURS} className="tours__view-all tours__view-all--mobile">
             Ver todos los tours →
-          </a>
+          </Link>
         </div>
       </div>
     </section>

@@ -1,6 +1,7 @@
 'use client'
 
 import Image from "next/image"
+import Link from "next/link"
 import { useHeroImages } from "@/hooks/useHeroImages"
 import { ROUTES } from "@/config/routes"
 
@@ -58,8 +59,8 @@ export default function HomeHero() {
         </p>
 
         <div className="hero__ctas">
-          <a href={ROUTES.DESTINATIONS} className="btn btn--primary">Ver destinos →</a>
-          <a href={ROUTES.TOURS} className="btn btn--ghost">Nuestros tours</a>
+          <Link href={ROUTES.DESTINATIONS} className="btn btn--primary">Ver destinos →</Link>
+          <Link href={ROUTES.TOURS} className="btn btn--ghost">Nuestros tours</Link>
         </div>
       </div>
 

@@ -1,5 +1,6 @@
 /* ─── FinalCta.tsx — Server Component ──────────────────────── */
 
+import Link from 'next/link'
 import { ROUTES } from '@/config/routes'
 
 export default function FinalCta() {
@@ -23,12 +24,12 @@ export default function FinalCta() {
         </p>
 
         <div className="final-cta__ctas">
-          <a href={ROUTES.CONTACT} className="btn btn--primary">
+          <Link href={ROUTES.CONTACT} className="btn btn--primary">
             Planifica tu viaje →
-          </a>
-          <a href={ROUTES.DESTINATIONS} className="btn btn--ghost">
+          </Link>
+          <Link href={ROUTES.DESTINATIONS} className="btn btn--ghost">
             Explorar destinos
-          </a>
+          </Link>
         </div>
       </div>
     </section>
