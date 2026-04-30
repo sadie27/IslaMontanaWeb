@@ -1,16 +1,16 @@
-interface QuickLink {
-  label: string
-  sub: string
-  href: string
-  color: string
-}
+const LINKS = [
+  { label: 'Islas Galápagos', sub: 'Fauna & Snorkel',      href: '/destinations/galapagos',        color: '#1a7a8a' },
+  { label: 'Amazonía',        sub: 'Selva & Biodiversidad', href: '/destinations/amazonia',         color: '#2d6a1e' },
+  { label: 'Andes Cultural',  sub: 'Pueblos & Tradición',   href: '/destinations/andes-cultura',    color: '#8B4513' },
+  { label: 'Andes & Volcanes',sub: 'Trekking & Cumbres',    href: '/destinations/andes-naturaleza', color: '#4a6fa5' },
+]
 
 interface ErrorQuickLinksProps {
-  links: QuickLink[]
   isMobile: boolean
 }
 
-export default function ErrorQuickLinks({ links, isMobile }: ErrorQuickLinksProps) {
+export default function ErrorQuickLinks({ isMobile }: ErrorQuickLinksProps) {
+  const links = LINKS
   return (
     <>
       <div className="fade-up fade-up-5">

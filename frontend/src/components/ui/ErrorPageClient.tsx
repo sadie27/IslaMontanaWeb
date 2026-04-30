@@ -7,12 +7,6 @@ import ErrorHeader from './ErrorHeader'
 import ErrorCTAs from './ErrorCTAs'
 import ErrorQuickLinks from './ErrorQuickLinks'
 
-const QUICK_LINKS = [
-  { label: 'Islas Galápagos', sub: 'Fauna & Snorkel',      href: '/destinations/galapagos',       color: '#1a7a8a' },
-  { label: 'Amazonía',        sub: 'Selva & Biodiversidad', href: '/destinations/amazonia',        color: '#2d6a1e' },
-  { label: 'Andes Cultural',  sub: 'Pueblos & Tradición',   href: '/destinations/andes-cultura',   color: '#8B4513' },
-  { label: 'Andes & Volcanes',sub: 'Trekking & Cumbres',    href: '/destinations/andes-naturaleza', color: '#4a6fa5' },
-]
 
 function BgIllustration() {
   return (
@@ -77,7 +71,7 @@ export default function ErrorPageClient({ type, reset }: Props) {
       >
         <ErrorHeader type={type} isMobile={isMobile} />
         <ErrorCTAs type={type} isMobile={isMobile} reset={reset} />
-        {is404 && <ErrorQuickLinks links={QUICK_LINKS} isMobile={isMobile} />}
+        {is404 && <ErrorQuickLinks isMobile={isMobile} />}
         {!isMobile && (
           <div className="error-page__decoration">
             ISLAMONTANA
