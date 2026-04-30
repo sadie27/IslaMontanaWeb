@@ -1,12 +1,7 @@
 import Link from 'next/link'
 import type { TourItem } from '@/lib/types'
 import { ROUTES } from '@/config/routes'
-
-const DIFF_COLORS = {
-  'Fácil':    '#22c55e',
-  'Moderado': '#eab308',
-  'Exigente': '#ef4444',
-} as const
+import { DIFF_COLORS } from '@/config/colors'
 
 interface Props {
   tour: TourItem

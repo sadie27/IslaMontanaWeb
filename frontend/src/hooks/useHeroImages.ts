@@ -39,7 +39,7 @@ export function useHeroImages(): UseHeroImagesReturn {
   }, [checkIfMobile])
 
   // Seleccionar el set de imágenes correcto según mobile/desktop
-  const images = isMobile ? heroImages.movile : heroImages.computer
+  const images = isMobile ? heroImages.mobile : heroImages.computer
 
   // Precargar TODAS las imágenes del set activo al montar
   useEffect(() => {

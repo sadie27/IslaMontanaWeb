@@ -36,14 +36,14 @@ export const ASSETS = {
       SACHA_LODGE: '/images/hero-main/computer/SachaLodge 29 Barizo Ag2019.webp',
       VIAJE_ECUADOR: '/images/hero-main/computer/Viaje Ecuador 22 Sacha Ag2024.webp',
       YUBARTA: '/images/hero-main/computer/Yubarta 8 Isla de La Plata Ag2019.webp',
-      LOBITOS: '/images/hero-main/Computer/lobitos.webp',
-      PIQUERO: '/images/hero-main/Computer/piquero.webp',
-      PAISAJE: '/images/hero-main/Computer/paisaje.webp',
+      LOBITOS: '/images/hero-main/computer/lobitos.webp',
+      PIQUERO: '/images/hero-main/computer/piquero.webp',
+      PAISAJE: '/images/hero-main/computer/paisaje.webp',
     },
-    MOVILE: {
-      PAPALLACTA_ANTISANA: '/images/hero-main/movile/Papallacta Antisana Nov2016.webp',
-      LOBITO: '/images/hero-main/movile/lobito.webp',
-      PIQUEROS: '/images/hero-main/movile/piqueros.webp',
+    MOBILE: {
+      PAPALLACTA_ANTISANA: '/images/hero-main/mobile/Papallacta Antisana Nov2016.webp',
+      LOBITO: '/images/hero-main/mobile/lobito.webp',
+      PIQUEROS: '/images/hero-main/mobile/piqueros.webp',
     },
   },
   SVG: {
