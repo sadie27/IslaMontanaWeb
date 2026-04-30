@@ -15,6 +15,7 @@
 @import './navbar.css';
 @import './footer.css';
 @import './home.css';
+@import './error-page.css';
 
 /* ── Breakpoints específicos por dispositivo ── */
 @import './breakpoints/mobile.css';

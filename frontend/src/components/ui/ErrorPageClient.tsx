@@ -49,17 +49,10 @@ export default function ErrorPageClient({ type, reset }: Props) {
   const is404 = type === '404'
 
   return (
-    <div style={{
-      fontFamily: "'Outfit', system-ui, sans-serif",
-      position: 'fixed',
-      inset: 0,
-      zIndex: 9999,
-      background: '#0d200c',
-      overflow: 'hidden',
-    }}>
+    <div className="error-page">
 
       {/* BG image */}
-      <div style={{ position: 'absolute', inset: 0 }}>
+      <div className="error-page__bg-image">
         <Image
           src={ASSETS.MEGA_MENU.GALAPAGOS}
           alt=""
@@ -71,60 +64,40 @@ export default function ErrorPageClient({ type, reset }: Props) {
       </div>
 
       {/* Dark overlay */}
-      <div style={{
-        position: 'absolute', inset: 0,
-        background: 'linear-gradient(to bottom, rgba(13,32,12,0.6) 0%, rgba(13,32,12,0.92) 60%, #0d200c 100%)',
-      }} />
+      <div className="error-page__overlay" />
 
       {/* BG map illustration */}
-      <div style={{
-        position: 'absolute',
-        right: isMobile ? '-20%' : '-4%',
-        top: '50%',
-        transform: 'translateY(-50%)',
-        width: isMobile ? '70%' : '42%',
-        maxWidth: 520,
-        pointerEvents: 'none',
-      }}>
+      <div
+        className="error-page__illustration"
+        style={{
+          right: isMobile ? '-20%' : '-4%',
+          width: isMobile ? '70%' : '42%',
+        }}
+      >
         <BgIllustration />
       </div>
 
       {/* Content */}
-      <div style={{
-        position: 'relative', zIndex: 2,
-        height: '100%',
-        display: 'flex', flexDirection: 'column', justifyContent: 'center',
-        padding: isMobile ? `100px ${px} 64px` : `120px ${px} 80px`,
-        maxWidth: isMobile ? 'none' : 1280,
-        margin: '0 auto',
-      }}>
+      <div
+        className="error-page__content"
+        style={{
+          padding: isMobile ? `100px ${px} 64px` : `120px ${px} 80px`,
+          maxWidth: isMobile ? 'none' : 1280,
+        }}
+      >
 
         {/* Error badge */}
-        <div className="fade-up fade-up-1" style={{ display: 'inline-flex', alignItems: 'center', gap: 8, marginBottom: 28 }}>
-          <span style={{
-            background: 'rgba(171,212,48,0.1)',
-            border: '1px solid rgba(171,212,48,0.25)',
-            borderRadius: 100,
-            padding: '5px 16px',
-            fontSize: 11, fontWeight: 700, letterSpacing: '0.14em', color: '#abd430',
-            display: 'inline-flex', alignItems: 'center', gap: 7,
-          }}>
-            <span style={{ width: 5, height: 5, borderRadius: '50%', background: '#abd430', display: 'inline-block' }} />
+        <div className="error-page__badge fade-up fade-up-1">
+          <span className="error-page__badge-pill">
+            <span className="error-page__badge-dot" />
             ERROR {type}
           </span>
         </div>
 
         {/* Headline */}
         <h1
-          className="fade-up fade-up-2"
-          style={{
-            fontSize: isMobile ? 'clamp(44px, 12vw, 68px)' : 'clamp(64px, 6vw, 96px)',
-            fontWeight: 900,
-            color: 'white',
-            lineHeight: 0.9,
-            letterSpacing: '-0.035em',
-            marginBottom: 22,
-          }}
+          className="error-page__headline fade-up fade-up-2"
+          style={{ fontSize: isMobile ? 'clamp(44px, 12vw, 68px)' : 'clamp(64px, 6vw, 96px)' }}
         >
           {is404
             ? <><span>Esta ruta</span><br /><span style={{ color: '#abd430' }}>no existe.</span></>
@@ -134,13 +107,9 @@ export default function ErrorPageClient({ type, reset }: Props) {
 
         {/* Subtitle */}
         <p
-          className="fade-up fade-up-3"
+          className="error-page__subtitle fade-up fade-up-3"
           style={{
             fontSize: isMobile ? 15 : 18,
-            fontWeight: 300,
-            color: 'rgba(255,255,255,0.68)',
-            lineHeight: 1.7,
-            maxWidth: '42ch',
             marginBottom: isMobile ? 36 : 48,
           }}
         >
@@ -151,8 +120,8 @@ export default function ErrorPageClient({ type, reset }: Props) {
 
         {/* CTAs */}
         <div
-          className="fade-up fade-up-4"
-          style={{ display: 'flex', gap: 10, flexWrap: 'wrap', marginBottom: isMobile ? 48 : 64 }}
+          className="error-page__ctas fade-up fade-up-4"
+          style={{ marginBottom: isMobile ? 48 : 64 }}
         >
           <Link
             href={ROUTES.HOME}
@@ -208,18 +177,12 @@ export default function ErrorPageClient({ type, reset }: Props) {
         {/* Quick links — solo en 404 */}
         {is404 && (
           <>
-            <div className="fade-up fade-up-5" style={{ marginBottom: 16 }}>
-              <span style={{
-                fontSize: 10, letterSpacing: '0.18em', textTransform: 'uppercase',
-                color: 'rgba(255,255,255,0.38)', fontWeight: 600,
-              }}>
-                Quizás buscabas
-              </span>
+            <div className="fade-up fade-up-5">
+              <p className="error-page__quick-label">Quizás buscabas</p>
             </div>
             <div
-              className="fade-up fade-up-5"
+              className="error-page__quick-grid fade-up fade-up-5"
               style={{
-                display: 'grid',
                 gridTemplateColumns: isMobile ? '1fr 1fr' : 'repeat(4, 1fr)',
                 gap: isMobile ? 8 : 10,
                 maxWidth: isMobile ? '100%' : 680,
@@ -229,20 +192,17 @@ export default function ErrorPageClient({ type, reset }: Props) {
                 <Link
                   key={link.href}
                   href={link.href}
-                  style={{
-                    display: 'flex', flexDirection: 'column', gap: 3,
-                    padding: isMobile ? '12px 14px' : '14px 16px',
-                    borderRadius: 10,
-                    background: 'rgba(255,255,255,0.03)',
-                    border: '1px solid rgba(255,255,255,0.07)',
-                    transition: 'all 0.18s ease',
-                    textDecoration: 'none',
-                  }}
-                  className="link-card"
+                  style={{ padding: isMobile ? '12px 14px' : '14px 16px' }}
+                  className="error-page__link-card"
                 >
-                  <span style={{ width: 18, height: 3, borderRadius: 2, background: link.color, display: 'block', marginBottom: 4 }} />
-                  <span style={{ fontSize: isMobile ? 13 : 14, fontWeight: 700, color: 'rgba(255,255,255,0.82)', lineHeight: 1.2 }}>{link.label}</span>
-                  <span style={{ fontSize: 11, color: 'rgba(255,255,255,0.50)', fontWeight: 400 }}>{link.sub}</span>
+                  <span className="error-page__link-card-bar" style={{ background: link.color }} />
+                  <span
+                    className="error-page__link-card-label"
+                    style={{ fontSize: isMobile ? 13 : 14 }}
+                  >
+                    {link.label}
+                  </span>
+                  <span className="error-page__link-card-sub">{link.sub}</span>
                 </Link>
               ))}
             </div>
@@ -251,24 +211,12 @@ export default function ErrorPageClient({ type, reset }: Props) {
 
         {/* Decoration — desktop only */}
         {!isMobile && (
-          <div style={{
-            position: 'absolute', bottom: 40, left: '50%', transform: 'translateX(-50%)',
-            display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 8,
-            color: 'rgba(255,255,255,0.30)', fontSize: 9, letterSpacing: '0.22em',
-            pointerEvents: 'none',
-          }}>
+          <div className="error-page__decoration">
             ISLAMONTANA
-            <div style={{ width: 1, height: 36, background: 'linear-gradient(to bottom, rgba(255,255,255,0.18), transparent)' }} />
+            <div className="error-page__decoration-line" />
           </div>
         )}
       </div>
-
-      {/* Hover styles */}
-      <style>{`
-        .link-card:hover { background: rgba(255,255,255,0.06) !important; transform: translateY(-1px); }
-        .btn-primary:hover { filter: brightness(1.08); transform: translateY(-1px); }
-        .btn-ghost:hover { background: rgba(255,255,255,0.1) !important; }
-      `}</style>
     </div>
   )
 }
