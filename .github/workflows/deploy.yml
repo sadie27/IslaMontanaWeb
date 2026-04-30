@@ -34,6 +34,14 @@ jobs:
         working-directory: frontend
         run: npm run generate:hero
 
+      - name: Lint
+        working-directory: frontend
+        run: npm run lint
+
+      - name: Type check
+        working-directory: frontend
+        run: npx tsc --noEmit
+
       - name: Build
         working-directory: frontend
         run: npm run build
