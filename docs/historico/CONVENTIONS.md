@@ -1,3 +1,8 @@
+> ⚠️ **Documento histórico (abril 2026).** La fuente activa es `docs/`. El
+> contenido de este fichero ha sido migrado a `docs/ConventionsCode-Frontend.md`
+> y `docs/ConventionsStyle-Frontend.md`. Este fichero se conserva como referencia
+> del estado anterior.
+
 # Convenciones del proyecto
 
 > Repositorio: IslaMontana Travel — Frontend  

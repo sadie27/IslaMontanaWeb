@@ -1,3 +1,8 @@
+> ⚠️ **Documento histórico (abril 2026).** La fuente activa es `docs/`. Las
+> decisiones bloqueantes (DB-1..DB-8) están recogidas en
+> `docs/DecisionesPendientes.md` con su estado actual. Este fichero se conserva
+> como referencia del plan original.
+
 # Plan de optimización del frontend
 
 > Repositorio: IslaMontana Travel — Frontend  

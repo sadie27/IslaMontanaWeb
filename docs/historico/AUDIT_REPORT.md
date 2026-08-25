@@ -1,3 +1,7 @@
+> ⚠️ **Documento histórico (abril 2026).** La fuente activa es `docs/`. Este
+> fichero se conserva como referencia del estado inicial; no refleja el estado
+> actual del repositorio.
+
 # Audit Report
 > Repositorio: IslaMontana Travel — Frontend  
 > Fecha de auditoría: 2026-04-29  

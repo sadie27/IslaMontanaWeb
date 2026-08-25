@@ -1,3 +1,8 @@
+> ⚠️ **Documento histórico (abril 2026).** La fuente activa es `docs/`. El
+> contenido de este fichero ha sido migrado a `docs/Frontend.md` y
+> `docs/ConventionsCode-Frontend.md`. Este fichero se conserva como referencia
+> del estado anterior.
+
 # Frontend Architecture — IslaMontana Travel
 
 ## Regla arquitectónica
