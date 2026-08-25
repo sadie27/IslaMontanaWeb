@@ -46,22 +46,12 @@ const fallbackNavData: NavItem[] = [
   {
     label: "Experiencias",
     href: ROUTES.EXPERIENCES,
-    subItems: [
-      { label: "Cruceros",     description: "Navega las Galápagos",    href: ROUTES.EXPERIENCE('cruceros'),     image: ASSETS.MEGA_MENU.GALAPAGOS },
-      { label: "Circuitos",   description: "Rutas a tu medida",        href: ROUTES.EXPERIENCE('circuitos'),    image: ASSETS.MEGA_MENU.ANDES_NATURALEZA },
-      { label: "Day Tours",   description: "Escápate un día",          href: ROUTES.EXPERIENCE('day-tours'),    image: ASSETS.MEGA_MENU.COSTA },
-      { label: "Birdwatching", description: "Aves únicas del Ecuador", href: ROUTES.EXPERIENCE('birdwatching'), image: ASSETS.MEGA_MENU.AMAZONIA },
-    ],
+    subItems: [],
   },
   {
     label: "Galería",
     href: ROUTES.GALLERY,
-    subItems: [
-      { label: "Fauna & Wildlife", description: "Vida silvestre única",    href: ROUTES.GALLERY_CATEGORY('fauna-wildlife'), image: ASSETS.MEGA_MENU.GALAPAGOS },
-      { label: "Paisajes",         description: "Volcanes, selva, océano", href: ROUTES.GALLERY_CATEGORY('paisajes'),        image: ASSETS.MEGA_MENU.ANDES_NATURALEZA },
-      { label: "Cultura",          description: "Haciendas, mercados, gente", href: ROUTES.GALLERY_CATEGORY('cultura'),     image: ASSETS.MEGA_MENU.COSTA },
-      { label: "Aventura",         description: "Buceo, trekking, birdwatching", href: ROUTES.GALLERY_CATEGORY('aventura'), image: ASSETS.MEGA_MENU.AMAZONIA },
-    ],
+    subItems: [],
   },
   {
     label: "Nosotros",

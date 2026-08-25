@@ -1,25 +1,11 @@
-﻿# Graphify Pending Update
+﻿# Graphify - actualizacion pendiente
 
-Last session (2026-04-24 23:58) modified:
-frontend/public/images/mega-menu/andes-naturaleza .webp
+Ultima sesion (2026-08-25 20:02) modifico 2 fichero(s):
+
 frontend/src/app/layout.tsx
-frontend/src/app/page.tsx
-frontend/src/components/destinations/DestinationMapAnimation.tsx
-frontend/src/components/destinations/DestinationMapAnimationMobile.tsx
-frontend/src/components/destinations/FinalCta.tsx
-frontend/src/components/destinations/GalleryCta.tsx
-frontend/src/components/destinations/TourCard.tsx
-frontend/src/components/home/DestCard.tsx
-frontend/src/components/home/Destinations.tsx
-frontend/src/components/home/FinalCta.tsx
-frontend/src/components/home/Gallery.tsx
-frontend/src/components/home/TourCard.tsx
-frontend/src/components/home/Tours.tsx
-frontend/src/components/home/WhyUs.tsx
-frontend/src/components/layout/Footer.tsx
-frontend/src/components/layout/MegaMenu.tsx
-frontend/src/components/layout/Navbar.tsx
-frontend/src/components/ui/ErrorPageClient.tsx
-frontend/src/data/destinations.ts
+graphify-out/PENDING_UPDATE.md
 
-> Re-run /graphify to update the knowledge graph.
+> Preferente: parchea la capa EXTRACTED del grafo de forma incremental
+> invocando la skill graphify (se documenta a si misma; ver tambien la nota
+> en docs/CONTEXT.md #6). Alternativa: ejecuta /graphify para una
+> reconstruccion completa (recalcula tambien la capa semantica).
