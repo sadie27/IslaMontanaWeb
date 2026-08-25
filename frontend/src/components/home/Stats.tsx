@@ -14,10 +14,10 @@ interface StatItem {
 }
 
 const STATS: StatItem[] = [
-  { value: 10,   suffix: '+', label: 'Años de experiencia' },
+  { value: 30, suffix: '+', label: 'Años de experiencia' },
   { value: 3800, suffix: '+', label: 'Viajeros satisfechos' },
-  { value: 4,    suffix: '',  label: 'Regiones únicas' },
-  { value: 98,   suffix: '%', label: 'Tasa de satisfacción' },
+  { value: 4, suffix: '', label: 'Regiones únicas' },
+  { value: 98, suffix: '%', label: 'Tasa de satisfacción' },
 ]
 
 function useCountUp(target: number, trigger: boolean): number {
