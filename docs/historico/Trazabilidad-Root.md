@@ -1,3 +1,8 @@
+> ⚠️ **Documento histórico (junio 2026).** El contenido de este fichero ha sido
+> migrado a `CHANGELOG.md` en la raíz del repo, donde el registro pasa a ser
+> **opcional/recomendado** en lugar de obligatorio por prompt. Este fichero se
+> conserva como referencia del estado anterior.
+
 # Trazabilidad-Root — Log de cambios transversales
 
 > Log de cambios **transversales**: infra, configuración global, dependencias

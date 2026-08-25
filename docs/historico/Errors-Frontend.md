@@ -1,3 +1,8 @@
+> ⚠️ **Documento histórico (junio 2026).** La fuente activa es `docs/`. El
+> contenido de este fichero ha sido migrado a la sección "Manejo de errores
+> (Frontend)" de `docs/DecisionesPendientes.md`. Este fichero se conserva como
+> referencia del estado anterior.
+
 # Errors-Frontend.md — Manejo de errores (Frontend)
 
 > El caso transversal "cuando algo va mal" en el cliente: error boundaries,

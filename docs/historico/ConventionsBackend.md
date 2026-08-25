@@ -1,3 +1,8 @@
+> ⚠️ **Documento histórico (junio 2026).** La fuente activa es `docs/`. El
+> contenido de este fichero ha sido migrado a la sección "Convenciones
+> previstas" de `docs/Backend.md`. Este fichero se conserva como referencia
+> del estado anterior.
+
 # ConventionsBackend.md — Convenciones de código (Backend)
 
 > Cómo se **escribe** el backend: capas, naming, DTOs/validación, acceso a

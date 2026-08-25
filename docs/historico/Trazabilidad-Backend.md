@@ -1,3 +1,9 @@
+> ⚠️ **Documento histórico (junio 2026).** La fuente activa es `docs/`. Este log
+> estaba vacío (solo plantilla, cero entradas reales) — `git log` cubre lo
+> mismo sin mantenimiento manual. La obligación de registrar trazabilidad por
+> prompt se ha eliminado de `docs/CONTEXT.md`. Este fichero se conserva como
+> referencia del estado anterior.
+
 # Trazabilidad-Backend — Log de cambios de Backend
 
 > Log de cambios que afectan **solo al backend** (`backend/`). Los cambios

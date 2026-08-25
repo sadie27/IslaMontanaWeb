@@ -1,3 +1,8 @@
+> ⚠️ **Documento histórico (junio 2026).** La fuente activa es `docs/`. El
+> contenido de este fichero ha sido migrado a la sección "Manejo de errores
+> previsto" de `docs/Backend.md`. Este fichero se conserva como referencia
+> del estado anterior.
+
 # Errors-Backend.md — Manejo de errores (Backend)
 
 > El caso transversal "cuando algo va mal" en el servidor: excepciones de

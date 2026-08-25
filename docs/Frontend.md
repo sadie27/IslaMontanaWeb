@@ -37,7 +37,8 @@ src/
 - **Estilos: Tailwind, CSS modular, design tokens, tipografía, responsive**
   → lee `docs/ConventionsStyle-Frontend.md`.
 - **Manejo de errores: error boundaries, errores de API, validación de
-  formularios, notificaciones al usuario** → lee `docs/Errors-Frontend.md`.
+  formularios, notificaciones al usuario** → lee la sección "Manejo de errores
+  (Frontend)" en `docs/DecisionesPendientes.md`.
 
 ## Skills de frontend
 

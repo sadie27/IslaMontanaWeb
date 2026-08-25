@@ -1,3 +1,8 @@
+> ⚠️ **Documento histórico (junio 2026).** La fuente activa es `docs/`. El
+> contenido de este fichero se ha reducido a una referencia de una línea en
+> `docs/CONTEXT.md` — la herramienta `graphify` se documenta a sí misma. Este
+> fichero se conserva como referencia del estado anterior.
+
 # Grafo.md — Grafo de conocimiento del repositorio
 
 > El repo está mapeado con `graphify` en `graphify-out/graph.json`: un grafo de

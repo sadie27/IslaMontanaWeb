@@ -80,11 +80,15 @@ trabajar en ese dominio**, y desde ahí lee sus hijos cuando la tarea lo pida.
   léelo.
 - **No propagar deuda técnica conocida.** El repo tiene puntos detectados que
   están MAL y no deben replicarse ni darse por buenos (ver el bloque de
-  "Atención" en `Errors-Frontend.md` y `ConventionsStyle-Frontend.md`, y las
-  decisiones abiertas en `docs/DecisionesPendientes.md`). Si vas a tocar uno de
-  esos puntos, corrígelo, no lo imites.
+  "Atención" en `ConventionsStyle-Frontend.md` y en la sección "Manejo de
+  errores" de `docs/DecisionesPendientes.md`, y las decisiones abiertas en ese
+  mismo fichero). Si vas a tocar uno de esos puntos, corrígelo, no lo imites.
 - **Ante ambigüedad, pregunta.** Si una decisión no está cubierta por estos
   docs, no improvises una convención nueva en silencio: proponla.
+- **Grafo de conocimiento del repo.** El repo está mapeado con la skill
+  `graphify` (`graphify-out/graph.json`). Para preguntas de relación, impacto o
+  localización de código, invoca `/graphify` o consulta ese grafo directamente
+  — la herramienta se documenta a sí misma.
 
 ## 7. Enrutamiento
 
@@ -109,18 +113,13 @@ repo). Aún no hay ninguna creada; a medida que se añadan, `docs/Frontend.md` y
 > deberían vivir además en `.claude/skills/`. Mientras tanto, se invocan según
 > lo que indiquen los routers de dominio.
 
-## 9. Trazabilidad (OBLIGATORIO en cada prompt)
+## 9. Changelog (opcional, recomendado — no obligatorio)
 
-**Al final de CADA prompt en el que modifiques código**, añade una entrada en el
-fichero de trazabilidad del dominio que hayas tocado. Son logs **independientes**:
-
-- Cambios de **frontend** → `docs/Trazabilidad-Frontend.md`
-- Cambios de **backend** → `docs/Trazabilidad-Backend.md`
-- Cambios **transversales** (infra, config global, dependencias compartidas) →
-  `docs/Trazabilidad-Root.md`
-
-Si un prompt toca dos dominios, añade una entrada en cada log correspondiente.
-Si un prompt no modifica código (solo preguntas o lectura), no se registra nada.
+Para cambios transversales significativos (infra, config global, dependencias
+compartidas), es recomendable añadir una entrada en `CHANGELOG.md` (raíz del
+repo). No es obligatorio por prompt: `git log` ya es la fuente autoritativa del
+historial completo; el changelog es solo un resumen legible de lo que vale la
+pena destacar.
 
 **Formato de entrada** (una línea por cambio, la más reciente arriba del todo):
 
@@ -130,4 +129,3 @@ Si un prompt no modifica código (solo preguntas o lectura), no se registra nada
 
 `<tipo>` usa el mismo vocabulario que los commits: `feat`, `fix`, `refactor`,
 `chore`, `perf`, `ci`, `docs`. Si no hay ticket, pon `-`.
-La plantilla y un ejemplo están al principio de cada fichero de trazabilidad.

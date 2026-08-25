@@ -2,9 +2,10 @@
 
 > Cómo se **escribe** el código del frontend: naming, componentes, hooks,
 > estado, imports, fetching y tipos. Lo visual (CSS/Tailwind) está en
-> `ConventionsStyle-Frontend.md`. El manejo de fallos está en
-> `Errors-Frontend.md`. Estas reglas reflejan el patrón ya consolidado en el
-> repo: respétalas para mantener la coherencia.
+> `ConventionsStyle-Frontend.md`. El manejo de fallos está en la sección
+> "Manejo de errores (Frontend)" de `DecisionesPendientes.md`. Estas reglas
+> reflejan el patrón ya consolidado en el repo: respétalas para mantener la
+> coherencia.
 
 ---
 
@@ -56,8 +57,8 @@ sin proponerlo antes**: es una decisión de arquitectura, no de implementación.
 - `fetch` nativo, **centralizado en `src/lib/api.ts`**. No se usa axios ni React
   Query.
 - Las llamadas llevan `next: { revalidate: 3600 }`.
-- El manejo de errores de estas llamadas se rige por `Errors-Frontend.md`
-  (no lo dupliques aquí).
+- El manejo de errores de estas llamadas se rige por la sección "Manejo de
+  errores (Frontend)" de `DecisionesPendientes.md` (no lo dupliques aquí).
 
 ## Tipos y adaptadores (regla importante)
 

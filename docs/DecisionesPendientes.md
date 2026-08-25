@@ -68,18 +68,12 @@ No hay tests. Cada refactor va a producción sin red de seguridad.
 
 ### DB-5 · ¿Se renombra el directorio `movile/` → `mobile/` en `public/images/hero-main/`?
 
-**Estado:** ABIERTA
+**Estado:** CERRADA ✅
 
-El directorio de imágenes móviles se llama `movile/` (typo). Requiere mover el
-directorio y actualizar `scripts/generate-hero-manifest.mjs`,
-`src/config/hero-images.ts` (generado) y `src/hooks/useHeroImages.ts`.
-
-**Opciones:**
-- A) Renombrar ahora → operación coordinada + regenerar el manifiesto.
-- B) Dejar → deuda técnica documentada.
-
-**Condición para A:** confirmar que no hay enlace externo ni CDN apuntando al
-path `movile/`.
+Ya renombrado. Commit `98c1ba5` (2026-04-30) — "fix: rename hero-main/movile
+to mobile (typo)". El directorio real y todas las referencias
+(`scripts/generate-hero-manifest.mjs`, `src/config/hero-images.ts`,
+`src/hooks/useHeroImages.ts`) usan `mobile/`. No hay nada que decidir.
 
 ---
 
@@ -142,14 +136,6 @@ previene errores de runtime pero el menú aparece incompleto visualmente.
 
 ---
 
-### BUG-2 · Typo de directorio `movile/` → `mobile/`
-
-**Fichero:** `public/images/hero-main/movile/` (directorio), referencias en
-`src/hooks/useHeroImages.ts` y `src/config/hero-images.ts`.
-**Estado:** abierto (ver DB-5)
-
----
-
 ### BUG-3 · `mapRegion` siempre devuelve `'galapagos'` en el adaptador
 
 **Fichero:** `src/lib/adapters.ts:19` — `mapRegion: 'galapagos'` es un literal
@@ -166,14 +152,6 @@ tres valores.
 `src/components/destinations/TourCard.tsx`.
 **Estado:** bloqueado hasta resolución de DB-6 (requiere excepción de zona
 intocable).
-
----
-
-### BUG-5 · CI despliega sin lint ni type-check
-
-**Fichero:** `.github/workflows/deploy.yml`
-**Estado:** abierto. El pipeline no ejecuta `npm run lint` ni `npx tsc --noEmit`
-antes del build. Riesgo: código con errores de tipos o lint llega a GitHub Pages.
 
 ---
 
@@ -205,18 +183,60 @@ operativo habrá que extender el schema `DestinationResponse` y el adaptador.
 
 ---
 
-### DEUDA-1 · 7 archivos `.bak*` en el repositorio
+### DEUDA-2 · Páginas no implementadas
 
-**Ficheros:**
-- `src/app/destinations/page.tsx.bak`
-- `src/components/destinations/DestinationMapAnimation.tsx.bak` (y `.bak2`, `.bak3`, `.bak4`)
-- `src/data/ecuadorPaths.ts.bak` (y `.bak2`)
-**Estado:** abierto. Son zona intocable o adyacentes. Eliminarlos requiere
-confirmar que no afectan ningún script y añadir `*.bak` al `.gitignore`.
+**Rutas:** `/contact`, `/tours`, `/about`, `/gallery`, `/experiences` y subrutas
+(`cruceros`, `circuitos`, `day-tours`, `birdwatching`).
+**Estado:** abierto. Verificado en `AUDIT_REPORT.md` (raíz) — ninguna de estas
+rutas existe todavía en `frontend/src/app/`.
 
 ---
 
-### DEUDA-2 · Páginas no implementadas
+## Manejo de errores (Frontend)
 
-**Rutas:** `/contact`, `/tours`, `/about`, `/gallery`
-**Estado:** abierto (ver `frontend/ARCHITECTURE.md`, sección "Páginas pendientes").
+> Fusionado desde `Errors-Frontend.md` (archivado en `docs/historico/`). El caso
+> transversal "cuando algo va mal" en el cliente: error boundaries, errores de
+> API, validación de formularios y notificaciones al usuario.
+
+### Error boundaries (Next.js App Router)
+
+- `src/app/error.tsx` → boundary global para errores de runtime (500).
+- `src/app/not-found.tsx` → manejo de 404.
+- Ambos delegan en `ErrorPageClient` con la prop `type: '404' | '500'`.
+
+Mantén este patrón: los errores de página se canalizan por estos dos ficheros y
+el componente `ErrorPageClient`, no con boundaries ad-hoc dispersos.
+
+### Errores de API
+
+Estado actual (`lib/api.ts`): las llamadas hacen `try/catch` **silencioso** y
+retornan `[]` o `null` en caso de fallo; nunca lanzan. Los componentes reciben
+datos vacíos y muestran su fallback. No hay interceptores globales (no hay axios).
+
+> ⚠️ Atención (deuda técnica): el patrón silencioso oculta fallos reales (un
+> error de red se ve igual que "no hay datos"). No lo des por correcto. Regla a
+> seguir cuando trabajes esta zona:
+> - Distingue **"sin datos"** de **"error"**: no devuelvas `[]`/`null` para ambos.
+> - Cuando un fallo deba ser visible al usuario, usa el sistema de notificación
+>   (ver abajo) en lugar de tragarte el error.
+> - No introduzcas axios/React Query sin proponerlo: el estándar es `fetch` en
+>   `lib/api.ts`.
+
+### Validación de formularios
+
+Aún no hay formularios implementados (`src/app/contact/` no existe) y no hay
+librería de validación instalada. **Decisión pendiente**: cuando se implemente
+el formulario de contacto hay que elegir librería (p. ej. react-hook-form + Zod)
+y documentar aquí el patrón de mensajes de error. No improvises una validación
+manual sin proponer antes el enfoque.
+
+### Notificaciones al usuario (toasts)
+
+No hay sistema de toasts/notificaciones instalado. **Decisión pendiente**,
+probablemente ligada al formulario de contacto. Cuando se añada, documenta aquí
+su ubicación y cómo se disparan los mensajes de error.
+
+### Logging / monitorización
+
+No hay logging de cliente (sin Sentry ni similar). Si se añade observabilidad,
+documéntala aquí.
