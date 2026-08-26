@@ -50,11 +50,9 @@
 
 /* ── Filters ── */
 .gallery-filters {
-  position: sticky;
-  top: var(--nav-height);
+  position: relative;
   z-index: 90;
-  background: rgba(255, 255, 255, 0.97);
-  backdrop-filter: blur(12px);
+  background: var(--color-white);
   border-bottom: 1px solid var(--gallery-border);
   padding: 18px var(--px);
 }
@@ -62,9 +60,62 @@
 .gallery-filters__inner {
   max-width: var(--max-width);
   margin: 0 auto;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.gallery-filters__toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 18px;
+  border-radius: 100px;
+  font-size: 14px;
+  font-weight: 600;
+  border: 1px solid var(--gallery-border);
+  color: var(--color-dark);
+  background: var(--color-white);
+  transition: border-color 0.18s ease;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .gallery-filters__toggle:hover {
+    border-color: var(--gallery-border-hover);
+  }
+}
+
+.gallery-filters__toggle[aria-expanded="true"] {
+  border-color: var(--color-dark);
+}
+
+.gallery-filters__toggle-value {
+  color: var(--gallery-text-muted);
+  font-weight: 500;
+}
+
+.gallery-filters__count {
+  font-size: 13px;
+  color: var(--gallery-text-muted);
+  white-space: nowrap;
+}
+
+.gallery-filters__panel {
+  position: absolute;
+  top: calc(100% + 10px);
+  left: 0;
+  z-index: 91;
+  background: var(--color-white);
+  border-radius: 14px;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.14), 0 0 0 1px rgba(0, 0, 0, 0.05);
+  padding: 16px;
   display: flex;
   flex-direction: column;
   gap: 12px;
+  min-width: 280px;
+  max-width: calc(100vw - 2 * var(--px));
 }
 
 .gallery-filters__tabs {
@@ -74,15 +125,8 @@
 
 .gallery-filters__subs {
   display: flex;
+  flex-wrap: wrap;
   gap: 8px;
-  overflow-x: auto;
-  padding-bottom: 2px;
-  scrollbar-width: none;
-  -webkit-overflow-scrolling: touch;
-}
-
-.gallery-filters__subs::-webkit-scrollbar {
-  display: none;
 }
 
 .gallery-filters__btn {
@@ -119,18 +163,6 @@
   .gallery-filters__btn--active:hover {
     color: var(--color-white);
   }
-}
-
-.gallery-filters__count {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  padding: 0;
-  margin: -1px;
-  overflow: hidden;
-  clip: rect(0, 0, 0, 0);
-  white-space: nowrap;
-  border: 0;
 }
 
 /* ── Grid ── */

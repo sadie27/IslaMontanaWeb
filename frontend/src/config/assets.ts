@@ -36,6 +36,14 @@ export const ASSETS = {
     AMAZONIA_CANAL: '/images/amazonia/SachaLodge 14 Canal Ag2019.webp',
     AMAZONIA_VIAJE_15: '/images/amazonia/Viaje Ecuador 15 Sacha Ag2024 .webp',
     AMAZONIA_VIAJE_22: '/images/amazonia/Viaje Ecuador 22 Sacha Ag2024 .webp',
+    // Pendiente: subir fotos reales a estas carpetas (ver frontend/public/images/andes-cultura/.gitkeep
+    // y frontend/public/images/andes-naturaleza/.gitkeep). Nombres de archivo esperados abajo.
+    ANDES_CULTURA_01: '/images/andes-cultura/andes-cultura-01.webp',
+    ANDES_CULTURA_02: '/images/andes-cultura/andes-cultura-02.webp',
+    ANDES_CULTURA_03: '/images/andes-cultura/andes-cultura-03.webp',
+    ANDES_NATURALEZA_01: '/images/andes-naturaleza/andes-naturaleza-01.webp',
+    ANDES_NATURALEZA_02: '/images/andes-naturaleza/andes-naturaleza-02.webp',
+    ANDES_NATURALEZA_03: '/images/andes-naturaleza/andes-naturaleza-03.webp',
   },
   HERO: {
     COMPUTER: {

@@ -32,9 +32,9 @@ export const DESTINATIONS: Destination[] = [
     ],
     bestTime: 'Junio – Diciembre',
     photos: [
-      ASSETS.HERO.COMPUTER.LOBITOS,
-      ASSETS.HERO.COMPUTER.PIQUERO,
-      ASSETS.HERO.COMPUTER.PAISAJE,
+      ASSETS.GALLERY.GALAPAGOS_CASTILLOS,
+      ASSETS.GALLERY.GALAPAGOS_TORTUGA,
+      ASSETS.GALLERY.GALAPAGOS_SEA_LIONS,
     ],
     tours: {
       dia: [
@@ -160,9 +160,9 @@ export const DESTINATIONS: Destination[] = [
     ],
     bestTime: 'Agosto – Enero',
     photos: [
-      ASSETS.MEGA_MENU.AMAZONIA,
-      ASSETS.HERO.COMPUTER.PAISAJE,
-      ASSETS.HERO.COMPUTER.LOBITOS,
+      ASSETS.GALLERY.AMAZONIA_BUHO,
+      ASSETS.GALLERY.AMAZONIA_NUTRIA,
+      ASSETS.GALLERY.AMAZONIA_PASARELA,
     ],
     tours: {
       dia: [
@@ -253,10 +253,10 @@ export const DESTINATIONS: Destination[] = [
       },
     ],
     bestTime: 'Todo el año',
+    // TODO: fotos reales pendientes en public/images/andes-cultura/ (ver ASSETS.GALLERY.ANDES_CULTURA_*).
+    // Mientras no existan los archivos, se usa la imagen del mega-menu como única foto propia disponible.
     photos: [
       ASSETS.MEGA_MENU.ANDES_CULTURA,
-      ASSETS.HERO.COMPUTER.PAISAJE,
-      ASSETS.HERO.COMPUTER.LOBITOS,
     ],
     tours: {
       dia: [
@@ -354,10 +354,10 @@ export const DESTINATIONS: Destination[] = [
       },
     ],
     bestTime: 'Junio – Septiembre',
+    // TODO: fotos reales pendientes en public/images/andes-naturaleza/ (ver ASSETS.GALLERY.ANDES_NATURALEZA_*).
+    // Mientras no existan los archivos, se usa la imagen del mega-menu como única foto propia disponible.
     photos: [
       ASSETS.MEGA_MENU.ANDES_NATURALEZA,
-      ASSETS.HERO.COMPUTER.PAISAJE,
-      ASSETS.HERO.COMPUTER.PIQUERO,
     ],
     tours: {
       dia: [

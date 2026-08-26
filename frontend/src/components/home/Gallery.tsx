@@ -5,11 +5,36 @@ import { ROUTES } from '@/config/routes'
 import { ASSETS } from '@/config/assets'
 
 const GALLERY_IMGS = [
-  { src: ASSETS.GALLERY.GALAPAGOS,        alt: 'Islas Galápagos',        tall: true  },
-  { src: ASSETS.GALLERY.AMAZONIA,         alt: 'Amazonía Ecuatoriana',   tall: false },
-  { src: ASSETS.GALLERY.ANDES_NATURALEZA, alt: 'Andes y Volcanes',       tall: false },
-  { src: ASSETS.GALLERY.PAISAJE,          alt: 'Paisaje ecuatoriano',    tall: false },
-  { src: ASSETS.GALLERY.LOBITOS,          alt: 'Lobitos marinos',        tall: false },
+  {
+    src: ASSETS.GALLERY.GALAPAGOS_PORTADA,
+    alt: 'Islas Galápagos',
+    tall: true,
+    href: ROUTES.GALLERY_FILTERED('destinos', 'galapagos'),
+  },
+  {
+    src: ASSETS.GALLERY.AMAZONIA_VIAJE_22,
+    alt: 'Amazonía Ecuatoriana',
+    tall: false,
+    href: ROUTES.GALLERY_FILTERED('destinos', 'amazonia'),
+  },
+  {
+    src: ASSETS.MEGA_MENU.ANDES_NATURALEZA,
+    alt: 'Andes y Volcanes',
+    tall: false,
+    href: ROUTES.GALLERY_FILTERED('destinos', 'andes-naturaleza'),
+  },
+  {
+    src: ASSETS.GALLERY.GALAPAGOS_TORTUGA,
+    alt: 'Buceo con tortugas marinas en Galápagos',
+    tall: false,
+    href: ROUTES.GALLERY_FILTERED('destinos', 'galapagos'),
+  },
+  {
+    src: ASSETS.GALLERY.AMAZONIA_BUHO,
+    alt: 'Fauna de la selva amazónica',
+    tall: false,
+    href: ROUTES.GALLERY,
+  },
 ]
 
 export default function Gallery() {
@@ -57,7 +82,7 @@ export default function Gallery() {
                 {/* Overlay en la última imagen (desktop) */}
                 {isLast && (
                   <a
-                    href={ROUTES.GALLERY}
+                    href={img.href}
                     className="gallery__img-overlay"
                     aria-label="Ver todas las fotos de la galería"
                   >

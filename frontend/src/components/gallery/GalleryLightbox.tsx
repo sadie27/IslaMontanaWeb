@@ -2,6 +2,7 @@
 
 import { useEffect, useRef } from "react"
 import { useBodyOverflowLock } from "@/hooks/useBodyOverflowLock"
+import { imgPath } from "@/lib/image-path"
 import type { GalleryImage } from "@/types/gallery"
 
 interface GalleryLightboxProps {
@@ -78,7 +79,7 @@ export default function GalleryLightbox({ items, index, onClose, onNav, triggerR
     const prevItem = items[(index - 1 + items.length) % items.length]
     for (const item of [nextItem, prevItem]) {
       const img = new window.Image()
-      img.src = item.src
+      img.src = imgPath(item.src)
     }
   }, [isOpen, index, items])
 
@@ -140,7 +141,7 @@ export default function GalleryLightbox({ items, index, onClose, onNav, triggerR
       </button>
       <figure className="gallery-lightbox__figure" onClick={(e) => e.stopPropagation()}>
         {/* eslint-disable-next-line @next/next/no-img-element -- resolución completa sin optimizador; el loader custom del proyecto no aporta aquí */}
-        <img src={item.src} alt={item.alt} className="gallery-lightbox__img" />
+        <img src={imgPath(item.src)} alt={item.alt} className="gallery-lightbox__img" />
         <figcaption className="gallery-lightbox__caption">{item.tag}</figcaption>
       </figure>
     </div>

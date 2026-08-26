@@ -9,9 +9,10 @@ interface Props {
 }
 
 export default function GalleryCta({ destination, isMobile }: Props) {
-  const { name, accentColor, photos, heroImage } = destination
+  const { slug, name, accentColor, photos, heroImage } = destination
   const px = isMobile ? '24px' : '56px'
   const allPhotos = [...photos, heroImage].slice(0, 4)
+  const galleryHref = ROUTES.GALLERY_FILTERED('destinos', slug)
 
   return (
     <section style={{ background: '#071a06', overflow: 'hidden' }}>
@@ -47,7 +48,7 @@ export default function GalleryCta({ destination, isMobile }: Props) {
             Más de 80 fotografías de nuestros tours, fauna, paisajes y experiencias.
           </p>
           <Link
-            href={ROUTES.GALLERY}
+            href={galleryHref}
             style={{
               display: 'inline-flex', alignItems: 'center', gap: 8,
               padding: '11px 22px', borderRadius: 8,
@@ -75,7 +76,7 @@ export default function GalleryCta({ destination, isMobile }: Props) {
           {allPhotos.map((src, i) => (
             <Link
               key={i}
-              href={ROUTES.GALLERY}
+              href={galleryHref}
               style={{ position: 'relative', overflow: 'hidden', background: '#1a3018', display: 'block' }}
               className="group"
             >
