@@ -11,4 +11,28 @@
   .hero__content {
     padding-top: calc(var(--nav-height) + 16px);
   }
+
+  /* Galería: hero y filtros con más aire, grid a 4 columnas */
+  .gallery-hero {
+    padding: 72px var(--px) 56px;
+  }
+
+  .gallery-filters {
+    padding: 18px var(--px);
+  }
+
+  .gallery-grid {
+    padding: 36px var(--px) 96px;
+  }
+
+  .gallery-grid__inner {
+    grid-template-columns: repeat(4, 1fr);
+    grid-auto-rows: 220px;
+    gap: 10px;
+  }
+
+  .gallery-item--big {
+    grid-column: span 2;
+    grid-row: span 2;
+  }
 }

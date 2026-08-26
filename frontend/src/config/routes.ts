@@ -6,6 +6,7 @@ export const ROUTES = {
   EXPERIENCE: (slug: string) => `/experiences/${slug}`,
   GALLERY: '/gallery',
   GALLERY_CATEGORY: (category: string) => `/gallery?category=${category}`,
+  GALLERY_FILTERED: (category: string, sub: string) => `/gallery?category=${category}&sub=${sub}`,
   ABOUT: '/about',
   CONTACT: '/contact',
   TOURS: '/tours',

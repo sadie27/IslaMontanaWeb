@@ -24,6 +24,18 @@ export const ASSETS = {
     ANDES_NATURALEZA: '/images/andes-naturaleza.webp',
     PAISAJE: '/images/paisaje.webp',
     LOBITOS: '/images/lobitos.webp',
+    GALAPAGOS_CASTILLOS: '/images/galapagos/Castillos y Lobos Española.webp',
+    GALAPAGOS_DSC_0436: '/images/galapagos/DSC_0436.webp',
+    GALAPAGOS_TORTUGA: '/images/galapagos/GLP 5 Amalia con TortugaMarina Mayo2019.webp',
+    GALAPAGOS_SEA_LIONS: '/images/galapagos/GLP Children sea Lions and sandcastles.webp',
+    GALAPAGOS_FLYCATCHER: '/images/galapagos/Galapagos Flycatcher y Luis 2.webp',
+    GALAPAGOS_PORTADA: '/images/galapagos/galapagos.webp',
+    AMAZONIA_BUHO: '/images/amazonia/Buho Crestado 01.webp',
+    AMAZONIA_NUTRIA: '/images/amazonia/Nutria Gigante 02 LDD Sacha Lodge.webp',
+    AMAZONIA_PASARELA: '/images/amazonia/SachaLodge 13 Pasarela Ag2019.webp',
+    AMAZONIA_CANAL: '/images/amazonia/SachaLodge 14 Canal Ag2019.webp',
+    AMAZONIA_VIAJE_15: '/images/amazonia/Viaje Ecuador 15 Sacha Ag2024 .webp',
+    AMAZONIA_VIAJE_22: '/images/amazonia/Viaje Ecuador 22 Sacha Ag2024 .webp',
   },
   HERO: {
     COMPUTER: {

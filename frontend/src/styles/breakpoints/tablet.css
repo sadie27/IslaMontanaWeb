@@ -57,4 +57,11 @@
     padding: 13px 28px;
     font-size: 14px;
   }
+
+  /* ── Galería tablet: 3 columnas, los "big" no saltan a 2×2 ── */
+  .gallery-grid__inner {
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: 200px;
+    gap: 10px;
+  }
 }
