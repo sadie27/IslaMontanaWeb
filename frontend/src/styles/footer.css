@@ -1,154 +1,283 @@
 /* ════════════════════════════════════════════════════════════
    footer.css — Islamontana Travel
+   Fondo SVG art-direction + degradado + 3 columnas + wordmark
 ════════════════════════════════════════════════════════════ */
 
 .footer {
-  background: var(--color-dark);
-  padding: 72px var(--px) 36px;
+  --footer-text-link: rgba(255, 255, 255, 0.65);
+  --footer-text-link-hover: rgba(255, 255, 255, 0.9);
+  --footer-text-muted: rgba(255, 255, 255, 0.62);
+  --footer-text-faint: rgba(255, 255, 255, 0.62);
+  --footer-hairline: rgba(255, 255, 255, 0.07);
+  --footer-accent-hover: #c3e563;
+  --footer-social-bg: rgba(255, 255, 255, 0.08);
+
+  position: relative;
+  background-color: var(--color-dark);
+  color: var(--color-white);
+  overflow: hidden;
+}
+
+/* ── Fondo: capas absolutas ── */
+.footer__bg {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.footer__bg picture,
+.footer__bg img {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.footer__bg img {
+  object-fit: cover;
+  object-position: center bottom;
+}
+
+.footer__gradient {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(13, 32, 12, 0.62) 0%,
+    rgba(13, 32, 12, 0.80) 60%,
+    rgba(13, 32, 12, 0.92) 100%
+  );
+}
+
+/* ── Contenido (por encima de las capas de fondo) ── */
+.footer__content {
+  position: relative;
 }
 
 .footer__inner {
   max-width: var(--max-width);
   margin: 0 auto;
+  padding: clamp(48px, 9vw, 96px) var(--px) 0;
 }
 
-.footer__grid {
-  display: grid;
-  grid-template-columns: 2fr 1fr 1fr;
-  gap: clamp(32px, 5vw, 64px);
-  margin-bottom: 56px;
-}
-
-.footer__brand {}
-
-.footer__logo {
+/* ── Fila principal: 3 columnas ──
+   align-items: flex-start porque las columnas tienen alturas muy distintas
+   (Nav con 5 links apilados vs Social con solo iconos) — center las dejaba
+   escalonadas verticalmente en vez de alineadas por arriba. */
+.footer__row {
   display: flex;
-  align-items: center;
-  gap: 11px;
-  margin-bottom: 22px;
+  flex-wrap: wrap;
+  gap: clamp(32px, 5vw, 56px);
+  justify-content: flex-start;
+  align-items: flex-start;
+  padding-bottom: clamp(36px, 5vw, 56px);
+  border-bottom: 1px solid var(--footer-hairline);
 }
 
-.footer__brand-name {
-  display: block;
-  font-weight: 800;
-  font-size: 13px;
-  letter-spacing: 0.1em;
-  color: white;
-  line-height: 1;
+/* ── Columna 1: Navegación ── */
+.footer__nav {
+  flex: 1 1 140px;
 }
 
-.footer__brand-sub {
-  display: block;
-  font-size: 10px;
-  letter-spacing: 0.28em;
-  color: rgba(255, 255, 255, 0.4);
-  margin-top: 3px;
-}
-
-.footer__tagline {
-  color: rgba(255, 255, 255, 0.62);
-  font-size: 14px;
-  line-height: 1.85;
-  max-width: 260px;
-}
-
-.footer__col-title {
+.footer__nav-eyebrow {
   font-size: 11px;
   font-weight: 700;
   letter-spacing: 0.15em;
-  color: var(--color-accent);
-  margin-bottom: 24px;
   text-transform: uppercase;
+  color: var(--color-accent);
+  margin: 0 0 22px;
 }
 
-.footer__col ul {
+.footer__nav ul {
   display: flex;
   flex-direction: column;
   gap: 14px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
 
 .footer__link {
-  color: rgba(255, 255, 255, 0.65);
+  color: var(--footer-text-link);
   font-size: 14px;
   transition: color 0.2s;
 }
+
 @media (hover: hover) and (pointer: fine) {
-  .footer__link:hover { color: rgba(255, 255, 255, 0.88); }
+  .footer__link:hover { color: var(--footer-text-link-hover); }
 }
 
-.footer__link:active { color: rgba(255, 255, 255, 0.88); }
+.footer__link:active { color: var(--footer-text-link-hover); }
 
-.footer__bottom {
-  border-top: 1px solid rgba(255, 255, 255, 0.07);
-  padding-top: 28px;
+/* ── Columna 2: CTA ── */
+.footer__cta {
+  flex: 1.5 1 220px;
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
   align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.footer__cta-title {
+  font-family: var(--font-bebas), 'Bebas Neue', Impact, sans-serif;
+  font-size: clamp(30px, 4vw, 40px);
+  letter-spacing: 0.03em;
+  color: var(--color-accent);
+  line-height: 1;
+  margin: 0 0 10px;
+}
+
+.footer__cta-subtitle {
+  font-size: 14px;
+  color: var(--footer-text-muted);
+  margin: 0 0 22px;
+}
+
+.footer__cta-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  align-self: center;
+  background: var(--color-accent);
+  color: var(--color-dark);
+  font-weight: 700;
+  font-size: 14px;
+  padding: 14px 34px;
+  border-radius: 999px;
+  transition: background 0.2s, transform 0.18s;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .footer__cta-btn:hover {
+    background: var(--footer-accent-hover);
+    transform: translateY(-2px);
+  }
+}
+
+.footer__cta-btn:active {
+  background: var(--footer-accent-hover);
+}
+
+/* ── Columna 3: Social + copyright ── */
+.footer__social {
+  flex: 1 1 180px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+
+.footer__social-icons {
+  display: flex;
+  gap: 10px;
+}
+
+.footer__social-icon {
+  width: 44px;
+  height: 44px;
+  min-width: 44px;
+  min-height: 44px;
+  border-radius: 50%;
+  background: var(--footer-social-bg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s, transform 0.18s;
+}
+
+.footer__social-icon svg {
+  width: 18px;
+  height: 18px;
+  fill: currentColor;
+  color: var(--color-white);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .footer__social-icon:hover {
+    background: var(--color-primary);
+    transform: scale(1.08);
+  }
+}
+
+.footer__social-icon:active {
+  background: var(--color-primary);
+}
+
+.footer__copyright {
+  font-size: 13px;
+  color: var(--footer-text-faint);
+  line-height: 1.6;
+  text-align: center;
+  margin: 0;
+}
+
+/* ── Fila de idioma / región ── */
+.footer__locales {
+  display: flex;
   flex-wrap: wrap;
-  gap: 16px;
-  color: rgba(255, 255, 255, 0.42);
+  justify-content: center;
+  gap: 28px;
+  padding: 20px 0;
+  color: var(--footer-text-faint);
   font-size: 12px;
 }
 
-.footer__locales {
-  display: flex;
-  gap: 28px;
+/* ── Franja del wordmark ── */
+.footer__wordmark {
+  border-top: 1px solid var(--footer-hairline);
+  padding: 2px var(--px) clamp(16px, 3vw, 26px);
+  overflow: hidden;
+  text-align: center;
 }
 
-.footer__locales span { cursor: pointer; }
-
-@media (hover: hover) and (pointer: fine) {
-  .footer__locales span:hover { color: rgba(255, 255, 255, 0.6); }
+.footer__wordmark span {
+  font-family: var(--font-bebas), 'Bebas Neue', Impact, sans-serif;
+  font-size: clamp(40px, 10vw, 130px);
+  letter-spacing: 0.02em;
+  line-height: 0.88;
+  color: var(--color-accent);
+  display: block;
+  white-space: nowrap;
 }
 
-.footer__locales span:active { color: rgba(255, 255, 255, 0.6); }
+/* ── Focus visible sobre fondo oscuro ── */
+.footer a:focus-visible,
+.footer button:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 3px;
+}
 
-/* ── Tablet (768–1023px) ── */
-@media (min-width: 768px) and (max-width: 1023px) {
-  .footer__grid {
-    grid-template-columns: 1.5fr 1fr 1fr;
-    gap: clamp(24px, 3vw, 40px);
+/* ── Reduced motion ── */
+@media (prefers-reduced-motion: reduce) {
+  .footer__cta-btn,
+  .footer__social-icon {
+    transition: none;
   }
 
-  .footer {
-    padding: 64px var(--px) 32px;
+  .footer__cta-btn:hover,
+  .footer__social-icon:hover {
+    transform: none;
   }
 }
 
-/* ── Responsive ── */
+/* ── Móvil: wordmark no se sale, columnas centradas ── */
 @media (max-width: 767px) {
-  .footer__grid {
-    grid-template-columns: 1fr 1fr;
-    gap: 32px 24px;
+  .footer__row {
+    justify-content: center;
+    text-align: center;
   }
 
-  .footer__brand { grid-column: 1 / -1; }
-
-  .footer__bottom {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 12px;
+  .footer__nav {
+    align-items: center;
+    text-align: center;
   }
 
-  .footer__locales { gap: 16px; }
-}
+  .footer__nav ul {
+    align-items: center;
+  }
 
-@media (max-width: 639px) {
-  .footer__grid { gap: 28px 20px; }
-  .footer__col-title { font-size: 10px; margin-bottom: 16px; }
-  .footer__link { font-size: 13px; }
-}
-
-@media (max-width: 479px) {
-  .footer__grid { gap: 24px 16px; }
-  .footer { padding: 56px var(--px) 28px; }
-}
-
-@media (max-width: 374px) {
-  .footer__grid { gap: 20px 12px; }
-  .footer__link { font-size: 12px; }
-}
-
-@media (max-width: 320px) {
-  .footer__col ul { gap: 10px; }
+  .footer__wordmark span {
+    font-size: clamp(26px, 11vw, 130px);
+  }
 }

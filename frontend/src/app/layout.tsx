@@ -1,5 +1,5 @@
 import type { Metadata } from "next"
-import { Outfit } from "next/font/google"
+import { Outfit, Bebas_Neue } from "next/font/google"
 import Navbar from "@/components/layout/Navbar"
 import Footer from "@/components/layout/Footer"
 import "@/styles/globals.css"
@@ -14,6 +14,13 @@ const outfit = Outfit({
   weight: ["300", "400", "500", "600", "700", "800", "900"],
   variable: "--font-outfit",
   display: "swap",
+})
+
+const bebas = Bebas_Neue({
+  subsets: ["latin", "latin-ext"],
+  weight: "400",
+  display: "swap",
+  variable: "--font-bebas",
 })
 
 const base = process.env.NEXT_PUBLIC_BASE_PATH ?? ''
@@ -76,7 +83,7 @@ export default async function RootLayout({
   const navData = await getNavMenuData()
 
   return (
-    <html lang="es" className={outfit.variable}>
+    <html lang="es" className={`${outfit.variable} ${bebas.variable}`}>
       <body>
         <Navbar navData={navData} />
         <main>{children}</main>

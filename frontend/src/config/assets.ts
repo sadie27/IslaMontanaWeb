@@ -70,4 +70,9 @@ export const ASSETS = {
     ECUADOR_HIGH: '/ecuadorHigh.svg',
     SOUTH_AMERICA_LOW: '/southAmericaLow.svg',
   },
+  FOOTER: {
+    BG_16X9: '/images/footer/footer-bg-16x9.svg',
+    BG_1X1: '/images/footer/footer-bg-1x1.svg',
+    BG_4X5: '/images/footer/footer-bg-4x5.svg',
+  },
 } as const

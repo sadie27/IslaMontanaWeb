@@ -8,7 +8,6 @@ import WhyVisit        from './WhyVisit'
 import Tours           from './Tours'
 import GalleryCta      from './GalleryCta'
 import FAQ             from './FAQ'
-import FinalCta        from './FinalCta'
 
 type Breakpoint = 'mobile' | 'tablet' | 'desktop'
 
@@ -41,7 +40,6 @@ export default function DestinationPageClient({ destination }: Props) {
       <Tours           destination={destination} bp={bp} />
       <GalleryCta      destination={destination} isMobile={isMobile} />
       <FAQ             destination={destination} isMobile={isMobile} />
-      <FinalCta        destination={destination} isMobile={isMobile} />
     </>
   )
 }

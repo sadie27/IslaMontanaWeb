@@ -4,7 +4,6 @@ import Destinations from '@/components/home/Destinations'
 import WhyUs from '@/components/home/WhyUs'
 import Tours from '@/components/home/Tours'
 import Gallery from '@/components/home/Gallery'
-import FinalCta from '@/components/home/FinalCta'
 
 const Stats = dynamic(
   () => import('@/components/home/Stats'),
@@ -20,7 +19,6 @@ export default function HomePage() {
       <WhyUs />
       <Tours />
       <Gallery />
-      <FinalCta />
     </>
   )
 }

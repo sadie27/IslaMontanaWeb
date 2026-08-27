@@ -45,6 +45,19 @@ export interface FaqItem {
   a: string
 }
 
+// ─── Footer Types ────────────────────────────────────────────────────────────
+
+export interface FooterLink {
+  label: string
+  href: string
+}
+
+export interface SocialLink {
+  label: string
+  href: string
+  icon: 'facebook' | 'whatsapp'
+}
+
 export interface Destination {
   slug: string
   name: string
