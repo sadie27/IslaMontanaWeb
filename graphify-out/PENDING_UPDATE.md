@@ -1,14 +1,14 @@
 ﻿# Graphify - actualizacion pendiente
 
-Ultima sesion (2026-08-26 23:07) modifico 8 fichero(s):
+Ultima sesion (2026-08-27 14:42) modifico 8 fichero(s):
 
+frontend/src/app/gallery/GalleryView.tsx
+frontend/src/components/destinations/DestinationHero.tsx
 frontend/src/components/destinations/GalleryCta.tsx
-frontend/src/components/gallery/GalleryFilters.tsx
-frontend/src/components/gallery/GalleryLightbox.tsx
+frontend/src/components/destinations/WhyVisit.tsx
 frontend/src/components/home/Gallery.tsx
-frontend/src/config/assets.ts
-frontend/src/data/destinations.ts
-frontend/src/styles/gallery.css
+frontend/src/components/layout/MegaMenu.tsx
+frontend/src/styles/home.css
 graphify-out/PENDING_UPDATE.md
 
 > Preferente: parchea la capa EXTRACTED del grafo de forma incremental

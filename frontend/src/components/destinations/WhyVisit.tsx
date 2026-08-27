@@ -52,7 +52,7 @@ export default function WhyVisit({ destination, bp }: Props) {
                 >
                   <div className="polaroid-card polaroid-card--no-pseudo">
                     <div className="polaroid-image">
-                      <Image src={src} alt="" fill unoptimized style={{ objectFit: 'cover' }} />
+                      <Image src={src} alt="" fill style={{ objectFit: 'cover' }} />
                     </div>
                   </div>
                 </div>
@@ -98,7 +98,7 @@ export default function WhyVisit({ destination, bp }: Props) {
                 >
                   <div className="polaroid-card">
                     <div className="polaroid-image">
-                      <Image src={src} alt="" fill unoptimized style={{ objectFit: 'cover' }} />
+                      <Image src={src} alt="" fill style={{ objectFit: 'cover' }} />
                     </div>
                   </div>
                 </div>

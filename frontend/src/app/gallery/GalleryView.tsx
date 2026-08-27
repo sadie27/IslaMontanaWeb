@@ -1,12 +1,13 @@
 "use client"
 
-import { useMemo, useRef, useState } from "react"
+import { useMemo } from "react"
 import { useRouter, useSearchParams, usePathname } from "next/navigation"
 import GalleryFilters from "@/components/gallery/GalleryFilters"
 import GalleryGrid from "@/components/gallery/GalleryGrid"
 import GalleryLightbox from "@/components/gallery/GalleryLightbox"
+import { useLightbox } from "@/hooks/useLightbox"
 import { GALLERY_IMAGES, GALLERY_CATEGORIES, GALLERY_SUBFILTERS } from "@/data/gallery"
-import type { GalleryCategory, GalleryImage } from "@/types/gallery"
+import type { GalleryCategory } from "@/types/gallery"
 
 // Enlaces legacy del MegaMenu (categorías antiguas de /gallery?category=...)
 // → estado inicial equivalente en la nueva taxonomía destinos/experiencias.
@@ -44,32 +45,13 @@ export default function GalleryView() {
     searchParams.get('sub')
   )
 
-  const [lightboxItems, setLightboxItems] = useState<GalleryImage[]>([])
-  const [lightboxIndex, setLightboxIndex] = useState<number | null>(null)
-  const lastTriggerRef = useRef<HTMLElement | null>(null)
+  const { lightboxItems, lightboxIndex, triggerRef, openLightbox, closeLightbox, navLightbox } = useLightbox()
 
   const filteredItems = useMemo(() => {
     return GALLERY_IMAGES.filter(
       (img) => img.category === category && (sub === 'todos' || img.sub === sub)
     )
   }, [category, sub])
-
-  function openLightbox(items: GalleryImage[], index: number) {
-    lastTriggerRef.current = document.activeElement as HTMLElement
-    setLightboxItems(items)
-    setLightboxIndex(index)
-  }
-
-  function closeLightbox() {
-    setLightboxIndex(null)
-  }
-
-  function navLightbox(direction: 1 | -1) {
-    setLightboxIndex((prev) => {
-      if (prev === null || lightboxItems.length === 0) return prev
-      return (prev + direction + lightboxItems.length) % lightboxItems.length
-    })
-  }
 
   function resetFilters() {
     router.replace(`${pathname}?category=destinos&sub=todos`, { scroll: false })
@@ -84,7 +66,7 @@ export default function GalleryView() {
         index={lightboxIndex}
         onClose={closeLightbox}
         onNav={navLightbox}
-        triggerRef={lastTriggerRef}
+        triggerRef={triggerRef}
       />
     </>
   )

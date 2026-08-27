@@ -127,14 +127,6 @@ export default function MegaMenu({
           <MenuCard key={item.href} item={item} tabIndex={isOpen ? 0 : -1} isTablet={isTablet} />
         ))}
       </div>
-      <div
-        style={{
-          height: "4px",
-          background: "#abd430",
-          opacity: 0.25,
-          width: "100%",
-        }}
-      />
     </div>
   )
 }

@@ -34,7 +34,6 @@ export default function DestinationHero({ destination, bp }: Props) {
             alt={name}
             fill
             priority
-            unoptimized
             style={{ objectFit: 'cover', opacity: 0.5 }}
             onError={() => setImgError(true)}
           />
