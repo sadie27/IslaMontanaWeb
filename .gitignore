@@ -1,5 +1,9 @@
 # Claude Code local settings (personal, not committed)
 .claude/settings.local.json
+.claude/scheduled_tasks.lock
+
+# Obsidian vault local config (personal workspace/layout, not shared)
+.obsidian/
 
 # Python
 __pycache__/
