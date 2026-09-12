@@ -86,9 +86,9 @@ export default function WhyUs() {
             <span className="why-us__title-accent">huella de verdad.</span>
           </h2>
           <p className="why-us__body">
-            No somos una agencia más. Somos un equipo pequeño de viajeros ecuatorianos
-            que llevan más de diez años diseñando experiencias auténticas en los cuatro
-            mundos del Ecuador.
+            No somos una agencia más. Somos un equipo pequeño que lleva más de veinte
+            años guiando en Galápagos —nuestro destino insignia— y diseñando experiencias
+            auténticas en los cuatro mundos del Ecuador.
           </p>
           <Link href={ROUTES.ABOUT} className="why-us__link">
             Conoce nuestro equipo →

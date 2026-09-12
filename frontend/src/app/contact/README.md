@@ -4,27 +4,28 @@ Ruta `/contact` — formulario de contacto.
 
 ## Estado
 
-**PENDIENTE — PRIORIDAD CRÍTICA.** La carpeta existe como placeholder.
+**UI CREADA — FALTA BACKEND.** `page.tsx`, `ContactHero` y `ContactForm` ya
+existen. El formulario valida en cliente (nombre, email, mensaje requeridos)
+y muestra un mensaje de éxito, pero **no envía nada todavía**: no hay
+`POST /api/contact` porque el backend FastAPI no está implementado (ver
+`docs/Backend.md`). Ver el `TODO` en `ContactForm.tsx`.
 
 Esta ruta está referenciada en:
-- El botón "Reservar" de la Navbar (`layout.tsx` línea 136)
+- El botón "Contáctanos" de la Navbar y el drawer móvil
 - Los CTAs de todos los destinos implementados (galapagos, amazonia, andes-cultura, andes-naturaleza)
-- El componente `TourCard` (línea 116)
+- El componente `TourCard` (botón "Consultar")
 - El Footer
 
-Mientras no exista `page.tsx`, todos estos enlaces generan un 404.
+## Plan pendiente
 
-## Plan
+- Conectar el envío del formulario a `POST /api/contact` cuando el backend exista
+- Persistir/enviar el mensaje (email al equipo, o guardarlo en BD)
+- Confirmar con el cliente el número de WhatsApp y email reales (ver TODO en `src/data/footer.ts`)
 
-- `page.tsx` con un Client Component para el formulario (`'use client'`)
-- Validación client-side sin librerías externas (o react-hook-form si se añade)
-- Envío vía `POST /api/contact` al backend FastAPI
-- Mensaje de confirmación tras envío exitoso
-
-## Campos del formulario (mínimo)
+## Campos del formulario (ya implementados)
 
 - Nombre
 - Email
 - Teléfono (opcional)
-- Destino de interés (selector)
+- Destino de interés (selector, poblado desde `src/data/destinations.ts`)
 - Mensaje / consulta

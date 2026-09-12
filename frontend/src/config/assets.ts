@@ -75,4 +75,9 @@ export const ASSETS = {
     BG_1X1: '/images/footer/footer-bg-1x1.svg',
     BG_4X5: '/images/footer/footer-bg-4x5.svg',
   },
+  TEAM: {
+    IRENE: '/images/team/irene-morejon.svg',
+    LUIS: '/images/team/luis-die.svg',
+    KLEBER: '/images/team/kleber-cisneros.svg',
+  },
 } as const

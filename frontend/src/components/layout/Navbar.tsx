@@ -120,7 +120,7 @@ export default function Navbar({ navData }: NavbarProps) {
             </div>
           ))}
           <Link href={ROUTES.CONTACT} className="navbar__cta">
-            Reservar
+            Contáctanos
           </Link>
         </div>
 

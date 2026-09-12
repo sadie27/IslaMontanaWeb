@@ -45,6 +45,22 @@ export interface FaqItem {
   a: string
 }
 
+// ─── About Page Types ────────────────────────────────────────────────────────
+
+export interface TeamMember {
+  name: string
+  role: string
+  photo?: string
+  placeholderBg: string
+  bio: string
+}
+
+export interface CompanyValue {
+  icon: 'compass' | 'leaf' | 'users' | 'shield'
+  title: string
+  desc: string
+}
+
 // ─── Footer Types ────────────────────────────────────────────────────────────
 
 export interface FooterLink {

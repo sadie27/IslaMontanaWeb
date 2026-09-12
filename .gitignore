@@ -1,6 +1,5 @@
-# Claude Code local settings (personal, not committed)
-.claude/settings.local.json
-.claude/scheduled_tasks.lock
+# Claude Code local config (personal, not committed)
+.claude/
 
 # Obsidian vault local config (personal workspace/layout, not shared)
 .obsidian/

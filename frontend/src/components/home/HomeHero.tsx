@@ -49,13 +49,13 @@ export default function HomeHero() {
 
         {/* Headline — left-aligned (anti-center bias) */}
         <h1 className="hero__title">
-          Ecuador<br />
+          Galápagos<br />
           <span className="hero__title-accent">te espera.</span>
         </h1>
 
         <p className="hero__subtitle">
-          Tours únicos a los rincones más extraordinarios del planeta.
-          Experiencias que transforman para siempre.
+          Nuestro destino insignia, y la puerta a los rincones más extraordinarios
+          de Ecuador. Experiencias que transforman para siempre.
         </p>
 
         <div className="hero__ctas">

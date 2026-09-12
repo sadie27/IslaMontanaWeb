@@ -77,7 +77,7 @@ export default function MobileDrawer({
             className="navbar__drawer-cta"
             onClick={closeMobile}
           >
-            Reservar
+            Contáctanos
           </Link>
         </div>
       </div>
