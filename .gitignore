@@ -65,6 +65,7 @@ logs/
 
 # graphify (knowledge graph generator - regenerated output, not source)
 graphify-out/
+**/graphify-out/
 .graphify_python
 .graphify_detect.json
 .graphify_extract.json
