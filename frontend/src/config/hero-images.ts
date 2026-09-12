@@ -10,14 +10,18 @@
 
 export const heroImages = {
   computer: [
+    '/images/hero-main/computer/Bahia Gardner Feb2018.webp',
     '/images/hero-main/computer/DSC_0436.webp',
+    '/images/hero-main/computer/GLP 4 Amalia con Pinguinos Isabela May02019 - Copy.webp',
     '/images/hero-main/computer/GLP 5 Amalia con TortugaMarina Mayo2019.webp',
-    '/images/hero-main/computer/GLP Children sea Lions and sandcastles.webp',
+    '/images/hero-main/computer/Galapagos DaniSanti 31 Ag2016.webp',
+    '/images/hero-main/computer/Lobito marino 2 IslaLobos Feb2021.webp',
     '/images/hero-main/computer/Orcas Mom and Calf Feb2016.webp',
-    '/images/hero-main/computer/Papallacta Die-Muriel 2 Oct2016.webp',
+    '/images/hero-main/computer/Penguin Last Snorkle Sombrero Chino Apr2014.webp',
     '/images/hero-main/computer/Reserva PazdelasAves Cock-of-the-Rock Nov2018.webp',
     '/images/hero-main/computer/SachaLodge 29 Barizo Ag2019.webp',
-    '/images/hero-main/computer/Viaje Ecuador 22 Sacha Ag2024.webp',
+    '/images/hero-main/computer/Sea Lion Pup and Kid.webp',
+    '/images/hero-main/computer/Tortuga bay panorama.webp',
     '/images/hero-main/computer/Yubarta 8 Isla de La Plata Ag2019.webp',
   ],
   mobile: [

@@ -62,3 +62,17 @@ logs/
 # backup files
 *.bak
 *.bak[0-9]
+
+# graphify (knowledge graph generator - regenerated output, not source)
+graphify-out/
+.graphify_python
+.graphify_detect.json
+.graphify_extract.json
+.graphify_ast.json
+.graphify_semantic.json
+.graphify_analysis.json
+.graphify_labels.json
+.graphify_incremental.json
+.graphify_old.json
+.graphify_merged_graph.json
+.graphify_chunk_*.json
