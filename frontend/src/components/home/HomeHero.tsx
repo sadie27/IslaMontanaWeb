@@ -60,7 +60,7 @@ export default function HomeHero() {
 
         <div className="hero__ctas">
           <Link href={ROUTES.DESTINATIONS} className="btn btn--primary">Ver destinos →</Link>
-          <Link href={ROUTES.TOURS} className="btn btn--ghost">Nuestros tours</Link>
+          <Link href={ROUTES.EXPERIENCES} className="btn btn--ghost">Nuestros tours</Link>
         </div>
       </div>
 

@@ -45,6 +45,13 @@ export const ASSETS = {
     ANDES_NATURALEZA_02: '/images/andes-naturaleza/andes-naturaleza-02.webp',
     ANDES_NATURALEZA_03: '/images/andes-naturaleza/andes-naturaleza-03.webp',
   },
+  TOURS: {
+    // Pendiente: subir fotos reales a public/images/tours/. Mientras no existan
+    // los archivos, TourCard usa un fallback de color por región (ver TourCard.tsx).
+    CRUCERO_ISLAS_OCCIDENTALES: '/images/tours/crucero-islas-occidentales.webp',
+    GALAPAGOS_AVENTURA_PRIVADA: '/images/tours/galapagos-aventura-privada.webp',
+    SACHA_LODGE_ALTO_NAPO: '/images/tours/sacha-lodge-alto-napo.webp',
+  },
   HERO: {
     COMPUTER: {
       DSC_0436: '/images/hero-main/computer/DSC_0436.webp',

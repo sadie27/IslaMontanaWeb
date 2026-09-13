@@ -1,5 +1,7 @@
 import type { Tour } from '@/components/home/TourCard'
+import { ASSETS } from '@/config/assets'
 
+/** Todos los tours base — fuente de verdad para /experiences. */
 export const HOME_TOURS: Tour[] = [
   {
     id: 'c3',
@@ -10,6 +12,7 @@ export const HOME_TOURS: Tour[] = [
     badge: 'Islas remotas',
     accent: '#1a7a8a',
     region: 'Galápagos',
+    image: ASSETS.TOURS.CRUCERO_ISLAS_OCCIDENTALES,
     highlights: [
       'Isabela y Fernandina — mejor zona para ballenas',
       'Pingüinos de Galápagos en Elizabeth Bay',
@@ -25,6 +28,7 @@ export const HOME_TOURS: Tour[] = [
     badge: 'Hiking & Snorkel',
     accent: '#1a7a8a',
     region: 'Galápagos',
+    image: ASSETS.TOURS.GALAPAGOS_AVENTURA_PRIVADA,
     highlights: [
       'Trekking al cráter del Sierra Negra',
       'Snorkel con tortugas, lobos marinos y tiburones',
@@ -40,6 +44,7 @@ export const HOME_TOURS: Tour[] = [
     badge: 'Lodge premiado',
     accent: '#2d6a1e',
     region: 'Amazonía',
+    image: ASSETS.TOURS.SACHA_LODGE_ALTO_NAPO,
     highlights: [
       'Torre Kapok y puente colgante sobre el dosel',
       'Canoa nocturna en busca de caimanes',
@@ -107,3 +112,10 @@ export const HOME_TOURS: Tour[] = [
     ],
   },
 ]
+
+const FEATURED_IDS = ['c3', 't3', 'at3']
+
+/** Selección destacada para la landing — Sacha Lodge + los dos tours de Galápagos. */
+export const FEATURED_HOME_TOURS: Tour[] = FEATURED_IDS
+  .map((id) => HOME_TOURS.find((tour) => tour.id === id))
+  .filter((tour): tour is Tour => Boolean(tour))
