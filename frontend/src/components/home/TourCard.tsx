@@ -3,6 +3,11 @@
 import { ROUTES } from '@/config/routes'
 import { DIFF_COLORS } from '@/config/colors'
 
+export interface TourItineraryDay {
+  title: string
+  description: string
+}
+
 export interface Tour {
   id: string
   name: string
@@ -13,6 +18,18 @@ export interface Tour {
   accent: string
   region: string
   highlights: string[]
+  /** Párrafo largo de presentación — ficha de detalle. Opcional hasta rellenar. */
+  overview?: string
+  /** Fotos propias del tour — ficha de detalle. */
+  gallery?: string[]
+  /** Itinerario día a día — ficha de detalle. */
+  itinerary?: TourItineraryDay[]
+  /** Qué incluye el programa — ficha de detalle. */
+  includes?: string[]
+  /** Qué no incluye el programa — ficha de detalle. */
+  excludes?: string[]
+  /** Actividades principales, ej. "Hiking, birdwatching" — ficha de detalle. */
+  activities?: string[]
 }
 
 interface TourCardProps {
@@ -72,11 +89,11 @@ export default function TourCard({ tour }: TourCardProps) {
           {tour.price}
         </span>
         <a
-          href={ROUTES.TOUR(tour.id)}
+          href={ROUTES.EXPERIENCE(tour.id)}
           className="tour-card__cta"
           style={{ borderColor: tour.accent, color: tour.accent }}
         >
-          Consultar →
+          Ver ficha →
         </a>
       </div>
     </article>
