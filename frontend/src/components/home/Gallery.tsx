@@ -66,8 +66,10 @@ export default function Gallery() {
       <div className="gallery__inner">
         {/* ── Header ── */}
         <div className="gallery__header">
-          <p className="gallery__label">Galería</p>
-          <h2 className="gallery__title">Ecuador en imágenes.</h2>
+          <h2 className="gallery__title">
+            <span className="gallery__title-lead">Galería</span>
+            Ecuador en imágenes.
+          </h2>
         </div>
 
         {/* ── Grid ── */}

@@ -80,10 +80,9 @@ export default function WhyUs() {
       <div className="why-us__inner">
         {/* ── Left column ── */}
         <div className="why-us__left">
-          <p className="why-us__label">Por qué elegirnos</p>
           <h2 className="why-us__title">
-            Viajes que dejan<br />
-            <span className="why-us__title-accent">huella de verdad.</span>
+            <span className="why-us__title-lead">Por qué elegirnos</span>
+            Viajes que dejan huella de verdad.
           </h2>
           <p className="why-us__body">
             No somos una agencia más. Somos un equipo pequeño que lleva más de veinte

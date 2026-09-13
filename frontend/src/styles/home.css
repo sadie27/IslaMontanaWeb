@@ -142,7 +142,7 @@
   font-size: clamp(14px, 1.1vw, 15px);
   font-weight: 700;
   letter-spacing: 0.03em;
-  transition: all 0.25s;
+  transition: background-color 0.25s, transform 0.25s, box-shadow 0.25s;
 }
 
 .btn--primary {
@@ -393,7 +393,7 @@
 .destinations__header-text {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 12px;
 }
 
 /* Link "Ver todos" — oculto en mobile (aparece en footer-link) */
@@ -401,20 +401,19 @@
   display: none;
 }
 
-.destinations__kicker {
-  font-size: 11px;
-  font-weight: 700;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  color: var(--color-primary);
-}
-
 .destinations__title {
-  font-size: clamp(32px, 4vw, 52px);
+  font-size: clamp(34px, 4.4vw, 56px);
   font-weight: 900;
   color: var(--color-dark);
   line-height: 0.95;
   letter-spacing: -0.03em;
+}
+
+/* Categorización bajo el título, no encima — evita el eyebrow repetido en cada sección */
+.destinations__subtitle {
+  font-size: clamp(15px, 1.2vw, 17px);
+  font-weight: 400;
+  color: var(--color-gray);
 }
 
 /* Grid de cards — mobile: columna única */
@@ -569,6 +568,20 @@
     rgba(0, 0, 0, 0.72) 100%
   );
   z-index: 1;
+}
+
+/* Capa extra que oscurece en hover — solo anima opacity, nunca el gradiente en sí */
+.dest-card__overlay::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.10) 0%,
+    rgba(0, 0, 0, 0.26) 50%,
+    rgba(0, 0, 0, 0.80) 100%
+  );
+  opacity: 0;
   transition: opacity 0.3s ease;
 }
 
@@ -653,8 +666,8 @@
     transform: scale(1.04);
   }
 
-  .dest-card:hover .dest-card__overlay {
-    opacity: 1.2; /* Oscurecer un poco más en hover */
+  .dest-card:hover .dest-card__overlay::after {
+    opacity: 1;
   }
 
   .dest-card:hover .dest-card__explore {
@@ -691,16 +704,9 @@
   flex-direction: column;
 }
 
-.why-us__label {
-  font-size: 11px;
-  font-weight: 700;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  color: var(--color-primary);
-  margin-bottom: 16px;
-}
-
 .why-us__title {
+  display: flex;
+  flex-direction: column;
   font-size: clamp(32px, 3.8vw, 52px);
   font-weight: 900;
   color: var(--color-dark);
@@ -709,8 +715,13 @@
   margin-bottom: 20px;
 }
 
-.why-us__title-accent {
-  color: var(--color-primary);
+/* Categorización integrada en el propio título, no como eyebrow separado */
+.why-us__title-lead {
+  font-size: clamp(15px, 1.3vw, 18px);
+  font-weight: 500;
+  color: var(--color-gray);
+  letter-spacing: -0.01em;
+  margin-bottom: 10px;
 }
 
 .why-us__body {
@@ -864,20 +875,22 @@
   gap: 8px;
 }
 
-.tours__label {
-  font-size: 11px;
-  font-weight: 700;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  color: var(--color-primary);
-}
-
 .tours__title {
+  display: flex;
+  flex-direction: column;
   font-size: clamp(28px, 3.2vw, 44px);
   font-weight: 900;
   color: var(--color-dark);
   line-height: 1.05;
   letter-spacing: -0.03em;
+}
+
+.tours__title-lead {
+  font-size: clamp(14px, 1.1vw, 16px);
+  font-weight: 500;
+  color: var(--color-gray);
+  letter-spacing: -0.01em;
+  margin-bottom: 6px;
 }
 
 /* "Ver todos" links */
@@ -1078,21 +1091,22 @@
   margin-bottom: 40px;
 }
 
-.gallery__label {
-  font-size: 11px;
-  font-weight: 700;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  color: var(--color-primary);
-  margin-bottom: 10px;
-}
-
 .gallery__title {
+  display: flex;
+  flex-direction: column;
   font-size: clamp(28px, 3.2vw, 44px);
   font-weight: 900;
   color: var(--color-dark);
   letter-spacing: -0.03em;
   line-height: 1.05;
+}
+
+.gallery__title-lead {
+  font-size: clamp(14px, 1.1vw, 16px);
+  font-weight: 500;
+  color: var(--color-gray);
+  letter-spacing: -0.01em;
+  margin-bottom: 6px;
 }
 
 /* Grid: desktop 2fr 1fr 1fr, 2 rows of 240px */
@@ -1227,22 +1241,23 @@
   text-align: left;
 }
 
-.final-cta__label {
-  font-size: 11px;
-  font-weight: 700;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  color: var(--color-accent);
-  margin-bottom: 16px;
-}
-
 .final-cta__title {
+  display: flex;
+  flex-direction: column;
   font-size: clamp(36px, 4.5vw, 64px);
   font-weight: 900;
   color: #fff;
   letter-spacing: -0.035em;
   line-height: 0.95;
   margin-bottom: 24px;
+}
+
+.final-cta__title-lead {
+  font-size: clamp(15px, 1.3vw, 18px);
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.55);
+  letter-spacing: -0.01em;
+  margin-bottom: 12px;
 }
 
 .final-cta__body {

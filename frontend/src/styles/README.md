@@ -32,7 +32,7 @@
 
 Los componentes estructurales (Navbar, Hero, Footer) usan clases BEM definidas aquí. Los componentes nuevos (MegaMenu, futuros componentes de página) usan utilidades Tailwind directamente. No mezclar: no añadir Tailwind a selectores BEM existentes ni viceversa.
 
-La fuente Outfit se carga via `next/font/google` en `app/layout.tsx` (no via `@import` en este archivo).
+La fuente Switzer se carga via `next/font/local` en `app/layout.tsx` (no via `@import` en este archivo), expuesta como `var(--font-outfit)` por compatibilidad con el token existente.
 
 ## Regla sobre colores
 

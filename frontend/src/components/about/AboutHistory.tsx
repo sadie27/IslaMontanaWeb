@@ -5,8 +5,10 @@ export default function AboutHistory() {
     <section className="about-history">
       <div className="about-history__inner">
         <div>
-          <p className="about-history__label">{ABOUT_HISTORY.eyebrow}</p>
-          <h2 className="about-history__title">{ABOUT_HISTORY.title}</h2>
+          <h2 className="about-history__title">
+            <span className="about-history__title-lead">{ABOUT_HISTORY.eyebrow}</span>
+            {ABOUT_HISTORY.title}
+          </h2>
           <p className="about-history__body">{ABOUT_HISTORY.body}</p>
         </div>
 

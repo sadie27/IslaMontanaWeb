@@ -22,7 +22,7 @@ Directorio raíz del App Router de Next.js. Cada carpeta es una ruta.
 ## layout.tsx
 
 RootLayout async que:
-1. Carga la fuente Outfit via `next/font/google`
+1. Carga la fuente Switzer via `next/font/local` (autoalojada, `src/fonts/Switzer-Variable.woff2`)
 2. Llama a `getNavMenuData()` — hoy devuelve datos estáticos, en el futuro fetcheará del backend con `revalidate: 3600`
 3. Pasa `navData` como prop a `<Navbar>`
 4. Renderiza `<Navbar>`, `<main>{children}</main>`, `<Footer>`

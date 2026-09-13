@@ -12,7 +12,15 @@ const config: Config = {
         sans: ["var(--font-outfit)", "system-ui", "sans-serif"],
       },
       colors: {
-        primary: {
+        // Verde de marca real — usa var(--color-primary) del CSS. `brand` (no `primary`)
+        // para no chocar con la convención Tailwind por defecto de "primary = color de marca".
+        brand: {
+          DEFAULT: "#3aa023",
+          dark: "#0d200c",
+          accent: "#abd430",
+        },
+        // Renombrada desde `primary`: esta escala es azul y no tiene relación con la marca.
+        sky: {
           50: "#f0f9ff",
           100: "#e0f2fe",
           200: "#bae6fd",

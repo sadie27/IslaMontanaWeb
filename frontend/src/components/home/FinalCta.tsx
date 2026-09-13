@@ -10,11 +10,9 @@ export default function FinalCta() {
       <span className="final-cta__bg-text" aria-hidden="true">EC</span>
 
       <div className="final-cta__content">
-        <p className="final-cta__label">Empieza tu viaje</p>
-
         <h2 className="final-cta__title">
-          Tu Ecuador te está<br />
-          esperando.
+          <span className="final-cta__title-lead">Empieza tu viaje</span>
+          Tu Ecuador te está esperando.
         </h2>
 
         <p className="final-cta__body">

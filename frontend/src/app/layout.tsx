@@ -1,5 +1,6 @@
 import type { Metadata } from "next"
-import { Outfit, Bebas_Neue } from "next/font/google"
+import localFont from "next/font/local"
+import { Bebas_Neue } from "next/font/google"
 import Navbar from "@/components/layout/Navbar"
 import Footer from "@/components/layout/Footer"
 import "@/styles/globals.css"
@@ -9,11 +10,11 @@ import { adaptNavItem } from "@/lib/adapters"
 import { ROUTES } from "@/config/routes"
 import { ASSETS } from "@/config/assets"
 
-const outfit = Outfit({
-  subsets: ["latin"],
-  weight: ["300", "400", "500", "600", "700", "800", "900"],
+const switzer = localFont({
+  src: "../fonts/Switzer-Variable.woff2",
   variable: "--font-outfit",
   display: "swap",
+  weight: "300 900",
 })
 
 const bebas = Bebas_Neue({
@@ -83,7 +84,7 @@ export default async function RootLayout({
   const navData = await getNavMenuData()
 
   return (
-    <html lang="es" className={`${outfit.variable} ${bebas.variable}`}>
+    <html lang="es" className={`${switzer.variable} ${bebas.variable}`}>
       <body>
         <Navbar navData={navData} />
         <main>{children}</main>

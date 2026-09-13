@@ -118,7 +118,7 @@
   font-size: 14px;
   font-weight: 600;
   letter-spacing: 0.04em;
-  transition: all 0.35s;
+  transition: background-color 0.25s, border-color 0.25s, color 0.25s;
 }
 
 /* ── Hamburger ── */

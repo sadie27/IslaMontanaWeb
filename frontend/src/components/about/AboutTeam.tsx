@@ -14,8 +14,10 @@ export default function AboutTeam() {
   return (
     <section className="about-team">
       <div className="about-team__inner">
-        <p className="about-team__label">Nuestro equipo</p>
-        <h2 className="about-team__title">Las personas detrás de cada viaje.</h2>
+        <h2 className="about-team__title">
+          <span className="about-team__title-lead">Nuestro equipo</span>
+          Las personas detrás de cada viaje.
+        </h2>
 
         <ul className="about-team__grid" role="list">
           {TEAM_MEMBERS.map((member) => (

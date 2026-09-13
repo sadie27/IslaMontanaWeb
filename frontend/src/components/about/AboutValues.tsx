@@ -51,8 +51,10 @@ export default function AboutValues() {
   return (
     <section className="about-values">
       <div className="about-values__inner">
-        <p className="about-values__label">Nuestros valores</p>
-        <h2 className="about-values__title">Lo que no negociamos.</h2>
+        <h2 className="about-values__title">
+          <span className="about-values__title-lead">Nuestros valores</span>
+          Lo que no negociamos.
+        </h2>
 
         <ul className="trust-grid" role="list">
           {COMPANY_VALUES.map((value) => (

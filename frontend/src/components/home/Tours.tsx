@@ -12,8 +12,10 @@ export default function Tours() {
         {/* ── Header ── */}
         <div className="tours__header">
           <div className="tours__header-left">
-            <p className="tours__label">Tours populares</p>
-            <h2 className="tours__title">Los más elegidos por nuestros viajeros.</h2>
+            <h2 className="tours__title">
+              <span className="tours__title-lead">Tours populares</span>
+              Los más elegidos por nuestros viajeros.
+            </h2>
           </div>
           {/* Ver todos — desktop: arriba derecha */}
           <Link href={ROUTES.EXPERIENCES} className="tours__view-all tours__view-all--desktop">
