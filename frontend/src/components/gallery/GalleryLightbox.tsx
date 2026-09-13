@@ -1,6 +1,6 @@
 "use client"
 
-import { useEffect, useRef } from "react"
+import { useEffect, useRef, useState } from "react"
 import { useBodyOverflowLock } from "@/hooks/useBodyOverflowLock"
 import { imgPath } from "@/lib/image-path"
 import type { GalleryImage } from "@/types/gallery"
@@ -20,8 +20,15 @@ export default function GalleryLightbox({ items, index, onClose, onNav, triggerR
   const closeRef = useRef<HTMLButtonElement>(null)
   const dialogRef = useRef<HTMLDivElement>(null)
   const touchStart = useRef<{ x: number; y: number } | null>(null)
+  const [isZoomed, setIsZoomed] = useState(false)
+  const [zoomOrigin, setZoomOrigin] = useState("50% 50%")
 
   useBodyOverflowLock(isOpen)
+
+  // El zoom es por-foto: al navegar o cerrar, vuelve a tamaño normal.
+  useEffect(() => {
+    setIsZoomed(false)
+  }, [index])
 
   useEffect(() => {
     if (!isOpen) return
@@ -87,6 +94,17 @@ export default function GalleryLightbox({ items, index, onClose, onNav, triggerR
 
   const item = items[index]
 
+  function handleImageClick(e: React.MouseEvent<HTMLImageElement>) {
+    e.stopPropagation()
+    if (!isZoomed) {
+      const rect = e.currentTarget.getBoundingClientRect()
+      const originX = ((e.clientX - rect.left) / rect.width) * 100
+      const originY = ((e.clientY - rect.top) / rect.height) * 100
+      setZoomOrigin(`${originX}% ${originY}%`)
+    }
+    setIsZoomed((z) => !z)
+  }
+
   function handleTouchStart(e: React.TouchEvent) {
     const t = e.touches[0]
     touchStart.current = { x: t.clientX, y: t.clientY }
@@ -139,9 +157,18 @@ export default function GalleryLightbox({ items, index, onClose, onNav, triggerR
       >
         ›
       </button>
-      <figure className="gallery-lightbox__figure" onClick={(e) => e.stopPropagation()}>
+      <figure
+        className={["gallery-lightbox__figure", isZoomed ? "gallery-lightbox__figure--zoomed" : ""].join(" ")}
+        onClick={(e) => e.stopPropagation()}
+      >
         {/* eslint-disable-next-line @next/next/no-img-element -- resolución completa sin optimizador; el loader custom del proyecto no aporta aquí */}
-        <img src={imgPath(item.src)} alt={item.alt} className="gallery-lightbox__img" />
+        <img
+          src={imgPath(item.src)}
+          alt={item.alt}
+          className={["gallery-lightbox__img", isZoomed ? "gallery-lightbox__img--zoomed" : ""].join(" ")}
+          style={isZoomed ? { transformOrigin: zoomOrigin } : undefined}
+          onClick={handleImageClick}
+        />
         <figcaption className="gallery-lightbox__caption">{item.tag}</figcaption>
       </figure>
     </div>

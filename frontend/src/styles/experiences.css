@@ -41,6 +41,46 @@
   font-weight: 300;
 }
 
+/* ── Custom-trip note ── */
+.experiences-note {
+  background: var(--color-light-bg);
+  border-bottom: 1px solid rgba(13, 32, 12, 0.08);
+  padding: 18px var(--px);
+}
+
+.experiences-note__inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.experiences-note__icon {
+  flex-shrink: 0;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(58, 160, 35, 0.12);
+  color: var(--color-primary);
+  font-size: 13px;
+}
+
+.experiences-note__text {
+  font-size: 14px;
+  line-height: 1.5;
+  color: rgba(13, 32, 12, 0.65);
+  font-weight: 300;
+}
+
+.experiences-note__text strong {
+  color: var(--color-dark);
+  font-weight: 700;
+}
+
 /* ── Filters ── */
 .experiences-filters {
   background: var(--color-white);
@@ -123,6 +163,8 @@
 
 @media (max-width: 767px) {
   .experiences-hero { padding: 56px 24px 40px; }
+  .experiences-note { padding: 14px 24px; }
+  .experiences-note__text { font-size: 13px; }
   .experiences-filters { padding: 14px 24px; }
   .experiences-grid { padding: 40px 24px 64px; }
 }

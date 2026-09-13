@@ -13,13 +13,13 @@ export default function Tours() {
         <div className="tours__header">
           <div className="tours__header-left">
             <h2 className="tours__title">
-              <span className="tours__title-lead">Tours populares</span>
-              Los más elegidos por nuestros viajeros.
+              <span className="tours__title-lead">Algunas ideas de viaje</span>
+              Así empiezan algunos viajes. El tuyo puede ser distinto.
             </h2>
           </div>
-          {/* Ver todos — desktop: arriba derecha */}
+          {/* Ver más ejemplos — desktop: arriba derecha */}
           <Link href={ROUTES.EXPERIENCES} className="tours__view-all tours__view-all--desktop">
-            Ver todos los tours →
+            Ver más ejemplos →
           </Link>
         </div>
 
@@ -32,10 +32,10 @@ export default function Tours() {
           ))}
         </ul>
 
-        {/* Ver todos — mobile: al final */}
+        {/* Ver más ejemplos — mobile: al final */}
         <div className="tours__view-all-wrap">
           <Link href={ROUTES.EXPERIENCES} className="tours__view-all tours__view-all--mobile">
-            Ver todos los tours →
+            Ver más ejemplos →
           </Link>
         </div>
       </div>

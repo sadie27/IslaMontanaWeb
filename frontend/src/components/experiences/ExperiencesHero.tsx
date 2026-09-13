@@ -9,8 +9,9 @@ export default function ExperiencesHero() {
           para ti.
         </h1>
         <p className="experiences-hero__body fade-up fade-up-3">
-          Tours de día, cruceros, expediciones en tierra firme y rutas a
-          medida — elige cómo quieres descubrir Ecuador.
+          Estos son ejemplos de viajes que hemos creado — no un catálogo cerrado.
+          Los usamos como punto de partida para diseñar contigo el tuyo, a tu
+          ritmo y con lo que de verdad te interesa.
         </p>
       </div>
     </section>

@@ -16,6 +16,16 @@ export default function ExperiencesView() {
 
   return (
     <>
+      <div className="experiences-note">
+        <div className="experiences-note__inner">
+          <span className="experiences-note__icon" aria-hidden="true">✎</span>
+          <p className="experiences-note__text">
+            Estos son ejemplos de lo que podemos crear, no un catálogo cerrado.
+            <strong> Cuéntanos tu viaje ideal</strong> y lo diseñamos contigo desde cero.
+          </p>
+        </div>
+      </div>
+
       <div className="experiences-filters">
         <div className="experiences-filters__inner">
           <button
