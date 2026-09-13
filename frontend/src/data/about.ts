@@ -14,7 +14,7 @@ export const ABOUT_HISTORY = {
 export const TEAM_MEMBERS: TeamMember[] = [
   {
     name: 'Irene Morejón',
-    role: 'Gerente General',
+    role: 'Cofundadora y Gerente General',
     photo: ASSETS.TEAM.IRENE,
     placeholderBg: '#3aa023',
     bio: 'Es la Gerente General y verdadera alma de Islamontana Travel. Con una licenciatura en Turismo y otra en Marketing, comenzó a trabajar en empresas turísticas desde muy joven y lleva más de 30 años organizando y operando grupos a todos los destinos de Ecuador. Sigue siendo la persona que supervisa y se ocupa personalmente de los detalles para que la experiencia de nuestros clientes sea excelente.',
