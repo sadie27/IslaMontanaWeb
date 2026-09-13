@@ -9,6 +9,7 @@ import { getNavMenu } from "@/lib/api"
 import { adaptNavItem } from "@/lib/adapters"
 import { ROUTES } from "@/config/routes"
 import { ASSETS } from "@/config/assets"
+import { SITE_URL, SITE_NAME, SITE_LOCALE } from "@/config/site"
 
 const switzer = localFont({
   src: "../fonts/Switzer-Variable.woff2",
@@ -26,12 +27,46 @@ const bebas = Bebas_Neue({
 
 const base = process.env.NEXT_PUBLIC_BASE_PATH ?? ''
 
+const description =
+  "Agencia de viajes especializada en turismo de naturaleza en Ecuador. Expertos en Galápagos, nuestro destino insignia, con tours también a la Amazonía y los Andes."
+
 export const metadata: Metadata = {
-  title: "Islamontana Travel",
-  description:
-    "Agencia de viajes especializada en turismo de naturaleza en Ecuador. Expertos en Galápagos, nuestro destino insignia, con tours también a la Amazonía y los Andes.",
+  metadataBase: new URL(SITE_URL),
+  // Sin `template`: cada página construye su propio título completo
+  // (incluyendo "— Islamontana Travel") — un template aquí duplicaría el
+  // sufijo de marca en esos títulos. `title` es solo el fallback para
+  // páginas que no exporten metadata propio.
+  title: SITE_NAME,
+  description,
   icons: {
-    icon: `${base}/favicon.ico`,
+    icon: [
+      { url: `${base}/favicon.ico` },
+      { url: `${base}/favicon-16x16.png`, sizes: '16x16', type: 'image/png' },
+      { url: `${base}/favicon-32x32.png`, sizes: '32x32', type: 'image/png' },
+    ],
+    apple: `${base}/apple-touch-icon.png`,
+  },
+  manifest: `${base}/site.webmanifest`,
+  openGraph: {
+    siteName: SITE_NAME,
+    locale: SITE_LOCALE,
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+  },
+}
+
+const organizationJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "TravelAgency",
+  name: SITE_NAME,
+  url: SITE_URL,
+  logo: `${SITE_URL}${ASSETS.LOGOS.HORIZONTAL}`,
+  description,
+  areaServed: {
+    "@type": "Country",
+    name: "Ecuador",
   },
 }
 
@@ -85,6 +120,12 @@ export default async function RootLayout({
 
   return (
     <html lang="es" className={`${switzer.variable} ${bebas.variable}`}>
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationJsonLd) }}
+        />
+      </head>
       <body>
         <Navbar navData={navData} />
         <main>{children}</main>

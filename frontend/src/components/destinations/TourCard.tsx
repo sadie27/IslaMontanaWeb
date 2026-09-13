@@ -63,24 +63,38 @@ export default function TourCard({ tour, accentColor }: Props) {
         ))}
       </ul>
 
-      <div style={{ borderTop: '1px solid rgba(255,255,255,0.05)', paddingTop: 14, display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+      <div style={{ borderTop: '1px solid rgba(255,255,255,0.05)', paddingTop: 14, display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: 8 }}>
         <span style={{ fontSize: 21, fontWeight: 900, letterSpacing: '-0.03em', color: accentColor }}>
           {tour.price}
         </span>
-        <Link
-          href={ROUTES.TOUR_CONTACT(tour.id)}
-          style={{
-            border: `1px solid ${accentColor}55`,
-            color: 'rgba(255,255,255,0.82)',
-            fontSize: 12,
-            fontWeight: 600,
-            padding: '7px 14px',
-            borderRadius: 7,
-            textDecoration: 'none',
-          }}
-        >
-          Consultar →
-        </Link>
+        <div style={{ display: 'flex', gap: 8 }}>
+          <Link
+            href={ROUTES.EXPERIENCE(tour.id)}
+            style={{
+              color: 'rgba(255,255,255,0.62)',
+              fontSize: 12,
+              fontWeight: 600,
+              padding: '7px 10px',
+              textDecoration: 'none',
+            }}
+          >
+            Ver detalles
+          </Link>
+          <Link
+            href={ROUTES.TOUR_CONTACT(tour.id)}
+            style={{
+              border: `1px solid ${accentColor}55`,
+              color: 'rgba(255,255,255,0.82)',
+              fontSize: 12,
+              fontWeight: 600,
+              padding: '7px 14px',
+              borderRadius: 7,
+              textDecoration: 'none',
+            }}
+          >
+            Consultar →
+          </Link>
+        </div>
       </div>
     </div>
   )

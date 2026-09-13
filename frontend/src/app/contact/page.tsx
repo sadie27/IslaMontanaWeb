@@ -2,10 +2,17 @@ import { Suspense } from 'react'
 import ContactHero from '@/components/contact/ContactHero'
 import ContactForm from '@/components/contact/ContactForm'
 
+// Keyword primaria: "contacto agencia de viajes Ecuador"
+const title = 'Contacto — Agencia de Viajes en Ecuador | Islamontana'
+const description =
+  'Escríbenos para planificar tu viaje a Galápagos, la Amazonía o los Andes de Ecuador. Te respondemos con un itinerario de viaje a medida, sin compromiso.'
+
 export const metadata = {
-  title: 'Contáctanos — Islamontana Travel',
-  description:
-    'Escríbenos para planificar tu viaje a Galápagos, la Amazonía o los Andes de Ecuador. Te respondemos con un itinerario a medida.',
+  title,
+  description,
+  alternates: { canonical: '/contact' },
+  openGraph: { title, description, url: '/contact' },
+  twitter: { title, description },
 }
 
 function ContactFormSkeleton() {

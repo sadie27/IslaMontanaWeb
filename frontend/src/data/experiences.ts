@@ -24,6 +24,22 @@ const TOUR_CATEGORY: Record<string, ExperienceCategory> = {
   ant5: 'tierra',
 }
 
+/**
+ * Slug del destino padre de cada tour, para el enlace de vuelta desde
+ * /experiences/[id] hacia /destinations/[slug] (cross-link bidireccional).
+ * Derivado de `tours` en src/data/destinations.ts — si se añade un tour
+ * nuevo allí, añadir aquí su slug de destino correspondiente.
+ */
+export const TOUR_DESTINATION_SLUG: Record<string, string> = {
+  c3: 'galapagos',
+  t3: 'galapagos',
+  at3: 'amazonia',
+  act4: 'andes-cultura',
+  and2: 'andes-naturaleza',
+  ant4: 'andes-naturaleza',
+  ant5: 'andes-naturaleza',
+}
+
 export const EXPERIENCES: Experience[] = HOME_TOURS.map((tour): Experience => ({
   ...tour,
   category: TOUR_CATEGORY[tour.id] ?? 'tierra',

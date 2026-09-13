@@ -4,10 +4,17 @@ import AboutTeam from '@/components/about/AboutTeam'
 import AboutValues from '@/components/about/AboutValues'
 import FinalCta from '@/components/home/FinalCta'
 
+// Keyword primaria: "agencia de viajes Ecuador" (marca / equipo)
+const title = 'Nuestro Equipo — Agencia de Viajes en Ecuador | Islamontana'
+const description =
+  'Conoce al equipo de Islamontana Travel: guías locales y viajeros apasionados por la naturaleza de Ecuador, expertos en Galápagos, Amazonía y los Andes.'
+
 export const metadata = {
-  title: 'Nosotros — Islamontana Travel',
-  description:
-    'Conoce al equipo detrás de Islamontana Travel: guías locales y viajeros apasionados por la naturaleza de Ecuador.',
+  title,
+  description,
+  alternates: { canonical: '/about' },
+  openGraph: { title, description, url: '/about' },
+  twitter: { title, description },
 }
 
 export default function AboutPage() {

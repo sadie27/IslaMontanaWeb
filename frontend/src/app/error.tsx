@@ -8,5 +8,13 @@ const ErrorPageClient = dynamic(
 )
 
 export default function Error({ reset }: { error: Error; reset: () => void }) {
-  return <ErrorPageClient type="500" reset={reset} />
+  return (
+    <>
+      {/* error.tsx es obligatoriamente Client Component en Next.js App Router,
+          por lo que no puede exportar `metadata`. React 19 sube automáticamente
+          las etiquetas <title>/<meta> renderizadas en el árbol al <head>. */}
+      <meta name="robots" content="noindex, nofollow" />
+      <ErrorPageClient type="500" reset={reset} />
+    </>
+  )
 }

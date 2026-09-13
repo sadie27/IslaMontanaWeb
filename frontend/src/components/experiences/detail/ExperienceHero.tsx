@@ -4,15 +4,17 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { useState } from 'react'
 import type { Tour } from '@/components/home/TourCard'
+import type { Destination } from '@/lib/types'
 import { ROUTES } from '@/config/routes'
 import { DIFF_COLORS } from '@/config/colors'
 
 interface Props {
   tour: Tour
   heroImage?: string
+  destination?: Destination
 }
 
-export default function ExperienceHero({ tour, heroImage }: Props) {
+export default function ExperienceHero({ tour, heroImage, destination }: Props) {
   const [imgError, setImgError] = useState(false)
   const diffColor = DIFF_COLORS[tour.difficulty] ?? '#6b7560'
   const showImage = Boolean(heroImage) && !imgError
@@ -38,6 +40,12 @@ export default function ExperienceHero({ tour, heroImage }: Props) {
       <div className="exp-hero__inner">
         <nav className="exp-hero__breadcrumb fade-up fade-up-1" aria-label="Ruta de navegación">
           <Link href={ROUTES.EXPERIENCES}>Experiencias</Link>
+          {destination && (
+            <>
+              <span aria-hidden="true">/</span>
+              <Link href={ROUTES.DESTINATION(destination.slug)}>{destination.name}</Link>
+            </>
+          )}
           <span aria-hidden="true">/</span>
           <span>{tour.name}</span>
         </nav>

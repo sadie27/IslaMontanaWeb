@@ -9,10 +9,10 @@
 'use client'
 
 import { useState, useEffect, useCallback, useRef } from 'react'
-import { heroImages } from '@/config/hero-images'
+import { heroImages, type HeroImage } from '@/config/hero-images'
 
 interface UseHeroImagesReturn {
-  images: string[]
+  images: HeroImage[]
   currentIndex: number
 }
 
@@ -45,7 +45,7 @@ export function useHeroImages(): UseHeroImagesReturn {
   useEffect(() => {
     if (images.length === 0 || hasPreloadedRef.current) return
     const img = new window.Image()
-    img.src = images[0]
+    img.src = images[0].src
     hasPreloadedRef.current = true
   }, [images])
 
@@ -53,7 +53,7 @@ export function useHeroImages(): UseHeroImagesReturn {
   useEffect(() => {
     if (images.length <= 1) return
     const preloadRest = () => {
-      images.slice(1).forEach(src => {
+      images.slice(1).forEach(({ src }) => {
         const img = new window.Image()
         img.src = src
       })

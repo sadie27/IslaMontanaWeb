@@ -1,9 +1,17 @@
 import DestinationMapAnimationWrapper from '@/components/destinations/DestinationMapAnimationWrapper';
 
+// Keyword primaria: "destinos Ecuador" (visión general — no compite con
+// "tours Galápagos" de /destinations/galapagos ni con la keyword de home).
+const destinationsTitle = 'Destinos en Ecuador: Galápagos, Amazonía y Andes'
+const destinationsDescription =
+  'Descubre los cuatro mundos de Ecuador: Galápagos, Amazonía, Andes Cultural y Andes Naturaleza. Viajes de naturaleza de alto impacto con Islamontana Travel.'
+
 export const metadata = {
-  title: 'Destinos — Islamontana Travel',
-  description:
-    'Descubre los cuatro mundos de Ecuador: Galápagos, Amazonía, Andes Cultural y Andes Naturaleza. Viajes de naturaleza de alto impacto con Islamontana Travel.',
+  title: destinationsTitle,
+  description: destinationsDescription,
+  alternates: { canonical: '/destinations' },
+  openGraph: { title: destinationsTitle, description: destinationsDescription, url: '/destinations' },
+  twitter: { title: destinationsTitle, description: destinationsDescription },
 };
 
 export default function DestinationsPage() {

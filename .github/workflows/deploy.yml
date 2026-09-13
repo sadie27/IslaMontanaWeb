@@ -35,6 +35,14 @@ jobs:
         working-directory: frontend
         run: npm run generate:hero
 
+      - name: Generate icons
+        working-directory: frontend
+        run: npm run generate:icons
+
+      - name: Generate image variants
+        working-directory: frontend
+        run: npm run generate:image-variants
+
       - name: Lint
         working-directory: frontend
         run: npm run lint
