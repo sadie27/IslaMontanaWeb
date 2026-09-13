@@ -114,6 +114,12 @@
   cursor: pointer;
 }
 
+.contact-form__note {
+  font-size: 13px;
+  color: var(--color-gray);
+  margin-top: -8px;
+}
+
 .contact-form__error {
   font-size: 13px;
   color: #c0392b;

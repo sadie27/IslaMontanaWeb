@@ -5,11 +5,14 @@ import type { GalleryImage } from "@/types/gallery"
 
 interface GalleryGridProps {
   items: GalleryImage[]
+  allItems: GalleryImage[]
   onOpen: (items: GalleryImage[], index: number) => void
   onReset: () => void
+  hasMore: boolean
+  onLoadMore: () => void
 }
 
-export default function GalleryGrid({ items, onOpen, onReset }: GalleryGridProps) {
+export default function GalleryGrid({ items, allItems, onOpen, onReset, hasMore, onLoadMore }: GalleryGridProps) {
   if (items.length === 0) {
     return (
       <div className="gallery-grid">
@@ -32,10 +35,18 @@ export default function GalleryGrid({ items, onOpen, onReset }: GalleryGridProps
             item={item}
             index={i}
             priority={i < 4}
-            onOpen={() => onOpen(items, i)}
+            onOpen={() => onOpen(allItems, allItems.indexOf(item))}
           />
         ))}
       </div>
+
+      {hasMore && (
+        <div className="gallery-grid__load-more">
+          <button type="button" className="gallery-grid__load-more-btn" onClick={onLoadMore}>
+            Mostrar más
+          </button>
+        </div>
+      )}
     </div>
   )
 }

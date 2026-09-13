@@ -1,6 +1,6 @@
 "use client"
 
-import { useMemo } from "react"
+import { useEffect, useMemo, useState } from "react"
 import { useRouter, useSearchParams, usePathname } from "next/navigation"
 import GalleryFilters from "@/components/gallery/GalleryFilters"
 import GalleryGrid from "@/components/gallery/GalleryGrid"
@@ -8,6 +8,8 @@ import GalleryLightbox from "@/components/gallery/GalleryLightbox"
 import { useLightbox } from "@/hooks/useLightbox"
 import { GALLERY_IMAGES, GALLERY_CATEGORIES, GALLERY_SUBFILTERS } from "@/data/gallery"
 import type { GalleryCategory } from "@/types/gallery"
+
+const PAGE_SIZE = 10
 
 // Enlaces legacy del MegaMenu (categorías antiguas de /gallery?category=...)
 // → estado inicial equivalente en la nueva taxonomía destinos/experiencias.
@@ -53,6 +55,20 @@ export default function GalleryView() {
     )
   }, [category, sub])
 
+  const [visibleCount, setVisibleCount] = useState(PAGE_SIZE)
+
+  // Cada vez que cambian los filtros, la paginación vuelve a empezar desde la primera página.
+  useEffect(() => {
+    setVisibleCount(PAGE_SIZE)
+  }, [category, sub])
+
+  const visibleItems = filteredItems.slice(0, visibleCount)
+  const hasMore = visibleCount < filteredItems.length
+
+  function loadMore() {
+    setVisibleCount((prev) => prev + PAGE_SIZE)
+  }
+
   function resetFilters() {
     router.replace(`${pathname}?category=destinos&sub=todos`, { scroll: false })
   }
@@ -60,7 +76,14 @@ export default function GalleryView() {
   return (
     <>
       <GalleryFilters category={category} sub={sub} resultCount={filteredItems.length} />
-      <GalleryGrid items={filteredItems} onOpen={openLightbox} onReset={resetFilters} />
+      <GalleryGrid
+        items={visibleItems}
+        allItems={filteredItems}
+        onOpen={openLightbox}
+        onReset={resetFilters}
+        hasMore={hasMore}
+        onLoadMore={loadMore}
+      />
       <GalleryLightbox
         items={lightboxItems}
         index={lightboxIndex}

@@ -98,6 +98,7 @@ export default function ContactForm() {
         <button type="submit" className="btn btn--primary contact-form__submit">
           Enviar mensaje →
         </button>
+        <p className="contact-form__note">Sin costo ni compromiso — solo te ayudamos a planificar tu viaje.</p>
       </form>
 
       <div className="contact-direct">
