@@ -3,6 +3,21 @@
 import Link from "next/link"
 import { useHeroImages } from "@/hooks/useHeroImages"
 import { ROUTES } from "@/config/routes"
+import { imgPath } from "@/lib/image-path"
+
+// Antepone basePath (vía imgPath, el mismo helper que usan FooterBackground
+// y GalleryLightbox) a cada URL de un srcset "w" — ej. "/images/foo-400w.webp 400w, ...".
+// Necesario porque estas imágenes se sirven con <img> nativo, sin pasar por
+// next/image ni por el loader personalizado que normalmente añade basePath.
+function imgPathInSrcSet(srcset: string): string {
+  return srcset
+    .split(', ')
+    .map((entry) => {
+      const [url, descriptor] = entry.split(' ')
+      return `${imgPath(url)} ${descriptor}`
+    })
+    .join(', ')
+}
 
 export default function HomeHero() {
   const { images, currentIndex } = useHeroImages()
@@ -27,8 +42,8 @@ export default function HomeHero() {
             // eslint-disable-next-line @next/next/no-img-element
             <img
               key={image.src}
-              src={image.src}
-              srcSet={image.srcset}
+              src={imgPath(image.src)}
+              srcSet={imgPathInSrcSet(image.srcset)}
               sizes="100vw"
               alt={image.alt}
               loading={idx === 0 ? 'eager' : 'lazy'}

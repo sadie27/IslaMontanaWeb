@@ -10,6 +10,7 @@
 
 import { useState, useEffect, useCallback, useRef } from 'react'
 import { heroImages, type HeroImage } from '@/config/hero-images'
+import { imgPath } from '@/lib/image-path'
 
 interface UseHeroImagesReturn {
   images: HeroImage[]
@@ -45,7 +46,7 @@ export function useHeroImages(): UseHeroImagesReturn {
   useEffect(() => {
     if (images.length === 0 || hasPreloadedRef.current) return
     const img = new window.Image()
-    img.src = images[0].src
+    img.src = imgPath(images[0].src)
     hasPreloadedRef.current = true
   }, [images])
 
@@ -55,7 +56,7 @@ export function useHeroImages(): UseHeroImagesReturn {
     const preloadRest = () => {
       images.slice(1).forEach(({ src }) => {
         const img = new window.Image()
-        img.src = src
+        img.src = imgPath(src)
       })
     }
     if ('requestIdleCallback' in window) {
