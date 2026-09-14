@@ -80,10 +80,10 @@ export default function HomeHero() {
         </h1>
 
         <p className="hero__subtitle">
-          Somos una agencia pequeña con más de 20 años y un guía que lleva 40
-          en las islas. No vendemos paquetes cerrados: nos cuentas qué te
-          gustaría ver y armamos el viaje contigo. Si quieres sumarle selva o
-          volcanes, también.
+          Llevamos más de 20 años organizando viajes por Ecuador y no vendemos
+          paquetes cerrados: nos cuentas qué te gustaría ver y armamos el viaje
+          contigo, con guías locales que conocen el terreno. Si quieres sumarle
+          selva o volcanes, también.
         </p>
 
         <div className="hero__ctas">

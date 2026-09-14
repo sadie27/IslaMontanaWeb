@@ -14,10 +14,10 @@ interface StatItem {
 }
 
 const STATS: StatItem[] = [
-  { value: 20, suffix: '+', label: 'Años como agencia' },
-  { value: 40, suffix: '', label: 'Años de Luis guiando en Galápagos' },
+  { value: 1900, suffix: '+', label: 'Especies endémicas en Galápagos' },
+  { value: 100, suffix: '%', label: 'Itinerarios a medida' },
   { value: 3800, suffix: '+', label: 'Viajeros acompañados' },
-  { value: 100, suffix: '%', label: 'Itinerarios hechos a medida' },
+  { value: 20, suffix: '+', label: 'Años de agencia en Ecuador' },
 ]
 
 function useCountUp(target: number, trigger: boolean): number {

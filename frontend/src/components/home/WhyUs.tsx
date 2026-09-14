@@ -18,8 +18,8 @@ const WHY_ITEMS = [
   },
   {
     icon: 'leaf',
-    title: 'Guías locales certificados',
-    desc: 'Todos nuestros guías están certificados por el Parque Nacional Galápagos o el Ministerio de Turismo, y son de la región que recorres.',
+    title: 'Guías locales, certificados y bilingües',
+    desc: 'Certificados por el Parque Nacional Galápagos o el Ministerio de Turismo, y de la región que recorres. Nadie te explica la Amazonía leyendo un guión.',
   },
 ]
 
