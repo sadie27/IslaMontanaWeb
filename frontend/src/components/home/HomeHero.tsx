@@ -80,9 +80,10 @@ export default function HomeHero() {
         </h1>
 
         <p className="hero__subtitle">
-          Llevamos más de 20 años guiando en las islas. No vendemos paquetes
-          cerrados: nos cuentas qué te gustaría ver y armamos el viaje contigo.
-          Si quieres sumarle selva o volcanes, también.
+          Somos una agencia pequeña con más de 20 años y un guía que lleva 40
+          en las islas. No vendemos paquetes cerrados: nos cuentas qué te
+          gustaría ver y armamos el viaje contigo. Si quieres sumarle selva o
+          volcanes, también.
         </p>
 
         <div className="hero__ctas">

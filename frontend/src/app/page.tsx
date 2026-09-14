@@ -19,7 +19,7 @@ const Stats = dynamic(
 // que sí compite por "tours Galápagos" / "cruceros Galápagos".
 const title = 'Agencia de Viajes y Turismo de Naturaleza en Ecuador'
 const description =
-  'Diseñamos tu viaje a Galápagos y Ecuador uno a uno, con trato directo y más de 20 años guiando en las islas. Cuéntanos tus fechas y te proponemos itinerario sin compromiso.'
+  'Diseñamos tu viaje a Galápagos y Ecuador uno a uno, con trato directo y más de 20 años como agencia. Cuéntanos tus fechas y te proponemos itinerario sin compromiso.'
 
 export const metadata: Metadata = {
   title,

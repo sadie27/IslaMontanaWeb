@@ -13,8 +13,8 @@ const WHY_ITEMS = [
   },
   {
     icon: 'compass',
-    title: '40 años de Galápagos',
-    desc: 'Luis lleva cuatro décadas como guía naturalista en las islas. Sabe qué barcos evitar, que es un consejo que ninguna web te va a dar.',
+    title: 'Luis lleva 40 años en las islas',
+    desc: 'Llegó desde España de biólogo y se quedó. Sabe qué barcos evitar, que es un consejo que ninguna web te va a dar.',
   },
   {
     icon: 'leaf',
@@ -87,8 +87,8 @@ export default function WhyUs() {
           <p className="why-us__body">
             Irene, Luis y Kleber. Nosotros contestamos tu primer mensaje, nosotros
             armamos tu itinerario y nosotros estamos al teléfono si algo pasa
-            mientras viajas. Llevamos más de 20 años haciéndolo, sobre todo en
-            Galápagos.
+            mientras viajas. La agencia tiene más de 20 años, pero Irene y Luis
+            llevaban ya media vida en esto cuando la fundaron.
           </p>
           <Link href={ROUTES.ABOUT} className="why-us__link">
             Conoce al equipo →

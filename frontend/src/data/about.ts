@@ -4,10 +4,10 @@ import { ASSETS } from '@/config/assets'
 export const ABOUT_HISTORY = {
   eyebrow: 'Nuestra historia',
   title: 'Empezó con un biólogo que fue a Galápagos y no volvió.',
-  body: 'Luis llegó desde España hace 40 años para trabajar como guía naturalista en las islas y ya nunca pudo dejarlas. Años después unió fuerzas con Irene, que llevaba toda su carrera operando grupos por Ecuador, y fundaron Islamontana Travel. Seguimos siendo un equipo pequeño a propósito: así podemos diseñar cada viaje uno a uno y conocer a quien viaja con nosotros antes de que se suba al avión.',
+  body: 'Luis llegó desde España hace 40 años para trabajar como guía naturalista en las islas y ya nunca pudo dejarlas. Años después unió fuerzas con Irene, que para entonces llevaba tres décadas operando grupos por Ecuador, y hace más de veinte fundaron Islamontana Travel. Seguimos siendo un equipo pequeño a propósito: así podemos diseñar cada viaje uno a uno y conocer a quien viaja con nosotros antes de que se suba al avión.',
   milestone: {
     value: '40',
-    label: 'años guiando en Galápagos',
+    label: 'años de Luis guiando en Galápagos',
   },
 }
 
