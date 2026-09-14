@@ -75,6 +75,14 @@ export const DESTINATIONS: Destination[] = [
         q: '¿Cuántos días necesito para ver lo esencial?',
         a: 'Recomendamos mínimo 6 días. Con 8–10 días puedes visitar varias islas con comodidad y sin prisas. Los cruceros de 8 días son la opción más completa: cubres mayor distancia y accedes a islas que no tienen tours de día.',
       },
+      {
+        q: '¿Puedo diseñar mi propio itinerario o solo hay paquetes fijos?',
+        a: 'Diseñamos cada itinerario contigo, no partimos de un paquete cerrado. Nos cuentas tus fechas, intereses (buceo, fotografía, familia, aventura) y presupuesto, y armamos la ruta de islas, embarcación y actividades a medida. El mismo equipo te acompaña desde la primera consulta hasta el regreso.',
+      },
+      {
+        q: '¿Los grupos son grandes o hay opción de viaje privado?',
+        a: 'Trabajamos con grupos pequeños y también itinerarios 100% privados para tu familia o pareja. En los cruceros, priorizamos embarcaciones de hasta 16 pasajeros — nunca los megabarcos de 100. En tierra, siempre puedes optar por guía privado.',
+      },
     ],
   },
   {

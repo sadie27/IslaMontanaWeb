@@ -36,7 +36,7 @@ export default function ErrorHeader({ type, isMobile }: ErrorHeaderProps) {
         }}
       >
         {is404
-          ? 'La página que buscas no existe o ha sido movida. Pero Ecuador sigue ahí, esperándote.'
+          ? 'La página que buscas no existe o ha cambiado de sitio. Galápagos, en cambio, sigue donde siempre.'
           : 'Algo falló en nuestro servidor. Estamos trabajando para resolverlo. Intenta de nuevo en unos minutos.'}
       </p>
     </>

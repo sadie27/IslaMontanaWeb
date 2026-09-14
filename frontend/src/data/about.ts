@@ -3,11 +3,11 @@ import { ASSETS } from '@/config/assets'
 
 export const ABOUT_HISTORY = {
   eyebrow: 'Nuestra historia',
-  title: 'Nacimos para mostrar el Ecuador que nosotros mismos amamos.',
-  body: 'Luis llegó desde España para trabajar como guía naturalista en Galápagos y ya nunca pudo dejar las islas. Años más tarde unió fuerzas con Irene, que llevaba toda su carrera organizando y operando grupos por Ecuador, y juntos fundaron Islamontana Travel. Desde entonces seguimos guiando viajeros por Galápagos, la Amazonía y los Andes, siempre con el mismo criterio: experiencias auténticas, respeto por el entorno y atención cercana en cada detalle del viaje.',
+  title: 'Empezó con un biólogo que fue a Galápagos y no volvió.',
+  body: 'Luis llegó desde España hace 40 años para trabajar como guía naturalista en las islas y ya nunca pudo dejarlas. Años después unió fuerzas con Irene, que llevaba toda su carrera operando grupos por Ecuador, y fundaron Islamontana Travel. Seguimos siendo un equipo pequeño a propósito: así podemos diseñar cada viaje uno a uno y conocer a quien viaja con nosotros antes de que se suba al avión.',
   milestone: {
-    value: '+20',
-    label: 'años guiando viajes por Ecuador',
+    value: '40',
+    label: 'años guiando en Galápagos',
   },
 }
 
@@ -37,23 +37,23 @@ export const TEAM_MEMBERS: TeamMember[] = [
 
 export const COMPANY_VALUES: CompanyValue[] = [
   {
-    icon: 'leaf',
-    title: 'Turismo responsable',
-    desc: 'Operamos con guías locales certificados y priorizamos actividades de bajo impacto ambiental.',
+    icon: 'users',
+    title: 'Trato directo, siempre',
+    desc: 'Hablas con quien diseña tu viaje, y como somos tres, no hay departamento al que pasarte ni ticket que se pierda por el camino.',
   },
   {
     icon: 'compass',
-    title: 'Experiencia real',
-    desc: 'Diseñamos cada ruta desde el conocimiento directo del terreno, no desde un catálogo genérico.',
+    title: 'Conocemos el terreno',
+    desc: 'Recomendamos rutas y barcos que hemos pisado nosotros. Si algo no encaja contigo, te lo decimos.',
   },
   {
-    icon: 'users',
-    title: 'Atención cercana',
-    desc: 'Acompañamos al viajero antes, durante y después del viaje — sin intermediarios anónimos.',
+    icon: 'leaf',
+    title: 'Turismo responsable',
+    desc: 'Guías locales certificados y actividades de bajo impacto. En Galápagos, respetando siempre los cupos del Parque Nacional.',
   },
   {
     icon: 'shield',
     title: 'Seguridad primero',
-    desc: 'Protocolos claros y guías certificados en cada actividad, especialmente en trekking y navegación.',
+    desc: 'Guías certificados en cada actividad y protocolos escritos. En el agua es donde importa de verdad.',
   },
 ]

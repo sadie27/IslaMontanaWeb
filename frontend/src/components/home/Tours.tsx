@@ -14,7 +14,7 @@ export default function Tours() {
           <div className="tours__header-left">
             <h2 className="tours__title">
               <span className="tours__title-lead">Algunas ideas de viaje</span>
-              Así empiezan algunos viajes. El tuyo puede ser distinto.
+              Ninguno de estos viajes se vende tal cual. El tuyo lo armamos contigo.
             </h2>
           </div>
           {/* Ver más ejemplos — desktop: arriba derecha */}

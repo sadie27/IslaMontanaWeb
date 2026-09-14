@@ -9,8 +9,8 @@ export default function GalleryHero() {
           imágenes.
         </h1>
         <p className="gallery-hero__body fade-up fade-up-3">
-          Fauna, paisajes y experiencias capturadas en cada rincón del país
-          más biodiverso del planeta.
+          Fotos reales de nuestros viajes: Galápagos, la Amazonía y los Andes,
+          tal y como los vieron quienes fueron con nosotros.
         </p>
       </div>
     </section>

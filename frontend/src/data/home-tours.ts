@@ -1,14 +1,28 @@
 import type { Tour } from '@/components/home/TourCard'
 import { ASSETS } from '@/config/assets'
 
+/*
+ * PRECIOS ORIENTATIVOS — PENDIENTE DE RELLENAR
+ * ---------------------------------------------
+ * Cada tour acepta un campo opcional `priceFrom` con el precio "desde" por
+ * persona, ej. priceFrom: '2.400 €'. Mientras esté vacío, la web sigue
+ * mostrando "Consultar" sin romper nada.
+ *
+ * Para activarlo: descomenta la línea `// priceFrom:` de cada tour y pon la
+ * cifra real confirmada. No inventar precios — un precio erróneo publicado
+ * es peor que no publicar ninguno.
+ */
+
 /** Todos los tours base — fuente de verdad para /experiences. */
 export const HOME_TOURS: Tour[] = [
   {
     id: 'c3',
+    groupSize: 'Hasta 16 viajeros',
     name: 'Crucero Islas Occidentales',
     duration: '6 días / 5 noches',
     difficulty: 'Moderado',
     price: 'Consultar',
+    // TODO(precio): priceFrom: 'X.XXX €',  ← rellenar con cifra real
     badge: 'Islas remotas',
     accent: '#1a7a8a',
     region: 'Galápagos',
@@ -93,10 +107,12 @@ export const HOME_TOURS: Tour[] = [
   },
   {
     id: 't3',
+    groupSize: 'Programa privado',
     name: 'Galápagos Aventura Privada',
     duration: '7 días / 6 noches',
     difficulty: 'Moderado',
     price: 'Consultar',
+    // TODO(precio): priceFrom: 'X.XXX €',  ← rellenar con cifra real
     badge: 'Hiking & Snorkel',
     accent: '#1a7a8a',
     region: 'Galápagos',
@@ -161,8 +177,16 @@ export const HOME_TOURS: Tour[] = [
         title: 'Día 7 — Regreso a Quito',
         description:
           'Traslado a Santa Cruz en lancha rápida y de ahí a Baltra por tierra (o vuelo directo alternativo) ' +
-          'para tomar el vuelo de regreso a Quito. Posibilidad de extender el viaje con tours de día completo a ' +
-          'Seymour Norte, South Plaza o Bartolomé.',
+          'para tomar el vuelo de regreso a Quito.',
+      },
+      {
+        title: '¿Quieres alargarlo? — días extra opcionales',
+        description:
+          'Puedes añadir uno o dos días más con excursiones de día completo en barco. Seymour Norte: lobos ' +
+          'marinos, colonias de fragatas en cortejo y piqueros de patas azules anidando, con snorkel ' +
+          'excepcional. South Plaza: iguanas terrestres y marinas, gaviotas de cola bifurcada y rabijuncos. ' +
+          'Bartolomé y Bahía Sullivan: el paisaje volcánico más espectacular del archipiélago, con ' +
+          'pingüinos y halcones de Galápagos. Dinos si te interesa y lo montamos.',
       },
     ],
     includes: [
@@ -186,6 +210,7 @@ export const HOME_TOURS: Tour[] = [
     duration: '4 días / 3 noches',
     difficulty: 'Fácil',
     price: 'Consultar',
+    // TODO(precio): priceFrom: 'X.XXX €',  ← rellenar con cifra real
     badge: 'Lodge premiado',
     accent: '#2d6a1e',
     region: 'Amazonía',
@@ -202,7 +227,8 @@ export const HOME_TOURS: Tour[] = [
       'en el alto río Napo, disfrutando de su biodiversidad sin igual, sus plantas y animales espectaculares y ' +
       'la belleza de sus lagunas y bosques inundados. Este lodge premiado ofrece una experiencia única de la ' +
       'selva amazónica con la comodidad y seguridad de habitaciones amplias con mosquiteros, gastronomía ' +
-      'destacada y una extensa red de senderos propios.',
+      'destacada y una extensa red de senderos propios. También operamos este programa en versión de ' +
+      '5 días / 4 noches si quieres más tiempo en la selva — dínoslo y lo ajustamos.',
     itinerary: [
       {
         title: 'Día 1 — Quito · Coca · Sacha Lodge',
@@ -259,6 +285,7 @@ export const HOME_TOURS: Tour[] = [
     duration: '3 días / 2 noches',
     difficulty: 'Fácil',
     price: 'Consultar',
+    // TODO(precio): priceFrom: 'X.XXX €',  ← rellenar con cifra real
     badge: 'Hacienda histórica',
     accent: '#8B4513',
     region: 'Andes',
@@ -323,6 +350,7 @@ export const HOME_TOURS: Tour[] = [
     duration: '1 día',
     difficulty: 'Moderado',
     price: 'Consultar',
+    // TODO(precio): priceFrom: 'X.XXX €',  ← rellenar con cifra real
     badge: 'Birdwatching',
     accent: '#4a6fa5',
     region: 'Andes',
@@ -388,10 +416,12 @@ export const HOME_TOURS: Tour[] = [
   },
   {
     id: 'ant4',
+    groupSize: 'Grupo reducido: 8 viajeros',
     name: 'Joyas del Chocó — Mindo Birding',
     duration: '3 días / 2 noches',
     difficulty: 'Fácil',
     price: 'Consultar',
+    // TODO(precio): priceFrom: 'X.XXX €',  ← rellenar con cifra real
     badge: 'Birdwatching',
     accent: '#4a6fa5',
     region: 'Andes',
@@ -453,10 +483,12 @@ export const HOME_TOURS: Tour[] = [
   },
   {
     id: 'ant5',
+    groupSize: 'Programa privado para 2',
     name: 'Mindo Birding Privado',
     duration: '2 días / 1 noche',
     difficulty: 'Fácil',
     price: 'Consultar',
+    // TODO(precio): priceFrom: 'X.XXX €',  ← rellenar con cifra real
     badge: 'Grupo privado',
     accent: '#4a6fa5',
     region: 'Andes',

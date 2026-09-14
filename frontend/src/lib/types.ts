@@ -61,6 +61,21 @@ export interface CompanyValue {
   desc: string
 }
 
+// ─── Testimonial Types ──────────────────────────────────────────
+
+export interface Testimonial {
+  /** Cita literal del cliente. */
+  quote: string
+  /** Nombre del cliente (o nombre + inicial). */
+  name: string
+  /** Ciudad y país de origen — aporta credibilidad. */
+  origin: string
+  /** Viaje realizado, ej. 'Galápagos, 8 días'. */
+  trip: string
+  /** Fecha aproximada del viaje, ej. 'marzo 2025'. Opcional. */
+  date?: string
+}
+
 // ─── Footer Types ────────────────────────────────────────────────────────────
 
 export interface FooterLink {

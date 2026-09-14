@@ -9,9 +9,9 @@ export default function ExperiencesHero() {
           para ti.
         </h1>
         <p className="experiences-hero__body fade-up fade-up-3">
-          Estos son ejemplos de viajes que hemos creado — no un catálogo cerrado.
-          Los usamos como punto de partida para diseñar contigo el tuyo, a tu
-          ritmo y con lo que de verdad te interesa.
+          Estos son viajes que ya hemos hecho con otros viajeros, no un catálogo
+          cerrado. Mira el que más se parezca a lo tuyo y a partir de ahí lo
+          cambiamos: los días, el barco, las islas, el ritmo.
         </p>
       </div>
     </section>

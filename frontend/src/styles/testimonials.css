@@ -1,0 +1,123 @@
+/* ════════════════════════════════════════════════════════════
+   testimonials.css — Sección de testimonios (home)
+   Solo se renderiza si data/testimonials.ts tiene entradas.
+════════════════════════════════════════════════════════════ */
+
+.testimonials {
+  background: var(--color-light-bg);
+  padding: clamp(64px, 9vw, 120px) var(--px);
+}
+
+.testimonials__inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+.testimonials__title {
+  font-size: clamp(32px, 4.5vw, 54px);
+  font-weight: 900;
+  letter-spacing: -0.03em;
+  line-height: 1.05;
+  color: var(--color-dark);
+  margin-bottom: clamp(32px, 4vw, 56px);
+}
+
+.testimonials__title-lead {
+  display: block;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-primary);
+  margin-bottom: 14px;
+}
+
+.testimonials__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: clamp(16px, 2vw, 26px);
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.testimonial-card {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  background: var(--color-white);
+  border-radius: 16px;
+  padding: clamp(22px, 2.4vw, 32px);
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+              box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.testimonial-card__icon {
+  color: var(--color-accent);
+}
+
+.testimonial-card__quote {
+  font-size: clamp(15px, 1.4vw, 17px);
+  line-height: 1.6;
+  color: var(--color-dark);
+  margin: 0;
+  flex: 1;
+}
+
+.testimonial-card__meta {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  border-top: 1px solid rgba(13, 32, 12, 0.1);
+  padding-top: 14px;
+}
+
+.testimonial-card__name {
+  font-style: normal;
+  font-size: 15px;
+  font-weight: 800;
+  color: var(--color-dark);
+}
+
+.testimonial-card__detail {
+  font-size: 13px;
+  color: var(--color-gray);
+}
+
+/* ── Hover (solo punteros finos) + equivalente táctil ── */
+@media (hover: hover) and (pointer: fine) {
+  .testimonial-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 32px rgba(13, 32, 12, 0.1);
+  }
+}
+
+.testimonial-card:active {
+  transform: translateY(-1px);
+}
+
+/* ── Tablet ── */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .testimonials__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* ── Mobile ── */
+@media (max-width: 767px) {
+  .testimonials__grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ── Reduced motion ── */
+@media (prefers-reduced-motion: reduce) {
+  .testimonial-card {
+    transition: none;
+  }
+
+  .testimonial-card:hover,
+  .testimonial-card:active {
+    transform: none;
+  }
+}

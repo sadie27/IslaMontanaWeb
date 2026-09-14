@@ -16,7 +16,7 @@ export default function AboutTeam() {
       <div className="about-team__inner">
         <h2 className="about-team__title">
           <span className="about-team__title-lead">Nuestro equipo</span>
-          Las personas detrás de cada viaje.
+          Quienes van a contestar tu mensaje.
         </h2>
 
         <ul className="about-team__grid" role="list">

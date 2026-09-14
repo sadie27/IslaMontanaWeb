@@ -4,7 +4,7 @@ import ExperiencesView from '@/components/experiences/ExperiencesView'
 // Keyword primaria: "tours y cruceros Ecuador"
 const title = 'Tours y Cruceros en Ecuador — Islamontana Travel'
 const description =
-  'Tours de día, cruceros, expediciones en tierra firme y rutas a medida por Galápagos, Amazonía y los Andes de Ecuador. Encuentra tu próxima aventura.'
+  'Cruceros y viajes en tierra por Galápagos, expediciones en la Amazonía y rutas andinas. Ejemplos reales de viajes que adaptamos contigo: días, ruta y ritmo.'
 
 export const metadata = {
   title,

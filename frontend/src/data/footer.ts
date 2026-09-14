@@ -18,8 +18,8 @@ export const FOOTER_SOCIAL_LINKS: SocialLink[] = [
 ]
 
 export const FOOTER_CTA = {
-  title: "¡Tu próxima aventura!",
-  subtitle: "¿Listo para descubrir las Islas Galápagos?",
-  buttonLabel: "¡Contáctanos!",
+  title: "¿Empezamos por Galápagos?",
+  subtitle: "Escríbenos y te respondemos con una propuesta a tu medida.",
+  buttonLabel: "Pedir mi propuesta",
   href: ROUTES.CONTACT,
 }

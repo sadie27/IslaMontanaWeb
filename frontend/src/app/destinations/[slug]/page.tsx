@@ -52,6 +52,36 @@ export default function DestinationPage({ params }: Props) {
     })),
   }
 
+  // TouristDestination: usa los datos ya existentes (whyVisit, stats,
+  // bestTime, photos) — sin inventar rating/reviews mientras no haya
+  // testimonios reales en data/testimonials.ts.
+  const touristDestinationJsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'TouristDestination',
+    name: destination.name,
+    description: destination.description,
+    url: `${SITE_URL}/destinations/${destination.slug}`,
+    image: destination.photos.map((photo) => `${SITE_URL}${photo}`),
+    touristType: destination.whyVisit.map((item) => item.title),
+    includesAttraction: destination.whyVisit.map((item) => ({
+      '@type': 'TouristAttraction',
+      name: item.title,
+      description: item.desc,
+    })),
+    additionalProperty: [
+      ...destination.stats.map((stat) => ({
+        '@type': 'PropertyValue',
+        name: stat.label,
+        value: stat.value,
+      })),
+      {
+        '@type': 'PropertyValue',
+        name: 'Mejor época para visitar',
+        value: destination.bestTime,
+      },
+    ],
+  }
+
   const breadcrumbJsonLd = {
     '@context': 'https://schema.org',
     '@type': 'BreadcrumbList',
@@ -64,6 +94,10 @@ export default function DestinationPage({ params }: Props) {
 
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(touristDestinationJsonLd) }}
+      />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}

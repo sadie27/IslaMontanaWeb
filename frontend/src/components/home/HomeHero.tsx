@@ -80,13 +80,14 @@ export default function HomeHero() {
         </h1>
 
         <p className="hero__subtitle">
-          Nuestro destino insignia, y la puerta a los rincones más extraordinarios
-          de Ecuador. Experiencias que transforman para siempre.
+          Llevamos más de 20 años guiando en las islas. No vendemos paquetes
+          cerrados: nos cuentas qué te gustaría ver y armamos el viaje contigo.
+          Si quieres sumarle selva o volcanes, también.
         </p>
 
         <div className="hero__ctas">
-          <Link href={ROUTES.DESTINATIONS} className="btn btn--primary">Ver destinos →</Link>
-          <Link href={ROUTES.EXPERIENCES} className="btn btn--ghost">Diseña tu viaje</Link>
+          <Link href={ROUTES.CONTACT} className="btn btn--primary">Diseña tu viaje a Galápagos →</Link>
+          <Link href={ROUTES.DESTINATIONS} className="btn btn--ghost">Ver destinos</Link>
         </div>
       </div>
 

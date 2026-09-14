@@ -120,6 +120,23 @@
   color: var(--color-white);
 }
 
+/* Precio orientativo "Desde X por persona" — ver TourCard.priceFrom. */
+.exp-hero__price-wrap {
+  display: inline-flex;
+  flex-direction: column;
+  line-height: 1.15;
+}
+
+.exp-hero__price-from,
+.exp-hero__price-unit {
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  opacity: 0.75;
+  color: var(--color-white);
+}
+
 .exp-hero__cta {
   display: inline-flex;
   align-items: center;

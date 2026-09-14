@@ -14,10 +14,10 @@ interface StatItem {
 }
 
 const STATS: StatItem[] = [
-  { value: 20, suffix: '+', label: 'Años de experiencia' },
-  { value: 3800, suffix: '+', label: 'Viajeros satisfechos' },
-  { value: 4, suffix: '', label: 'Regiones únicas' },
-  { value: 98, suffix: '%', label: 'Tasa de satisfacción' },
+  { value: 40, suffix: '', label: 'Años guiando en Galápagos' },
+  { value: 3800, suffix: '+', label: 'Viajeros acompañados' },
+  { value: 100, suffix: '%', label: 'Itinerarios hechos a medida' },
+  { value: 4, suffix: '', label: 'Regiones de Ecuador' },
 ]
 
 function useCountUp(target: number, trigger: boolean): number {

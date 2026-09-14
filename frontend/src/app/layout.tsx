@@ -28,7 +28,7 @@ const bebas = Bebas_Neue({
 const base = process.env.NEXT_PUBLIC_BASE_PATH ?? ''
 
 const description =
-  "Agencia de viajes especializada en turismo de naturaleza en Ecuador. Expertos en Galápagos, nuestro destino insignia, con tours también a la Amazonía y los Andes."
+  "Agencia de viajes a medida en Ecuador, especializada en Galápagos. Un equipo pequeño que diseña tu itinerario contigo y te acompaña antes, durante y después del viaje."
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),

@@ -15,8 +15,8 @@ export default function Destinations() {
         {/* Header — en desktop el link "Ver todos" va a la derecha */}
         <div className="destinations__header">
           <div className="destinations__header-text">
-            <h2 className="destinations__title">Destinos que<br />transforman</h2>
-            <p className="destinations__subtitle">Ecuador, cuatro mundos</p>
+            <h2 className="destinations__title">Empieza por<br />Galápagos</h2>
+            <p className="destinations__subtitle">Y añade el Ecuador que quieras: selva, volcanes o mercados andinos</p>
           </div>
 
           {/* Link desktop (oculto en mobile via CSS) */}

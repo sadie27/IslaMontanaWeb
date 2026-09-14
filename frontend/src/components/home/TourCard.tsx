@@ -19,6 +19,18 @@ export interface Tour {
   duration: string
   difficulty: string
   price: string
+  /**
+   * Precio orientativo "desde", por persona, ej. '2.400 €'.
+   * Opcional a propósito: si falta, la card y la ficha caen a `price`
+   * ("Consultar") sin romper nada. No inventar cifras — rellenar solo
+   * con datos confirmados por el cliente.
+   */
+  priceFrom?: string
+  /**
+   * Tamaño máximo del grupo, ej. 'Hasta 16 viajeros'. Dato tomado de los
+   * programas oficiales del operador — no estimar.
+   */
+  groupSize?: string
   badge: string
   accent: string
   region: string
@@ -85,7 +97,17 @@ export default function TourCard({ tour, priority = false }: TourCardProps) {
         <p className="tour-card__highlight">{tour.highlights[0]}</p>
 
         <div className="tour-card__footer">
-          <span className="tour-card__price">{tour.price}</span>
+          {/* Si hay precio orientativo lo mostramos con su "Desde" encima;
+              si no, cae al texto plano de `price` ("Consultar"). */}
+          {tour.priceFrom ? (
+            <span className="tour-card__price-wrap">
+              <span className="tour-card__price-from">Desde</span>
+              <span className="tour-card__price">{tour.priceFrom}</span>
+              <span className="tour-card__price-unit">/ persona</span>
+            </span>
+          ) : (
+            <span className="tour-card__price">{tour.price}</span>
+          )}
           <Link href={ROUTES.EXPERIENCE(tour.id)} className="tour-card__cta">
             Más información
             <svg width="13" height="13" viewBox="0 0 14 14" fill="none" aria-hidden="true">

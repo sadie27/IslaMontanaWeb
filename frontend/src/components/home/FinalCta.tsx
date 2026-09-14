@@ -12,21 +12,21 @@ export default function FinalCta() {
       <div className="final-cta__content">
         <h2 className="final-cta__title">
           <span className="final-cta__title-lead">Empieza tu viaje</span>
-          Tu Ecuador te está esperando.
+          Cuéntanos qué te gustaría ver.
         </h2>
 
         <p className="final-cta__body">
-          Cuéntanos qué regiones te llaman, cuántos días tienes y
-          cuántas personas viajan. Te preparamos un itinerario a medida
-          sin coste ni compromiso.
+          No necesitamos que lo tengas decidido. Con unas fechas aproximadas ya
+          podemos ponerte algo sobre la mesa, y a partir de ahí lo movemos. Te
+          contestamos nosotros, gratis.
         </p>
 
         <div className="final-cta__ctas">
           <Link href={ROUTES.CONTACT} className="btn btn--primary">
-            Planifica tu viaje →
+            Pedir mi propuesta →
           </Link>
-          <Link href={ROUTES.DESTINATIONS} className="btn btn--ghost">
-            Explorar destinos
+          <Link href={ROUTES.EXPERIENCES} className="btn btn--ghost">
+            Ver ideas de viaje
           </Link>
         </div>
       </div>

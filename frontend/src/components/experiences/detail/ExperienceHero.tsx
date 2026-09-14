@@ -69,6 +69,12 @@ export default function ExperienceHero({ tour, heroImage, destination }: Props) 
             <span className="exp-hero__meta-value" style={{ color: diffColor }}>{tour.difficulty}</span>
             <span className="exp-hero__meta-label">Dificultad</span>
           </div>
+          {tour.groupSize && (
+            <div className="exp-hero__meta-item">
+              <span className="exp-hero__meta-value">{tour.groupSize}</span>
+              <span className="exp-hero__meta-label">Grupo</span>
+            </div>
+          )}
           {tour.activities && tour.activities.length > 0 && (
             <div className="exp-hero__meta-item">
               <span className="exp-hero__meta-value">{tour.activities.join(' · ')}</span>
@@ -78,9 +84,17 @@ export default function ExperienceHero({ tour, heroImage, destination }: Props) 
         </div>
 
         <div className="exp-hero__actions fade-up fade-up-5">
-          <span className="exp-hero__price">{tour.price}</span>
+          {tour.priceFrom ? (
+            <span className="exp-hero__price-wrap">
+              <span className="exp-hero__price-from">Desde</span>
+              <span className="exp-hero__price">{tour.priceFrom}</span>
+              <span className="exp-hero__price-unit">por persona</span>
+            </span>
+          ) : (
+            <span className="exp-hero__price">{tour.price}</span>
+          )}
           <Link href={ROUTES.TOUR_CONTACT(tour.id)} className="exp-hero__cta" style={{ background: tour.accent }}>
-            Consultar disponibilidad
+            Pedir precio y fechas
             <svg width="15" height="15" viewBox="0 0 16 16" fill="none" aria-hidden="true">
               <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
             </svg>

@@ -1028,6 +1028,23 @@
   color: var(--color-dark);
 }
 
+/* Precio orientativo "Desde X / persona" — se renderiza solo cuando el tour
+   tiene `priceFrom`; si no, la card muestra `price` en plano. */
+.tour-card__price-wrap {
+  display: inline-flex;
+  flex-direction: column;
+  line-height: 1.15;
+}
+
+.tour-card__price-from,
+.tour-card__price-unit {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--color-gray);
+}
+
 .tour-card__cta {
   display: inline-flex;
   align-items: center;

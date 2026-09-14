@@ -1,0 +1,106 @@
+/* ════════════════════════════════════════════════════════════
+   plan-galapagos.css — Bloque de dudas frecuentes (home)
+   Responde las objeciones previas a contactar.
+════════════════════════════════════════════════════════════ */
+
+.plan-gal {
+  background: var(--color-dark);
+  color: var(--color-white);
+  padding: clamp(64px, 9vw, 120px) var(--px);
+}
+
+.plan-gal__inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+.plan-gal__header {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: clamp(20px, 4vw, 64px);
+  align-items: end;
+  margin-bottom: clamp(36px, 4.5vw, 60px);
+}
+
+.plan-gal__title {
+  font-size: clamp(32px, 4.5vw, 54px);
+  font-weight: 900;
+  letter-spacing: -0.03em;
+  line-height: 1.05;
+  margin: 0;
+}
+
+.plan-gal__title-lead {
+  display: block;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-accent);
+  margin-bottom: 14px;
+}
+
+.plan-gal__intro {
+  font-size: clamp(15px, 1.4vw, 17px);
+  line-height: 1.65;
+  color: rgba(255, 255, 255, 0.72);
+  margin: 0;
+}
+
+.plan-gal__grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: clamp(20px, 2.6vw, 40px);
+  list-style: none;
+  padding: 0;
+  margin: 0 0 clamp(32px, 4vw, 52px);
+}
+
+.plan-gal__item {
+  border-top: 1px solid rgba(255, 255, 255, 0.16);
+  padding-top: 20px;
+}
+
+.plan-gal__q {
+  font-size: clamp(17px, 1.7vw, 21px);
+  font-weight: 800;
+  letter-spacing: -0.01em;
+  color: var(--color-accent);
+  margin: 0 0 10px;
+}
+
+.plan-gal__a {
+  font-size: clamp(14px, 1.3vw, 16px);
+  line-height: 1.65;
+  color: rgba(255, 255, 255, 0.78);
+  margin: 0;
+}
+
+.plan-gal__footer {
+  display: flex;
+}
+
+/* ── Tablet ── */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .plan-gal__header {
+    grid-template-columns: 1fr;
+    align-items: start;
+  }
+}
+
+/* ── Mobile ── */
+@media (max-width: 767px) {
+  .plan-gal__header {
+    grid-template-columns: 1fr;
+    align-items: start;
+  }
+
+  .plan-gal__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .plan-gal__footer .btn {
+    width: 100%;
+    justify-content: center;
+  }
+}

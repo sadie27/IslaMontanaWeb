@@ -5,6 +5,8 @@ import Destinations from '@/components/home/Destinations'
 import WhyUs from '@/components/home/WhyUs'
 import Tours from '@/components/home/Tours'
 import Gallery from '@/components/home/Gallery'
+import Testimonials from '@/components/home/Testimonials'
+import PlanGalapagos from '@/components/home/PlanGalapagos'
 
 const Stats = dynamic(
   () => import('@/components/home/Stats'),
@@ -17,7 +19,7 @@ const Stats = dynamic(
 // que sí compite por "tours Galápagos" / "cruceros Galápagos".
 const title = 'Agencia de Viajes y Turismo de Naturaleza en Ecuador'
 const description =
-  'Agencia de viajes especializada en turismo de naturaleza en Ecuador. Tours y cruceros a Galápagos, expediciones en la Amazonía y rutas por los Andes.'
+  'Diseñamos tu viaje a Galápagos y Ecuador uno a uno, con trato directo y más de 20 años guiando en las islas. Cuéntanos tus fechas y te proponemos itinerario sin compromiso.'
 
 export const metadata: Metadata = {
   title,
@@ -41,7 +43,11 @@ export default function HomePage() {
       <Stats />
       <Destinations />
       <WhyUs />
+      {/* Testimonios: se auto-oculta mientras data/testimonials.ts esté vacío. */}
+      <Testimonials />
       <Tours />
+      {/* Resuelve las dudas previas al contacto (crucero vs isla, días, época, precio). */}
+      <PlanGalapagos />
       <Gallery />
     </>
   )

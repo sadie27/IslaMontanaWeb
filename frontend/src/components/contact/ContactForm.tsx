@@ -39,8 +39,8 @@ export default function ContactForm() {
       <div className="contact-form__success" role="status">
         <p className="contact-form__success-title">¡Mensaje recibido!</p>
         <p className="contact-form__success-body">
-          Gracias por escribirnos. Te responderemos lo antes posible para
-          preparar tu viaje a Galápagos.
+          Lo leemos nosotros mismos y te escribimos con una primera propuesta.
+          Si tienes prisa, escríbenos por WhatsApp y lo vemos al momento.
         </p>
       </div>
     )
@@ -68,7 +68,7 @@ export default function ContactForm() {
             <input className="contact-form__input" type="tel" id="phone" name="phone" autoComplete="tel" />
           </div>
           <div className="contact-form__field">
-            <label className="contact-form__label" htmlFor="destination">Destino de interés</label>
+            <label className="contact-form__label" htmlFor="destination">¿Por dónde empezamos?</label>
             <select
               className="contact-form__select"
               id="destination"
@@ -88,7 +88,7 @@ export default function ContactForm() {
             className="contact-form__textarea"
             id="message"
             name="message"
-            placeholder="Cuéntanos tus fechas, cuántas personas viajan y qué te gustaría vivir en Ecuador."
+            placeholder="Por ejemplo: somos dos, en julio, unos 10 días. Nos interesa sobre todo Galápagos y hacer snorkel."
             defaultValue={tourId ? `Estoy interesado/a en el tour "${tourId}". ` : ''}
           />
         </div>
@@ -96,13 +96,13 @@ export default function ContactForm() {
         {error && <p className="contact-form__error">{error}</p>}
 
         <button type="submit" className="btn btn--primary contact-form__submit">
-          Enviar mensaje →
+          Pedir mi propuesta →
         </button>
-        <p className="contact-form__note">Sin costo ni compromiso — solo te ayudamos a planificar tu viaje.</p>
+        <p className="contact-form__note">Gratis y sin compromiso. No te apuntamos a ninguna lista de correo.</p>
       </form>
 
       <div className="contact-direct">
-        <span className="contact-direct__label">O escríbenos directo</span>
+        <span className="contact-direct__label">¿Prefieres hablar? Escríbenos directo</span>
         <div className="contact-direct__links">
           {whatsapp && (
             <a className="contact-direct__link" href={whatsapp.href} target="_blank" rel="noopener noreferrer">

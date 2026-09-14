@@ -7,8 +7,9 @@ export default function ContactHero() {
           Cuéntanos tu viaje ideal a Galápagos.
         </h1>
         <p className="contact-hero__subtitle fade-up fade-up-3">
-          Escríbenos con tus fechas y preferencias. Te respondemos con un
-          itinerario a medida, sin coste ni compromiso.
+          No hace falta que lo tengas claro. Con unas fechas aproximadas y qué
+          te gustaría ver ya podemos proponerte algo. Te contesta una de las tres
+          personas del equipo, no un formulario automático.
         </p>
       </div>
     </section>

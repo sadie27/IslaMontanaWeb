@@ -2,24 +2,24 @@
 
 const WHY_ITEMS = [
   {
-    icon: 'compass',
-    title: 'Guías expertos y locales',
-    desc: 'Todos nuestros guías son certificados por el Ministerio de Turismo de Ecuador y conocen cada rincón de sus regiones.',
-  },
-  {
-    icon: 'leaf',
-    title: 'Turismo responsable',
-    desc: 'El 15% de cada tour va directo a comunidades locales y proyectos de conservación. Viajar bien tiene impacto real.',
+    icon: 'map-pin',
+    title: 'Tu viaje, hecho a medida',
+    desc: 'Nos dices cuántos días tienes y qué te mueve, y lo montamos desde cero. Ningún viaje nuestro se repite igual dos veces.',
   },
   {
     icon: 'users',
-    title: 'Grupos reducidos',
-    desc: 'Máximo 12 personas por tour. Sin masificación, sin prisas. La experiencia que te mereces.',
+    title: 'Hablas siempre con nosotros',
+    desc: 'Sin call centers ni intermediarios. El que te contesta el primer correo es el que te coge el teléfono si tu vuelo a Baltra se retrasa.',
   },
   {
-    icon: 'map-pin',
-    title: 'Itinerarios a medida',
-    desc: '¿Quieres algo diferente? Diseñamos tu viaje desde cero. Solo dinos cuántos días tienes y qué te mueve.',
+    icon: 'compass',
+    title: '40 años de Galápagos',
+    desc: 'Luis lleva cuatro décadas como guía naturalista en las islas. Sabe qué barcos evitar, que es un consejo que ninguna web te va a dar.',
+  },
+  {
+    icon: 'leaf',
+    title: 'Guías locales certificados',
+    desc: 'Todos nuestros guías están certificados por el Parque Nacional Galápagos o el Ministerio de Turismo, y son de la región que recorres.',
   },
 ]
 
@@ -81,16 +81,17 @@ export default function WhyUs() {
         {/* ── Left column ── */}
         <div className="why-us__left">
           <h2 className="why-us__title">
-            <span className="why-us__title-lead">Por qué elegirnos</span>
-            Viajes que dejan huella de verdad.
+            <span className="why-us__title-lead">Por qué con nosotros</span>
+            Somos tres personas, no un formulario.
           </h2>
           <p className="why-us__body">
-            No somos una agencia más. Somos un equipo pequeño que lleva más de veinte
-            años guiando en Galápagos —nuestro destino insignia— y diseñando experiencias
-            auténticas en los cuatro mundos del Ecuador.
+            Irene, Luis y Kleber. Nosotros contestamos tu primer mensaje, nosotros
+            armamos tu itinerario y nosotros estamos al teléfono si algo pasa
+            mientras viajas. Llevamos más de 20 años haciéndolo, sobre todo en
+            Galápagos.
           </p>
           <Link href={ROUTES.ABOUT} className="why-us__link">
-            Conoce nuestro equipo →
+            Conoce al equipo →
           </Link>
         </div>
 

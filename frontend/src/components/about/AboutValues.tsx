@@ -53,7 +53,7 @@ export default function AboutValues() {
       <div className="about-values__inner">
         <h2 className="about-values__title">
           <span className="about-values__title-lead">Nuestros valores</span>
-          Lo que no negociamos.
+          Cómo trabajamos.
         </h2>
 
         <ul className="trust-grid" role="list">
