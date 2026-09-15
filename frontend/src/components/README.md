@@ -26,8 +26,5 @@ components/
 ### `destinations/DestinationHero.tsx`
 - Líneas 82-83: color `#0d200c` hardcodeado en inline event handlers. Reemplazar con `var(--color-dark)`.
 
-### `destinations/TourCard.tsx`
-- Líneas 123 y 129: color `#0d200c` hardcodeado. Reemplazar con `var(--color-dark)`.
-
 ### `layout/MegaMenu.tsx`
 - `unoptimized={true}` en el componente `<Image>` deshabilita la optimización de Next.js. Eliminar una vez que todas las imágenes del mega-menu estén presentes.

@@ -50,17 +50,9 @@ export default function ExperienceHero({ tour, heroImage, destination }: Props) 
           <span>{tour.name}</span>
         </nav>
 
-        <span
-          className="exp-hero__badge fade-up fade-up-2"
-          style={{ background: `${tour.accent}20`, border: `1px solid ${tour.accent}45`, color: tour.accent }}
-        >
-          <span className="exp-hero__badge-dot" style={{ background: tour.accent }} />
-          {tour.region} · {tour.badge}
-        </span>
+        <h1 className="exp-hero__title fade-up fade-up-2">{tour.name}</h1>
 
-        <h1 className="exp-hero__title fade-up fade-up-3">{tour.name}</h1>
-
-        <div className="exp-hero__meta fade-up fade-up-4">
+        <div className="exp-hero__meta fade-up fade-up-3">
           <div className="exp-hero__meta-item">
             <span className="exp-hero__meta-value">{tour.duration}</span>
             <span className="exp-hero__meta-label">Duración</span>
@@ -83,7 +75,7 @@ export default function ExperienceHero({ tour, heroImage, destination }: Props) 
           )}
         </div>
 
-        <div className="exp-hero__actions fade-up fade-up-5">
+        <div className="exp-hero__actions fade-up fade-up-4">
           {tour.priceFrom ? (
             <span className="exp-hero__price-wrap">
               <span className="exp-hero__price-from">Desde</span>

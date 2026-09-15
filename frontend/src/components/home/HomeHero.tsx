@@ -67,12 +67,6 @@ export default function HomeHero() {
       </div>
 
       <div className="hero__content">
-        {/* Pill badge */}
-        <div className="hero__badge">
-          <span className="hero__badge-dot" />
-          <span>GALÁPAGOS · AMAZONÍA · ANDES</span>
-        </div>
-
         {/* Headline — left-aligned (anti-center bias) */}
         <h1 className="hero__title">
           Galápagos<br />

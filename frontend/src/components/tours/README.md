@@ -6,7 +6,7 @@ Componentes específicos del dominio de tours.
 
 Pendiente de poblar. La carpeta existe como placeholder.
 
-**Nota:** `TourCard` ya existe en `src/components/destinations/TourCard.tsx` y se usa en las páginas de destino individuales. Cuando se implemente `/tours`, evaluar si moverlo aquí o mantenerlo en `destinations/`.
+**Nota:** `TourCard` vive en `src/components/home/TourCard.tsx` y es el único que se usa en toda la web (landing, `/experiences` y las páginas de destino). Cuando se implemente `/tours`, reutilízalo — no crees una card nueva.
 
 ## Plan
 

@@ -44,3 +44,32 @@ export const EXPERIENCES: Experience[] = HOME_TOURS.map((tour): Experience => ({
   ...tour,
   category: TOUR_CATEGORY[tour.id] ?? 'tierra',
 }))
+
+/**
+ * Experiencias destacadas de cada destino, en el orden en que se muestran
+ * en la sección "Experiencias en este destino" de /destinations/[slug].
+ *
+ * Máximo 3 por destino (mismo criterio que la landing). Si un destino no
+ * aparece aquí, se cae a filtrar `TOUR_DESTINATION_SLUG` por orden natural,
+ * así que añadir un tour nuevo nunca deja la sección vacía.
+ */
+export const FEATURED_DESTINATION_TOURS: Record<string, string[]> = {
+  galapagos: ['c3', 't3'],
+  amazonia: ['at3'],
+  'andes-cultura': ['act4'],
+  'andes-naturaleza': ['and2', 'ant4', 'ant5'],
+}
+
+/** Tours de un destino, ya ordenados y recortados a 3. */
+export function getToursByDestination(slug: string): Tour[] {
+  const featured = FEATURED_DESTINATION_TOURS[slug]
+
+  const ids = featured ?? HOME_TOURS
+    .filter((tour) => TOUR_DESTINATION_SLUG[tour.id] === slug)
+    .map((tour) => tour.id)
+
+  return ids
+    .map((id) => HOME_TOURS.find((tour) => tour.id === id))
+    .filter((tour): tour is Tour => Boolean(tour))
+    .slice(0, 3)
+}

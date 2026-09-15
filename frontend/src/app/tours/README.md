@@ -16,5 +16,5 @@ El CTA "Nuestros tours" en el Hero de la página principal (`page.tsx` línea 70
 
 ## Dependencias
 
-- Componente `TourCard` en `src/components/destinations/TourCard.tsx` — ya existe, usado en las páginas de destino individuales
+- Componente `TourCard` en `src/components/home/TourCard.tsx` — ya existe, usado en la landing, `/experiences` y las páginas de destino
 - Tipos del tour en `src/lib/types.ts` — verificar que el tipo `Tour` esté definido o añadirlo

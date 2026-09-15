@@ -57,30 +57,6 @@
   z-index: 2;
 }
 
-.hero__badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  background: rgba(171, 212, 48, 0.12);
-  border: 1px solid rgba(171, 212, 48, 0.3);
-  border-radius: 100px;
-  padding: 6px 18px;
-  margin-bottom: 32px;
-  color: var(--color-accent);
-  font-size: 12px;
-  font-weight: 600;
-  letter-spacing: 0.1em;
-}
-
-.hero__badge-dot {
-  display: block;
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-  background: var(--color-accent);
-  flex-shrink: 0;
-}
-
 .hero__title {
   font-size: clamp(52px, 7.5vw, 96px);
   font-weight: 900;
@@ -187,11 +163,6 @@
     max-width: 440px;
     margin-bottom: 36px;
   }
-
-  .hero__badge {
-    font-size: 11px;
-    margin-bottom: 28px;
-  }
 }
 
 /* ── Responsive ── */
@@ -204,16 +175,6 @@
   .hero__subtitle {
     font-size: 16px;
     margin-bottom: 32px;
-  }
-
-  .hero__badge {
-    font-size: 10px;
-    padding: 5px 14px;
-    margin-bottom: 24px;
-    max-width: 90%;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
   }
 
   .hero__ctas { flex-direction: column; width: 100%; }
@@ -235,7 +196,6 @@
 
 @media (max-width: 320px) {
   .hero__title { font-size: 26px; }
-  .hero__badge { font-size: 9px; padding: 4px 12px; }
 }
 
 /* ── Móvil landscape ── */
@@ -246,7 +206,6 @@
   /* Fuentes: ignorar vw (que es grande en landscape) y usar valores fijos legibles */
   .hero__title    { font-size: 32px; margin-bottom: 12px; }
   .hero__subtitle { font-size: 14px; margin-bottom: 20px; }
-  .hero__badge    { margin-bottom: 16px; }
   .hero__scroll-hint { display: none; }
 
   /* CTAs en fila en landscape (hay espacio horizontal) */
@@ -1067,6 +1026,13 @@
 @media (min-width: 768px) and (max-width: 1023px) {
   .tours { padding: 80px var(--px); }
   .tours__grid { grid-template-columns: 1fr 1fr; gap: 24px; }
+
+  /* Variante --fit: se usa en /destinations/[slug], donde un destino puede
+     tener 1 o 2 experiencias. Sin esto el grid deja columnas vacías. */
+  .tours__grid--fit {
+    grid-template-columns: repeat(min(var(--tours-count, 2), 2), minmax(0, 420px));
+    justify-content: center;
+  }
 }
 
 /* Desktop: 3 col + "ver todos" arriba derecha */
@@ -1082,6 +1048,12 @@
   .tours__view-all--mobile  { display: none; }
   .tours__view-all-wrap     { display: none; }
   .tours__grid { grid-template-columns: repeat(3, 1fr); gap: 28px; }
+  /* Tope de 420px por card: con 1 o 2 experiencias, estirarlas a todo el
+     ancho deforma la foto (4/3) y la card ocupa casi una pantalla. */
+  .tours__grid--fit {
+    grid-template-columns: repeat(var(--tours-count, 3), minmax(0, 420px));
+    justify-content: center;
+  }
 }
 
 /* Mobile */

@@ -1,108 +1,70 @@
-'use client'
+/* ─── Tours.tsx — Experiencias del destino ──────────────────────────────────
+ *
+ * Reutiliza el TourCard y el BEM `.tours__*` / `.tour-card__*` de la landing
+ * (definidos en styles/home.css, cargado global vía globals.css). El objetivo
+ * es que un destino y la home se vean como la misma web: antes esta sección
+ * tenía su propia card de estilos inline y 4 tabs de categoría que, con el
+ * catálogo actual, solo mostraban huecos vacíos.
+ *
+ * Los datos salen de HOME_TOURS (fuente de verdad, con foto y ficha completa),
+ * no del campo `tours` de destinations.ts.
+ */
 
-import { useState } from 'react'
-import type { Destination, TourItem } from '@/lib/types'
-import TourCard from './TourCard'
-
-const TABS = [
-  { id: 'dia',           label: 'Day Tours' },
-  { id: 'cruceros',      label: 'Cruceros' },
-  { id: 'tierra',        label: 'Viaje a tierra' },
-  { id: 'personalizado', label: 'Personalizado' },
-] as const
+import Link from 'next/link'
+import type { Destination } from '@/lib/types'
+import TourCard from '@/components/home/TourCard'
+import { getToursByDestination } from '@/data/experiences'
+import { ROUTES } from '@/config/routes'
 
 interface Props {
   destination: Destination
   bp: 'mobile' | 'tablet' | 'desktop'
 }
 
-export default function Tours({ destination, bp }: Props) {
-  const { accentColor, tours } = destination
-  const [activeTab, setActiveTab] = useState<keyof typeof tours>('dia')
+export default function Tours({ destination }: Props) {
+  const tours = getToursByDestination(destination.slug)
 
-  const isMobile = bp === 'mobile'
-  const isTablet = bp === 'tablet'
-
-  const cur: TourItem[] = tours[activeTab]
-  const px = isMobile ? '24px' : isTablet ? '40px' : '56px'
-
-  const maxCols  = isTablet ? 2 : 3
-  const gridCols = cur.length === 1 ? '1fr' : `repeat(${Math.min(cur.length, maxCols)}, 1fr)`
+  // Un destino sin experiencias aún no debe renderizar una sección vacía.
+  if (tours.length === 0) return null
 
   return (
-    <section id="tours" style={{ background: 'white', padding: isMobile ? `64px ${px}` : isTablet ? `80px ${px}` : `96px ${px}` }}>
-      <div style={{ maxWidth: 1200, margin: '0 auto' }}>
+    <section id="tours" className="tours">
+      <div className="tours__inner">
 
-        {/* Header */}
-        <div style={{ marginBottom: 36 }}>
-          <span style={{
-            display: 'block', fontSize: 11, letterSpacing: '0.2em',
-            textTransform: 'uppercase', color: accentColor, fontWeight: 700, marginBottom: 10,
-          }}>
-            Tours disponibles
-          </span>
-          <h2 style={{
-            fontSize: isMobile ? 28 : isTablet ? 36 : 46,
-            fontWeight: 900, letterSpacing: '-0.03em', lineHeight: 0.95, color: 'var(--color-dark, #0d200c)',
-          }}>
-            Elige tu forma<br />de descubrirlas.
-          </h2>
-        </div>
-
-        {/* Tabs */}
-        <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap', marginBottom: 32, alignItems: 'center', justifyContent: 'center' }}>
-          {TABS.map((tab) => {
-            const isEmpty = tours[tab.id].length === 0
-            const isActive = activeTab === tab.id
-            return (
-              <button
-                key={tab.id}
-                onClick={() => { if (!isEmpty) setActiveTab(tab.id) }}
-                style={{
-                  padding: '10px 22px',
-                  borderRadius: 100,
-                  fontSize: 14,
-                  fontWeight: isActive ? 700 : 500,
-                  background: isActive ? accentColor : isEmpty ? '#f5f5f5' : '#f0f5ee',
-                  color: isActive ? 'white' : isEmpty ? '#bbb' : 'var(--color-dark, #0d200c)',
-                  cursor: isEmpty ? 'default' : 'pointer',
-                  opacity: isEmpty ? 0.45 : 1,
-                  transition: 'all 0.18s ease',
-                  letterSpacing: '0.01em',
-                  border: 'none',
-                  minHeight: 44,
-                }}
-              >
-                {tab.label}
-              </button>
-            )
-          })}
-        </div>
-
-        {/* Cards */}
-        {cur.length > 0 ? (
-          isMobile ? (
-            <div style={{ display: 'flex', flexDirection: 'column', gap: 14 }}>
-              {cur.map((tour) => (
-                <TourCard key={tour.id} tour={tour} accentColor={accentColor} />
-              ))}
-            </div>
-          ) : (
-            <div style={{ display: 'grid', gridTemplateColumns: gridCols, gap: 14 }}>
-              {cur.map((tour) => (
-                <TourCard key={tour.id} tour={tour} accentColor={accentColor} />
-              ))}
-            </div>
-          )
-        ) : (
-          <div style={{
-            padding: 40, textAlign: 'center',
-            color: 'rgba(13,32,12,0.55)', fontSize: 14,
-            background: '#f8f8f8', borderRadius: 12,
-          }}>
-            Sin tours en esta categoría para este destino.
+        {/* ── Header ── */}
+        <div className="tours__header">
+          <div className="tours__header-left">
+            <h2 className="tours__title">
+              <span className="tours__title-lead">Experiencias en este destino</span>
+              Así se recorre {destination.name}. El itinerario final lo armamos contigo.
+            </h2>
           </div>
-        )}
+          <Link href={ROUTES.EXPERIENCES} className="tours__view-all tours__view-all--desktop">
+            Ver todas las experiencias →
+          </Link>
+        </div>
+
+        {/* ── Grid ──
+            `--tours-count` colapsa las columnas al número real de cards: un
+            destino con 1 experiencia no debe dejar dos huecos vacíos. En tablet
+            el CSS ya limita a 2 col, así que el máximo aquí es 3. */}
+        <ul
+          className="tours__grid tours__grid--fit"
+          role="list"
+          style={{ '--tours-count': tours.length } as React.CSSProperties}
+        >
+          {tours.map((tour) => (
+            <li key={tour.id}>
+              <TourCard tour={tour} />
+            </li>
+          ))}
+        </ul>
+
+        <div className="tours__view-all-wrap">
+          <Link href={ROUTES.EXPERIENCES} className="tours__view-all tours__view-all--mobile">
+            Ver todas las experiencias →
+          </Link>
+        </div>
 
       </div>
     </section>

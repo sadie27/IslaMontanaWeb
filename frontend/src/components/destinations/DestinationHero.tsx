@@ -66,33 +66,9 @@ export default function DestinationHero({ destination, bp }: Props) {
             ? `100px ${px} 52px`
             : `120px ${px} 72px`,
       }}>
-        {/* Badge */}
-        <span
-          className="fade-up fade-up-1"
-          style={{
-            display: 'inline-flex',
-            alignItems: 'center',
-            gap: 8,
-            background: `${accentColor}20`,
-            border: `1px solid ${accentColor}45`,
-            color: accentColor,
-            fontSize: 11,
-            fontWeight: 700,
-            letterSpacing: '0.14em',
-            borderRadius: 100,
-            padding: '5px 16px',
-            width: 'fit-content',
-            marginBottom: isMobile ? 20 : 24,
-            textTransform: 'uppercase',
-          }}
-        >
-          <span style={{ width: 5, height: 5, borderRadius: '50%', background: accentColor, flexShrink: 0 }} />
-          DESTINO · ECUADOR
-        </span>
-
         {/* H1 */}
         <h1
-          className="fade-up fade-up-2"
+          className="fade-up fade-up-1"
           style={{
             fontSize: isMobile
               ? 'clamp(36px, 9vw, 50px)'
@@ -111,7 +87,7 @@ export default function DestinationHero({ destination, bp }: Props) {
 
         {/* Tagline */}
         <p
-          className="fade-up fade-up-3"
+          className="fade-up fade-up-2"
           style={{
             fontSize: isMobile
               ? 'clamp(14px, 4vw, 16px)'
@@ -130,7 +106,7 @@ export default function DestinationHero({ destination, bp }: Props) {
 
         {/* Stats */}
         <div
-          className="fade-up fade-up-4"
+          className="fade-up fade-up-3"
           style={{ display: 'flex', gap: isMobile ? 18 : isTablet ? 24 : 32, marginBottom: isMobile ? 32 : 44, flexWrap: 'wrap' }}
         >
           {stats.map((s, i) => (
@@ -156,7 +132,7 @@ export default function DestinationHero({ destination, bp }: Props) {
         </div>
 
         {/* CTAs */}
-        <div className="fade-up fade-up-5" style={{ display: 'flex', gap: 10, flexWrap: 'wrap' }}>
+        <div className="fade-up fade-up-4" style={{ display: 'flex', gap: 10, flexWrap: 'wrap' }}>
           <a
             href="#tours"
             className="cta-primary"
